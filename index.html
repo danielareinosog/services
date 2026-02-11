@@ -290,14 +290,24 @@
             line-height: 1.6;
         }
 
-        .roadmap-content { font-size: 14px; color: #555; margin-bottom: 10px; line-height: 1.6; }
+        /* NEW: Just a plain container for line items to match description style */
+        .roadmap-line { 
+            font-size: 14px; 
+            color: #555; 
+            margin-bottom: 10px; 
+            display: block; 
+            line-height: 1.6; 
+        }
+
         .roadmap-goal {
             font-style: italic;
             font-size: 14px;
             color: var(--teal);
             font-weight: 600;
-            margin-top: 10px;
+            margin-top: 15px;
             display: block;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         /* ABOUT & CTA */
@@ -442,7 +452,9 @@
             </div>
         </div>
 
-        <div class="page-break"></div> <div id="deep-dive-1" class="deep-dive open">
+        <div class="page-break"></div> 
+
+        <div id="deep-dive-1" class="deep-dive open">
             <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
                 <div class="deep-dive-header-content">
                     <h3>Phase 1: The Chaos-to-Clarity Scan</h3>
@@ -458,28 +470,22 @@
                         <div class="roadmap-item">
                             <span class="roadmap-week">Week 1: Kickoff & Access</span>
                             <span class="roadmap-desc">A 60-minute download with the Founder/CEO to hear the biggest pain points and "wish list."</span>
-                            <div class="roadmap-content">
-                                <strong>The "Mixed Signals" Scan:</strong> Review core documents (Handbook, Onboarding Checklist, Values Statement, recent job descriptions).
-                            </div>
+                            <span class="roadmap-line">The "Mixed Signals" Scan: Review core documents (Handbook, Onboarding Checklist, Values Statement, recent job descriptions).</span>
                             <span class="roadmap-goal">Goal: Understand what the org says it does vs what is actually written down.</span>
                         </div>
 
                         <div class="roadmap-item">
                             <span class="roadmap-week">Week 2: 3 Stakeholder "Pulse" Calls</span>
                             <span class="roadmap-desc">30-minute chats with key players (e.g., an Ops lead, a Manager, a new hire).</span>
-                            <div class="roadmap-content">
-                                <strong>One Process Walkthrough:</strong> Pick one chaotic workflow (usually Hiring or Performance Reviews) and walk through it with the org leaders live.
-                            </div>
+                            <span class="roadmap-line">One Process Walkthrough: Pick one chaotic workflow (usually Hiring or Performance Reviews) and walk through it with the org leaders live.</span>
                             <span class="roadmap-goal">Goal: Identify where the work actually gets stuck and how the team feels.</span>
                         </div>
 
                         <div class="roadmap-item">
                             <span class="roadmap-week">Week 3: Connecting the Dots</span>
                             <span class="roadmap-desc">Analyze the gap between Week 1 (what is written) and Week 2 (what is happening).</span>
-                            <div class="roadmap-content">
-                                <strong>Drafting the Plan:</strong> Create the 90-Day Stabilization Plan containing the 3-5 "no-regrets" actions.<br>
-                                <strong>The Leadership Debrief:</strong> A 60-90 minute strategy session to present the Chaos Map and the recommended immediate next steps.
-                            </div>
+                            <span class="roadmap-line">Drafting the Plan: Create the 90-Day Stabilization Plan containing the 3-5 "no-regrets" actions.</span>
+                            <span class="roadmap-line">The Leadership Debrief: A 60-90 minute strategy session to present the Chaos Map and the recommended immediate next steps.</span>
                             <span class="roadmap-goal">Goal: Synthesize findings into the "Chaos Map" and the action plan.</span>
                         </div>
 
