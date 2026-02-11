@@ -24,7 +24,6 @@
             
             /* CARD PALETTE */
             --card-light-bg: #FDF9F4;   /* Warm White */
-            --card-premium-bg: #E9C7BB; /* Warm Clay */
             
             /* UI VARIABLES */
             --bg-color: var(--beige);
@@ -46,7 +45,7 @@
 
         /* HEADER */
         .header {
-            background-color: var(--teal); /* BACK TO TEAL */
+            background-color: var(--teal);
             color: var(--white);
             padding: 80px 40px;
             text-align: center;
@@ -101,10 +100,10 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
-            align-items: stretch; /* Ensure equal height */
+            align-items: stretch;
         }
 
-        /* --- STANDARD CARD STYLING (Phase 1 & 2) --- */
+        /* --- CARD STYLING --- */
         .service-card {
             background: var(--card-light-bg); /* Warm White */
             border: 1px solid rgba(51,51,51,.12);
@@ -123,22 +122,11 @@
             box-shadow: 0 15px 40px rgba(15, 76, 92, 0.15);
         }
 
-        /* --- PREMIUM CARD STYLING (Retainer) --- */
+        /* PREMIUM CARD (Retainer) overrides */
         .service-card.premium {
-            background: var(--card-premium-bg); /* Warm Clay */
-            border: 2px solid var(--terracotta);
+            border: 2px solid var(--terracotta); /* Only the border is terracotta */
             box-shadow: 0 14px 35px rgba(0,0,0,.14);
-            position: relative; /* For the 'Premium' tag */
-        }
-
-        /* Premium Text Colors Override */
-        .service-card.premium .service-title,
-        .service-card.premium .service-subtitle,
-        .service-card.premium .feature,
-        .service-card.premium .info-label,
-        .service-card.premium .info-value, 
-        .service-card.premium .service-number {
-            color: #333333 !important;
+            position: relative;
         }
 
         /* Premium Badge */
@@ -152,9 +140,8 @@
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: .05em;
-            background: #F6F3EF; /* Cream */
-            color: var(--teal);
-            border: 1px solid rgba(15,76,92,.25);
+            background: #E9C7BB; /* Soft Clay Badge */
+            color: #333;
         }
 
         /* CARD HEADERS */
@@ -162,21 +149,10 @@
             padding: 30px;
             color: white;
             font-weight: 600;
-        }
-
-        /* Keep Teal Accents for Phase 1 & 2 Headers */
-        .service-card:not(.premium) .service-header {
-            background: var(--teal); 
+            background: var(--teal); /* All headers are Teal */
             padding-bottom: 20px;
         }
         
-        /* Remove header background for Premium card to show clay color */
-        .service-card.premium .service-header {
-            background: transparent;
-            padding-bottom: 0;
-            padding-top: 40px;
-        }
-
         .service-number {
             font-size: 12px;
             opacity: 0.8;
@@ -191,15 +167,9 @@
             margin-bottom: 5px;
             line-height: 1.2;
             font-weight: 700;
-            color: var(--text-dark); /* Dark text for light cards */
+            color: white; /* Title is white on Teal header */
         }
         
-        .service-card:not(.premium) .service-title,
-        .service-card:not(.premium) .service-number,
-        .service-card:not(.premium) .service-subtitle {
-             color: white; /* White text on Teal header */
-        }
-
         .service-subtitle {
             font-size: 14px;
             opacity: 0.95;
@@ -214,7 +184,7 @@
             flex-direction: column;
         }
 
-        /* KEY INFO (Timeline/Price) */
+        /* KEY INFO */
         .key-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -223,8 +193,6 @@
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-
-        .service-card.premium .key-info { border-bottom: 1px solid rgba(0,0,0,0.1); }
 
         .info-label {
             font-size: 11px;
@@ -251,14 +219,11 @@
         }
         .feature::before {
             content: '→';
-            color: var(--terracotta); /* Terracotta arrows */
+            color: var(--terracotta);
             font-weight: bold;
             margin-right: 10px;
             flex-shrink: 0;
         }
-        
-        /* Darker arrows for premium card readability */
-        .service-card.premium .feature::before { color: #A04020; }
 
         /* DEEP DIVE SECTIONS */
         .deep-dive {
@@ -374,6 +339,8 @@
             font-size: 13px;
         }
         .footer a { color: white; text-decoration: none; font-weight: 600; }
+        
+        /* HIDDEN DIVIDER */
         .page-break { height: 60px; display: flex; align-items: center; justify-content: center; margin: 60px 0; color: var(--border); font-size: 12px; }
 
         /* MOBILE */
@@ -394,8 +361,8 @@
 
     <div class="container">
         <div class="intro">
-            <h2>Three Ways to Work Together</h2>
-            <p>Choose the engagement that matches your organization's stage and needs. Click any card below for details.</p>
+            <h2>Let's Work Together</h2>
+            <p>Choose the engagement that matches your organization's stage and needs. Phase Click any card below for details.</p>
         </div>
 
         <div class="services">
@@ -428,7 +395,7 @@
                 <div class="service-header">
                     <div class="service-number">PHASE 2</div>
                     <div class="service-title">People Systems</div>
-                    <div class="service-subtitle">Build Complete</div>
+                    <div class="service-subtitle">HR Build from Phase 1</div>
                 </div>
                 <div class="service-content">
                     <div class="key-info">
@@ -475,4 +442,132 @@
             </div>
         </div>
 
-        <div class="page-break">
+        <div class="page-break"></div> <div id="deep-dive-1" class="deep-dive open">
+            <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
+                <div class="deep-dive-header-content">
+                    <h3>Phase 1: The Chaos-to-Clarity Scan</h3>
+                    <p>We stop the bleeding in 3 weeks. Here's how.</p>
+                </div>
+                <div class="dive-toggle">↓</div>
+            </div>
+            <div class="deep-dive-content">
+                <div class="deep-dive-body">
+                    <div class="deep-dive-section">
+                        <h4>The 3-Week Roadmap</h4>
+                        
+                        <div class="roadmap-item">
+                            <span class="roadmap-week">Week 1: Kickoff & Access</span>
+                            <span class="roadmap-desc">A 60-minute download with the Founder/CEO to hear the biggest pain points and "wish list."</span>
+                            <div class="roadmap-content">
+                                <strong>The "Mixed Signals" Scan:</strong> Review core documents (Handbook, Onboarding Checklist, Values Statement, recent job descriptions).
+                            </div>
+                            <span class="roadmap-goal">Goal: Understand what the org says it does vs what is actually written down.</span>
+                        </div>
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-week">Week 2: 3 Stakeholder "Pulse" Calls</span>
+                            <span class="roadmap-desc">30-minute chats with key players (e.g., an Ops lead, a Manager, a new hire).</span>
+                            <div class="roadmap-content">
+                                <strong>One Process Walkthrough:</strong> Pick one chaotic workflow (usually Hiring or Performance Reviews) and walk through it with the org leaders live.
+                            </div>
+                            <span class="roadmap-goal">Goal: Identify where the work actually gets stuck and how the team feels.</span>
+                        </div>
+
+                        <div class="roadmap-item">
+                            <span class="roadmap-week">Week 3: Connecting the Dots</span>
+                            <span class="roadmap-desc">Analyze the gap between Week 1 (what is written) and Week 2 (what is happening).</span>
+                            <div class="roadmap-content">
+                                <strong>Drafting the Plan:</strong> Create the 90-Day Stabilization Plan containing the 3-5 "no-regrets" actions.<br>
+                                <strong>The Leadership Debrief:</strong> A 60-90 minute strategy session to present the Chaos Map and the recommended immediate next steps.
+                            </div>
+                            <span class="roadmap-goal">Goal: Synthesize findings into the "Chaos Map" and the action plan.</span>
+                        </div>
+
+                    </div>
+                    
+                    <div class="deep-dive-section">
+                        <h4>The Deliverable</h4>
+                        <p>You stop guessing. You get a clear, visual map of your risks and a literal checklist to stabilize the ship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="deep-dive-2" class="deep-dive">
+            <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
+                <div class="deep-dive-header-content">
+                    <h3>Phase 2: The People Systems Build</h3>
+                    <p>Turning your values into simple, repeatable systems.</p>
+                </div>
+                <div class="dive-toggle">↓</div>
+            </div>
+            <div class="deep-dive-content">
+                <div class="deep-dive-body">
+                    <div class="deep-dive-section">
+                        <h4>The Philosophy: "Good Enough" Governance</h4>
+                        <p>We do not copy-paste corporate bureaucracy. We build "minimum viable policies" that protect your organization without crushing your soul.</p>
+                    </div>
+                    <div class="deep-dive-section">
+                        <h4>Sample Menu: What We Might Build</h4>
+                        <div class="feature"><strong>Global Remote Work Policy:</strong> Fair compensation and compliance.</div>
+                        <div class="feature"><strong>Safeguarding & Ethics:</strong> Clear reporting lines for investigations.</div>
+                        <div class="feature"><strong>Performance "Lite":</strong> A feedback rhythm without complex forms.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="deep-dive-3" class="deep-dive">
+            <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
+                <div class="deep-dive-header-content">
+                    <h3>The Fractional Leader Retainer</h3>
+                    <p>A Senior People Partner on your team.</p>
+                </div>
+                <div class="dive-toggle">↓</div>
+            </div>
+            <div class="deep-dive-content">
+                <div class="deep-dive-body">
+                    <div class="deep-dive-section">
+                        <h4>Best For</h4>
+                        <p>Established growing organizations with solid operational foundations that need a senior HR strategist. Also ideal for founders or CEOs who have someone handling HR logistics but want external guidance on complex decisions. This retainer scales with you—light touch when things are stable, more intensive when you're navigating change.</p>
+                    </div>
+                    <div class="deep-dive-section">
+                        <h4>What I Handle</h4>
+                        <div class="feature"><strong>Crisis Management:</strong> Leading sensitive ER investigations.</div>
+                        <div class="feature"><strong>Strategic Sounding Board:</strong> Weekly syncs with the CEO/COO.</div>
+                        <div class="feature"><strong>Oversight:</strong> Guiding your existing Admin/Ops staff.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about">
+            <h3>Why Work With Me</h3>
+            <div class="about-grid">
+                <div class="about-item">
+                    <h4>The Global Edge</h4>
+                    <p>I specialize in the complexity of international non-profits. I have managed people systems across 13+ countries, navigating remote teams and cross-border compliance.</p>
+                </div>
+                <div class="about-item">
+                    <h4>Why Clients Choose Me</h4>
+                    <p>I bridge the gap between operational reality and empathetic culture. I turn "ad-hoc chaos" into systems that run themselves.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Stop the Chaos?</h2>
+            <div class="cta-buttons">
+                <a href="https://cal.com/danielareinoso/consult" class="btn btn-primary">Book Discovery Call</a>
+                <a href="mailto:danielareinoso@icloud.com" class="btn btn-secondary">Email Me</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Daniela Reinoso | People & Culture Systems<br>
+        <a href="https://linkedin.com/in/danielareinoso">LinkedIn</a> • 
+        <a href="mailto:danielareinoso@icloud.com">danielareinoso@icloud.com</a>
+    </div>
+</body>
+</html>
