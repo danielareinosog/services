@@ -290,7 +290,6 @@
             line-height: 1.6;
         }
 
-        /* NEW: Just a plain container for line items to match description style */
         .roadmap-line { 
             font-size: 14px; 
             color: #555; 
@@ -310,26 +309,37 @@
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* ABOUT & CTA */
-        /* UPDATE THIS SECTION IN YOUR CSS */
+        /* ABOUT SECTION */
+        .about-section {
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+        
+        .about-section h3 {
+            font-size: 28px;
+            color: var(--teal);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
         .about-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider columns */
-            gap: 50px; /* INCREASED from 30px to 50px to fix spacing issues */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
             margin-bottom: 30px;
         }
 
         .about-item {
             display: flex;
             flex-direction: column;
-            gap: 15px; /* Ensures space between the Title and the Paragraph */
+            gap: 15px;
         }
 
         .about-item h4 {
             font-weight: 800;
             font-size: 18px;
             color: var(--terracotta);
-            margin-bottom: 0; /* Reset margins since we use gap now */
+            margin-bottom: 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -338,19 +348,96 @@
             font-size: 15px;
             line-height: 1.7;
             color: #444;
-            margin: 0; /* Reset margins */
+            margin: 0;
         }
 
+        /* CTA SECTION (RESTORED) */
+        .cta-section {
+            background-color: var(--white);
+            border: 2px solid var(--teal);
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 30px;
+            color: var(--teal);
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            background-color: var(--terracotta);
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #b55a3d;
+        }
+
+        /* FOOTER */
         .footer {
             background: var(--teal);
-            color: rgba(255,255,255,0.7);
-            padding: 40px;
+            color: rgba(255,255,255,0.8);
+            padding: 50px 40px;
             text-align: center;
-            margin-top: 80px;
-            font-size: 13px;
+            font-size: 14px;
         }
-        .footer a { color: white; text-decoration: none; font-weight: 600; }
         
+        .footer-name {
+            font-weight: 700;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500; 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.3s;
+        }
+
+        .footer a:hover {
+            opacity: 0.8;
+        }
+
+        .footer-icon {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
         /* HIDDEN DIVIDER */
         .page-break { height: 60px; display: flex; align-items: center; justify-content: center; margin: 60px 0; color: var(--border); font-size: 12px; }
 
@@ -360,6 +447,7 @@
             .header h1 { font-size: 30px; }
             .container { padding: 0 20px; }
             .key-info { grid-template-columns: 1fr; }
+            .footer-links { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -479,100 +567,4 @@
                             <span class="roadmap-week">Week 2: 3 Stakeholder "Pulse" Calls</span>
                             <span class="roadmap-desc">30-minute chats with key players (e.g., an Ops lead, a Manager, a new hire).</span>
                             <span class="roadmap-line">One Process Walkthrough: Pick one chaotic workflow (usually Hiring or Performance Reviews) and walk through it with the org leaders live.</span>
-                            <span class="roadmap-goal">Goal: Identify where the work actually gets stuck and how the team feels.</span>
-                        </div>
-
-                        <div class="roadmap-item">
-                            <span class="roadmap-week">Week 3: Connecting the Dots</span>
-                            <span class="roadmap-desc">Analyze the gap between Week 1 (what is written) and Week 2 (what is happening).</span>
-                            <span class="roadmap-line">Drafting the Plan: Create the 90-Day Stabilization Plan containing the 3-5 "no-regrets" actions.</span>
-                            <span class="roadmap-line">The Leadership Debrief: A 60-90 minute strategy session to present the Chaos Map and the recommended immediate next steps.</span>
-                            <span class="roadmap-goal">Goal: Synthesize findings into the "Chaos Map" and the action plan.</span>
-                        </div>
-
-                    </div>
-                    
-                    <div class="deep-dive-section">
-                        <h4>The Deliverable</h4>
-                        <p>You stop guessing. You get a clear, visual map of your risks and a literal checklist to stabilize the ship.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="deep-dive-2" class="deep-dive">
-            <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
-                <div class="deep-dive-header-content">
-                    <h3>Phase 2: The People Systems Build</h3>
-                    <p>Turning your values into simple, repeatable systems.</p>
-                </div>
-                <div class="dive-toggle">↓</div>
-            </div>
-            <div class="deep-dive-content">
-                <div class="deep-dive-body">
-                    <div class="deep-dive-section">
-                        <h4>The Philosophy: "Good Enough" Governance</h4>
-                        <p>We do not copy-paste corporate bureaucracy. We build "minimum viable policies" that protect your organization without crushing your soul.</p>
-                    </div>
-                    <div class="deep-dive-section">
-                        <h4>Sample Menu: What We Might Build</h4>
-                        <div class="feature"><strong>Global Remote Work Policy:</strong> Fair compensation and compliance.</div>
-                        <div class="feature"><strong>Safeguarding & Ethics:</strong> Clear reporting lines for investigations.</div>
-                        <div class="feature"><strong>Performance "Lite":</strong> A feedback rhythm without complex forms.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="deep-dive-3" class="deep-dive">
-            <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
-                <div class="deep-dive-header-content">
-                    <h3>The Fractional Leader Retainer</h3>
-                    <p>A Senior People Partner on your team.</p>
-                </div>
-                <div class="dive-toggle">↓</div>
-            </div>
-            <div class="deep-dive-content">
-                <div class="deep-dive-body">
-                    <div class="deep-dive-section">
-                        <h4>Best For</h4>
-                        <p>Established growing organizations with solid operational foundations that need a senior HR strategist. Also ideal for founders or CEOs who have someone handling HR logistics but want external guidance on complex decisions. This retainer scales with you—light touch when things are stable, more intensive when you're navigating change.</p>
-                    </div>
-                    <div class="deep-dive-section">
-                        <h4>What I Handle</h4>
-                        <div class="feature"><strong>Crisis Management:</strong> Leading sensitive ER investigations.</div>
-                        <div class="feature"><strong>Strategic Sounding Board:</strong> Weekly syncs with the CEO/COO.</div>
-                        <div class="feature"><strong>Oversight:</strong> Guiding your existing Admin/Ops staff.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="about">
-          <div class="about">
-            <h3>Why Work With Me</h3>
-            <div class="about-grid">
-                
-                <div class="about-item">
-                    <h4>The Global Edge</h4>
-                    <p>
-                        Most consultants stumble when borders are crossed. I have operationalized people systems across <strong>13+ countries</strong>. I navigate the messy reality of remote teams, cross-border compliance, and cultural nuance so you can hire the best talent anywhere—without the legal risk.
-                    </p>
-                </div>
-
-                <div class="about-item">
-                    <h4>Why Clients Choose Me</h4>
-                    <p>
-                        I bridge the gap between "corporate efficiency" and "non-profit empathy." I don't just write policies; I turn ad-hoc chaos into <strong>self-running systems</strong>. I give you the structure to protect your budget and the culture to keep your soul, freeing you from the day-to-day noise.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    <div class="footer">
-        Daniela Reinoso | People & Culture Systems<br>
-        <a href="https://linkedin.com/in/danielareinoso">LinkedIn</a> • 
-        <a href="mailto:danielareinoso@icloud.com">danielareinoso@icloud.com</a>
-    </div>
-</body>
-</html>
+                            <span class="roadmap-
