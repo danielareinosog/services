@@ -351,7 +351,7 @@
             margin: 0;
         }
 
-        /* CTA SECTION (RESTORED) */
+        /* UPDATED CTA SECTION */
         .cta-section {
             background-color: var(--white);
             border: 2px solid var(--teal);
@@ -377,20 +377,43 @@
             margin-right: auto;
         }
 
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .cta-button {
-            background-color: var(--terracotta);
-            color: white;
-            padding: 15px 40px;
-            font-size: 18px;
+            padding: 15px 35px;
+            font-size: 17px;
             font-weight: 700;
             border-radius: 50px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             display: inline-block;
         }
 
-        .cta-button:hover {
+        /* Primary Button (Calendar) */
+        .cta-button.primary {
+            background-color: var(--terracotta);
+            color: white;
+            border: 2px solid var(--terracotta);
+        }
+        .cta-button.primary:hover {
             background-color: #b55a3d;
+            border-color: #b55a3d;
+        }
+
+        /* Secondary Button (Email) */
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--teal);
+            border: 2px solid var(--teal);
+        }
+        .cta-button.secondary:hover {
+            background-color: var(--teal);
+            color: white;
         }
 
         /* FOOTER */
@@ -448,11 +471,12 @@
             .container { padding: 0 20px; }
             .key-info { grid-template-columns: 1fr; }
             .footer-links { flex-direction: column; gap: 10px; }
+            .cta-buttons { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
-  <div class="header">
+    <div class="header">
         <h1>
             Daniela Reinoso<br>
             <span style="display: block; font-size: 0.6em; margin-top: 10px; font-weight: 600; opacity: 0.9;">
@@ -609,9 +633,9 @@
                     </div>
                     <div class="deep-dive-section">
                         <h4>Sample Menu: What We Might Build</h4>
-                        <div class="feature"><strong>Global Remote Work Policy: </strong> Fair compensation and compliance.</div>
-                        <div class="feature"><strong>Safeguarding & Ethics: </strong> Clear reporting lines for investigations.</div>
-                        <div class="feature"><strong>Performance "Lite": </strong> A feedback rhythm without complex forms.</div>
+                        <div class="feature"><strong>Global Remote Work Policy:</strong> Fair compensation and compliance.</div>
+                        <div class="feature"><strong>Safeguarding & Ethics:</strong> Clear reporting lines for investigations.</div>
+                        <div class="feature"><strong>Performance "Lite":</strong> A feedback rhythm without complex forms.</div>
                     </div>
                 </div>
             </div>
@@ -664,8 +688,13 @@
 
         <div class="cta-section">
             <h2>Ready to stabilize your team?</h2>
-            <p>Let's book a discovery call to identify where your organization is stuck and which phase is right for you.</p>
-            <a href="mailto:danielareinoso@icloud.com" class="cta-button">Book a Discovery Call</a>
+            <p>Let's find out if we are a match. Book a free discovery call or shoot me an email.</p>
+            
+            <div class="cta-buttons">
+                <a href="https://cal.com/danielareinoso/discovery-call" class="cta-button primary" target="_blank">Book Discovery Call</a>
+                
+                <a href="mailto:danielareinoso@icloud.com" class="cta-button secondary">Email Me</a>
+            </div>
         </div>
 
     </div>
