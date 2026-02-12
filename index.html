@@ -311,34 +311,35 @@
         }
 
         /* ABOUT & CTA */
-        .about {
-            background: var(--white);
-            padding: 60px 40px;
-            border-radius: 12px;
-            margin-bottom: 40px;
-            border-top: 5px solid var(--teal);
+        /* UPDATE THIS SECTION IN YOUR CSS */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly wider columns */
+            gap: 50px; /* INCREASED from 30px to 50px to fix spacing issues */
+            margin-bottom: 30px;
         }
-        .about h3 { font-size: 26px; margin-bottom: 30px; color: var(--teal); }
-        .about-item h4 { font-weight: 700; margin-bottom: 10px; color: var(--terracotta); }
-        
-        .cta-section h2 { color: var(--teal); font-size: 32px; margin-bottom: 20px; }
-        .btn {
-            padding: 16px 32px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 14px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
+
+        .about-item {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Ensures space between the Title and the Paragraph */
+        }
+
+        .about-item h4 {
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--terracotta);
+            margin-bottom: 0; /* Reset margins since we use gap now */
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            display: inline-block;
         }
-        .btn-primary { background: var(--teal); color: white; }
-        .btn-primary:hover { background: var(--terracotta); }
-        .btn-secondary { background: transparent; color: var(--teal); border: 2px solid var(--teal); }
-        .btn-secondary:hover { background: var(--teal); color: white; }
+
+        .about-item p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #444;
+            margin: 0; /* Reset margins */
+        }
 
         .footer {
             background: var(--teal);
@@ -548,28 +549,26 @@
         </div>
 
         <div class="about">
+          <div class="about">
             <h3>Why Work With Me</h3>
             <div class="about-grid">
+                
                 <div class="about-item">
                     <h4>The Global Edge</h4>
-                    <p>I specialize in the complexity of international non-profits. I have managed people systems across 13+ countries, navigating remote teams and cross-border compliance.</p>
+                    <p>
+                        Most consultants stumble when borders are crossed. I have operationalized people systems across <strong>13+ countries</strong>. I navigate the messy reality of remote teams, cross-border compliance, and cultural nuance so you can hire the best talent anywhere—without the legal risk.
+                    </p>
                 </div>
+
                 <div class="about-item">
                     <h4>Why Clients Choose Me</h4>
-                    <p>I bridge the gap between operational reality and empathetic culture. I turn "ad-hoc chaos" into systems that run themselves.</p>
+                    <p>
+                        I bridge the gap between "corporate efficiency" and "non-profit empathy." I don't just write policies; I turn ad-hoc chaos into <strong>self-running systems</strong>. I give you the structure to protect your budget and the culture to keep your soul, freeing you from the day-to-day noise.
+                    </p>
                 </div>
+
             </div>
         </div>
-
-        <div class="cta-section">
-            <h2>Ready to Stop the Chaos?</h2>
-            <div class="cta-buttons">
-                <a href="https://cal.com/danielareinoso/consult" class="btn btn-primary">Book Discovery Call</a>
-                <a href="mailto:danielareinoso@icloud.com" class="btn btn-secondary">Email Me</a>
-            </div>
-        </div>
-    </div>
-
     <div class="footer">
         Daniela Reinoso | People & Culture Systems<br>
         <a href="https://linkedin.com/in/danielareinoso">LinkedIn</a> • 
