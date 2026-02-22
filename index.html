@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta property="og:title" content="Fractional HR for Mission-Driven Organizations">
@@ -10,7 +9,7 @@
     <meta property="og:image" content="https://danielareinosog.github.io/services/LIbanner.png">
     <meta property="og:url" content="https://danielareinosog.github.io/services/">
     <meta property="og:type" content="website">
-  
+
     <title>Daniela Reinoso | People & Culture Systems</title>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YZQYRTJQ9"></script>
@@ -18,7 +17,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-2YZQYRTJQ9');
     </script>
 
@@ -33,17 +31,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
         :root {
-            /* BRAND PALETTE */
             --teal: #0f4c5c;
             --terracotta: #cb6b4b;
             --beige: #f6f3ef;
             --text-dark: #333333;
             --white: #ffffff;
-            
-            /* CARD PALETTE */
-            --card-light-bg: #FDF9F4;   /* Warm White */
-            
-            /* UI VARIABLES */
+            --card-light-bg: #FDF9F4;
             --bg-color: var(--beige);
             --text-main: var(--text-dark);
             --border: #e0dbd3;
@@ -56,7 +49,6 @@
             line-height: 1.6;
         }
 
-        /* TYPOGRAPHY OVERRIDES */
         h1, h2, h3, h4, .service-title, .header h1 {
             font-family: 'Merriweather Sans', sans-serif;
         }
@@ -96,6 +88,49 @@
             font-weight: 500;
         }
 
+        /* INTRO BIO */
+        .intro-bio {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 50px 40px;
+        }
+
+        .intro-bio-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .intro-bio img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            flex-shrink: 0;
+            border: 4px solid var(--beige);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .intro-bio p {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.7;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .intro-bio-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .intro-bio p {
+                text-align: center;
+            }
+        }
+
         /* CONTAINER */
         .container {
             max-width: 1200px;
@@ -121,9 +156,9 @@
             align-items: stretch;
         }
 
-        /* --- CARD STYLING --- */
+        /* CARD STYLING */
         .service-card {
-            background: var(--card-light-bg); /* Warm White */
+            background: var(--card-light-bg);
             border: 1px solid rgba(51,51,51,.12);
             box-shadow: 0 10px 25px rgba(0,0,0,.08);
             border-radius: 16px;
@@ -140,14 +175,12 @@
             box-shadow: 0 15px 40px rgba(15, 76, 92, 0.15);
         }
 
-        /* PREMIUM CARD (Retainer) overrides */
         .service-card.premium {
-            border: 2px solid var(--terracotta); /* Only the border is terracotta */
+            border: 2px solid var(--terracotta);
             box-shadow: 0 14px 35px rgba(0,0,0,.14);
             position: relative;
         }
 
-        /* Premium Badge */
         .service-card.premium .service-content::before {
             content: "Premium";
             display: inline-block;
@@ -158,19 +191,18 @@
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: .05em;
-            background: #E9C7BB; /* Soft Clay Badge */
+            background: #E9C7BB;
             color: #333;
         }
 
-        /* CARD HEADERS */
         .service-header {
             padding: 30px;
             color: white;
             font-weight: 600;
-            background: var(--teal); /* All headers are Teal */
+            background: var(--teal);
             padding-bottom: 20px;
         }
-        
+
         .service-number {
             font-size: 12px;
             opacity: 0.8;
@@ -185,9 +217,9 @@
             margin-bottom: 5px;
             line-height: 1.2;
             font-weight: 700;
-            color: white; /* Title is white on Teal header */
+            color: white;
         }
-        
+
         .service-subtitle {
             font-size: 14px;
             opacity: 0.95;
@@ -219,7 +251,7 @@
             letter-spacing: 0.5px;
             margin-bottom: 4px;
         }
-        
+
         .info-value {
             font-size: 15px;
             font-weight: 600;
@@ -299,23 +331,20 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
         .roadmap-desc {
-            font-size: 14px; 
-            color: #555; 
-            margin-bottom: 10px; 
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
             display: block;
             line-height: 1.6;
         }
-
-        .roadmap-line { 
-            font-size: 14px; 
-            color: #555; 
-            margin-bottom: 10px; 
-            display: block; 
-            line-height: 1.6; 
+        .roadmap-line {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+            display: block;
+            line-height: 1.6;
         }
-
         .roadmap-goal {
             font-style: italic;
             font-size: 14px;
@@ -327,32 +356,42 @@
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
+        /* PHASE 1 CTA */
+        .phase1-cta {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+        .phase1-cta p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
         /* ABOUT SECTION */
         .about-section {
             margin-top: 80px;
             margin-bottom: 40px;
         }
-        
         .about-section h3 {
             font-size: 28px;
             color: var(--teal);
             text-align: center;
             margin-bottom: 40px;
         }
-
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 50px;
             margin-bottom: 30px;
         }
-
         .about-item {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-
         .about-item h4 {
             font-weight: 800;
             font-size: 18px;
@@ -361,7 +400,6 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-
         .about-item p {
             font-size: 15px;
             line-height: 1.7;
@@ -369,7 +407,7 @@
             margin: 0;
         }
 
-        /* UPDATED CTA SECTION */
+        /* CTA SECTION */
         .cta-section {
             background-color: var(--white);
             border: 2px solid var(--teal);
@@ -379,13 +417,11 @@
             margin-top: 60px;
             margin-bottom: 60px;
         }
-
         .cta-section h2 {
             font-size: 30px;
             color: var(--teal);
             margin-bottom: 15px;
         }
-
         .cta-section p {
             font-size: 18px;
             color: #555;
@@ -394,14 +430,12 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .cta-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
-
         .cta-button {
             padding: 15px 35px;
             font-size: 17px;
@@ -411,8 +445,6 @@
             transition: all 0.3s;
             display: inline-block;
         }
-
-        /* Primary Button (Calendar) */
         .cta-button.primary {
             background-color: var(--terracotta);
             color: white;
@@ -422,8 +454,6 @@
             background-color: #b55a3d;
             border-color: #b55a3d;
         }
-
-        /* Secondary Button (Email) */
         .cta-button.secondary {
             background-color: transparent;
             color: var(--teal);
@@ -442,7 +472,6 @@
             text-align: center;
             font-size: 14px;
         }
-        
         .footer-name {
             font-weight: 700;
             color: white;
@@ -450,7 +479,6 @@
             margin-bottom: 15px;
             display: block;
         }
-
         .footer-links {
             display: flex;
             justify-content: center;
@@ -458,28 +486,22 @@
             gap: 20px;
             flex-wrap: wrap;
         }
-
-        .footer a { 
-            color: white; 
-            text-decoration: none; 
-            font-weight: 500; 
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 8px;
             transition: opacity 0.3s;
         }
-
-        .footer a:hover {
-            opacity: 0.8;
-        }
-
+        .footer a:hover { opacity: 0.8; }
         .footer-icon {
             width: 18px;
             height: 18px;
             fill: white;
         }
 
-        /* HIDDEN DIVIDER */
         .page-break { height: 60px; display: flex; align-items: center; justify-content: center; margin: 60px 0; color: var(--border); font-size: 12px; }
 
         /* MOBILE */
@@ -487,6 +509,7 @@
             .header { padding: 60px 20px; }
             .header h1 { font-size: 30px; }
             .container { padding: 0 20px; }
+            .intro-bio { padding: 30px 20px; }
             .key-info { grid-template-columns: 1fr; }
             .footer-links { flex-direction: column; gap: 10px; }
             .cta-buttons { flex-direction: column; gap: 15px; }
@@ -494,6 +517,7 @@
     </style>
 </head>
 <body>
+
     <div class="header">
         <h1>
             Daniela Reinoso<br>
@@ -503,6 +527,13 @@
         </h1>
         <div class="tagline">Turning Chaos Into Calm, Fair, Repeatable Systems</div>
         <p>10+ years building HR systems across 13+ countries.</p>
+    </div>
+
+    <div class="intro-bio">
+        <div class="intro-bio-inner">
+            <img src="DRheadshot.jpeg" alt="Daniela Reinoso">
+            <p>I'm Daniela — a People & Culture strategist who has spent 10+ years untangling HR chaos for mission-driven organizations across 13+ countries. I don't do corporate templates. I build systems that actually fit how your team works.</p>
+        </div>
     </div>
 
     <div class="container">
@@ -588,7 +619,7 @@
             </div>
         </div>
 
-        <div class="page-break"></div> 
+        <div class="page-break"></div>
 
         <div id="deep-dive-1" class="deep-dive open">
             <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
@@ -602,7 +633,7 @@
                 <div class="deep-dive-body">
                     <div class="deep-dive-section">
                         <h4>The 3-Week Roadmap</h4>
-                        
+
                         <div class="roadmap-item">
                             <span class="roadmap-week">Week 1: Kickoff & Access</span>
                             <span class="roadmap-desc">A 60-minute download with the Founder/CEO to hear the biggest pain points and "wish list."</span>
@@ -624,12 +655,16 @@
                             <span class="roadmap-line">The Leadership Debrief: A 60-90 minute strategy session to present the Chaos Map and the recommended immediate next steps.</span>
                             <span class="roadmap-goal">Goal: Synthesize findings into the "Chaos Map" and the action plan.</span>
                         </div>
-
                     </div>
-                    
+
                     <div class="deep-dive-section">
                         <h4>The Deliverable</h4>
                         <p>You stop guessing. You get a clear, visual map of your risks and a literal checklist to stabilize the ship.</p>
+                    </div>
+
+                    <div class="phase1-cta">
+                        <p>This is usually where people say <em>"this is exactly what we need."</em></p>
+                        <a href="https://cal.com/danielareinoso/discovery-call" class="cta-button primary" target="_blank">Let's Start Here →</a>
                     </div>
                 </div>
             </div>
@@ -686,19 +721,20 @@
         <div class="about-section">
             <h3>Why Work With Me</h3>
             <div class="about-grid">
-                
+
                 <div class="about-item">
                     <h4>The Global Edge</h4>
-                    <p>
-                        Most consultants stumble when borders are crossed. I have operationalized people systems across <strong>13+ countries</strong>. I navigate the messy reality of remote teams, cross-border compliance, and cultural nuance so you can hire the best talent anywhere—without the legal risk.
-                    </p>
+                    <p>Most consultants stumble when borders are crossed. I have operationalized people systems across <strong>13+ countries</strong>. I navigate the messy reality of remote teams, cross-border compliance, and cultural nuance so you can hire the best talent anywhere—without the legal risk.</p>
+                </div>
+
+                <div class="about-item">
+                    <h4>No Corporate Bureaucracy</h4>
+                    <p>I build "minimum viable policies" — the simplest version of a system that protects your organization without killing your culture. Just enough structure to stop the chaos. Nothing more.</p>
                 </div>
 
                 <div class="about-item">
                     <h4>Why Clients Choose Me</h4>
-                    <p>
-                        I bridge the gap between "corporate efficiency" and "non-profit empathy." I don't just write policies; I turn ad-hoc chaos into <strong>self-running systems</strong>. I give you the structure to protect your budget and the culture to keep your soul, freeing you from the day-to-day noise.
-                    </p>
+                    <p>I bridge the gap between "corporate efficiency" and "non-profit empathy." I don't just write policies; I turn ad-hoc chaos into <strong>self-running systems</strong>. I give you the structure to protect your budget and the culture to keep your soul, freeing you from the day-to-day noise.</p>
                 </div>
 
             </div>
@@ -707,11 +743,9 @@
         <div class="cta-section">
             <h2>Ready to stabilize your team?</h2>
             <p>Let's find out if we are a match. Book a free discovery call or shoot me an email.</p>
-            
             <div class="cta-buttons">
                 <a href="https://cal.com/danielareinoso/discovery-call" class="cta-button primary" target="_blank">Book Discovery Call</a>
-                
-                <a href="mailto:danielareinoso@icloud.com" class="cta-button secondary">Email Me</a>
+                <a href="/cdn-cgi/l/email-protection#e581848b8c80898497808c8b8a968aa58c86898a9081cb868a88" class="cta-button secondary">Email Me</a>
             </div>
         </div>
 
@@ -724,11 +758,6 @@
                 <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 LinkedIn
             </a>
-            <a href="mailto:danielareinoso@icloud.com">
+            <a href="/cdn-cgi/l/email-protection#c6a2a7a8afa3aaa7b4a3afa8a9b5a986afa5aaa9b3a2e8a5a9ab">
                 <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                danielareinoso@icloud.com
-            </a>
-        </div>
-    </div>
-</body>
-</html>
+      
