@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta property="og:title" content="Fractional HR for Mission-Driven Organizations">
-    <meta property="og:description" content="The Chaos-to-Clarity methodology — fair, repeatable people systems without the full-time overhead.">
+    <meta property="og:title" content="Fractional HR for Growing Mission-Driven Nonprofits">
+    <meta property="og:description" content="People & culture systems for nonprofits under 100 staff — reduce HR chaos, strengthen retention, and free leadership to focus on mission.">
     <meta property="og:image" content="https://danielareinosog.github.io/services/LIbanner.png">
     <meta property="og:url" content="https://danielareinosog.github.io/services/">
     <meta property="og:type" content="website">
@@ -27,7 +27,6 @@
             box-sizing: border-box;
         }
 
-        /* FONTS */
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
         :root {
@@ -53,7 +52,6 @@
             font-family: 'Merriweather Sans', sans-serif;
         }
 
-        /* HEADER */
         .header {
             background-color: var(--teal);
             color: var(--white);
@@ -83,12 +81,11 @@
         .header p {
             font-size: 18px;
             color: rgba(255,255,255,0.95);
-            max-width: 700px;
+            max-width: 760px;
             margin: 0 auto;
             font-weight: 500;
         }
 
-        /* INTRO BIO */
         .intro-bio {
             background: var(--white);
             border-bottom: 1px solid var(--border);
@@ -96,7 +93,7 @@
         }
 
         .intro-bio-inner {
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -121,6 +118,61 @@
             text-align: left;
         }
 
+        .fit-strip {
+            background: #f9f6f1;
+            border-bottom: 1px solid var(--border);
+            padding: 44px 40px;
+        }
+
+        .fit-strip-inner {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .fit-strip h2 {
+            font-size: 28px;
+            color: var(--teal);
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .fit-strip p {
+            text-align: center;
+            color: #555;
+            font-size: 17px;
+            max-width: 760px;
+            margin: 0 auto 28px;
+        }
+
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .fit-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .fit-card h3 {
+            font-size: 16px;
+            color: var(--terracotta);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        .fit-card p {
+            font-size: 15px;
+            color: #444;
+            margin: 0;
+            text-align: left;
+        }
+
         @media (max-width: 768px) {
             .intro-bio-inner {
                 flex-direction: column;
@@ -131,23 +183,20 @@
             }
         }
 
-        /* CONTAINER */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 40px;
         }
 
-        /* INTRO */
         .intro {
             padding: 60px 0;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
         .intro h2 { font-size: 32px; margin-bottom: 20px; color: var(--teal); }
-        .intro p { font-size: 18px; color: #555; max-width: 700px; margin: 0 auto; }
+        .intro p { font-size: 18px; color: #555; max-width: 760px; margin: 0 auto; }
 
-        /* SERVICES GRID */
         .services {
             padding: 80px 0;
             display: grid;
@@ -156,7 +205,6 @@
             align-items: stretch;
         }
 
-        /* CARD STYLING */
         .service-card {
             background: var(--card-light-bg);
             border: 1px solid rgba(51,51,51,.12);
@@ -234,7 +282,6 @@
             flex-direction: column;
         }
 
-        /* KEY INFO */
         .key-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -258,7 +305,6 @@
             color: var(--teal);
         }
 
-        /* FEATURES LIST */
         .feature {
             display: flex;
             align-items: flex-start;
@@ -275,7 +321,6 @@
             flex-shrink: 0;
         }
 
-        /* DEEP DIVE SECTIONS */
         .deep-dive {
             background: var(--white);
             border: 1px solid var(--border);
@@ -313,7 +358,6 @@
         }
         .deep-dive-section p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 15px; }
 
-        /* ROADMAP STYLES */
         .roadmap-item {
             background: var(--beige);
             padding: 25px;
@@ -356,7 +400,6 @@
             border-top: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* STEPS */
         .step-item {
             display: flex;
             gap: 20px;
@@ -380,7 +423,6 @@
         .step-body { font-size: 15px; color: #444; line-height: 1.6; padding-top: 6px; }
         .step-body strong { color: var(--teal); }
 
-        /* PRICING TABLE */
         .pricing-table {
             width: 100%;
             border-collapse: collapse;
@@ -418,7 +460,6 @@
             vertical-align: middle;
         }
 
-        /* NOTE BOX */
         .note-box {
             background: var(--beige);
             border-left: 4px solid var(--terracotta);
@@ -431,7 +472,6 @@
         }
         .note-box strong { color: var(--teal); }
 
-        /* PHASE 1 CTA */
         .phase1-cta {
             text-align: center;
             margin-top: 30px;
@@ -445,7 +485,6 @@
             font-size: 16px;
         }
 
-        /* ABOUT SECTION */
         .about-section {
             margin-top: 80px;
             margin-bottom: 40px;
@@ -482,7 +521,6 @@
             margin: 0;
         }
 
-        /* CTA SECTION */
         .cta-section {
             background-color: var(--white);
             border: 2px solid var(--teal);
@@ -501,7 +539,7 @@
             font-size: 18px;
             color: #555;
             margin-bottom: 30px;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -539,7 +577,6 @@
             color: white;
         }
 
-        /* FOOTER */
         .footer {
             background: var(--teal);
             color: rgba(255,255,255,0.8);
@@ -579,12 +616,11 @@
 
         .page-break { height: 60px; display: flex; align-items: center; justify-content: center; margin: 60px 0; color: var(--border); font-size: 12px; }
 
-        /* MOBILE */
         @media (max-width: 768px) {
             .header { padding: 60px 20px; }
             .header h1 { font-size: 30px; }
             .container { padding: 0 20px; }
-            .intro-bio { padding: 30px 20px; }
+            .intro-bio, .fit-strip { padding: 30px 20px; }
             .key-info { grid-template-columns: 1fr; }
             .footer-links { flex-direction: column; gap: 10px; }
             .cta-buttons { flex-direction: column; gap: 15px; }
@@ -599,28 +635,52 @@
         <h1>
             Daniela Reinoso<br>
             <span style="display: block; font-size: 0.6em; margin-top: 10px; font-weight: 600; opacity: 0.9;">
-                People & Culture Systems for Mission-driven Orgs
+                People & Culture Systems for Growing Mission-driven Nonprofits
             </span>
         </h1>
-        <div class="tagline">Turning Chaos Into Calm, Fair, Repeatable Systems</div>
-        <p>10+ years building HR systems across 13+ countries.</p>
+        <div class="tagline">Reduce people-ops chaos. Strengthen retention. Free leadership to focus on mission.</div>
+        <p>I help nonprofits under 100 staff build practical, fair people systems when the CEO or Ops lead is stuck cleaning up HR messes and the organization is not ready for a full-time senior HR leader.</p>
     </div>
 
     <div class="intro-bio">
         <div class="intro-bio-inner">
             <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
-            <p>I'm Daniela — a People & Culture strategist who has spent 10+ years untangling HR chaos for mission-driven organizations across 13+ countries. I don't do corporate templates. I build systems that actually fit how your team works.</p>
+            <p>I'm Daniela — a People & Culture strategist who has spent 10+ years building HR systems inside mission-driven organizations across 13+ countries. I was hired into fast-growing teams because leadership needed someone who could handle both HR operations and HR risk, build structure from scratch, and create systems that fit the reality of a small, impact-driven organization.</p>
+        </div>
+    </div>
+
+    <div class="fit-strip">
+        <div class="fit-strip-inner">
+            <h2>You’re likely a fit if…</h2>
+            <p>You lead a growing mission-driven organization and people issues keep pulling leadership back into cleanup mode.</p>
+            <div class="fit-grid">
+                <div class="fit-card">
+                    <h3>Leadership is in the weeds</h3>
+                    <p>Your CEO, founder, or Ops lead keeps getting dragged into hiring, performance issues, or employee problems they do not have time or expertise to manage well.</p>
+                </div>
+                <div class="fit-card">
+                    <h3>You’ve outgrown ad hoc HR</h3>
+                    <p>Your team has grown, but your people processes are still informal, inconsistent, or dependent on a few overburdened people.</p>
+                </div>
+                <div class="fit-card">
+                    <h3>You need structure, not bureaucracy</h3>
+                    <p>You want stronger systems for hiring, onboarding, management, and retention — without importing corporate bloat that does not fit your culture.</p>
+                </div>
+                <div class="fit-card">
+                    <h3>You’re not ready for full-time senior HR</h3>
+                    <p>You need sharp diagnosis, stabilization, and leadership support now, but a permanent senior hire is not the right move yet.</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="container">
         <div class="intro">
-            <h2>Let's Work Together</h2>
-            <p>Choose the engagement that matches your organization's stage and needs.<br>Click any card below for details.</p>
+            <h2>How We Can Work Together</h2>
+            <p>Designed for growing nonprofits and mission-driven teams under 100 staff that need stronger people systems, clearer priorities, and less day-to-day chaos.</p>
         </div>
 
         <div class="services">
-            <!-- PHASE 1 -->
             <div class="service-card" onclick="document.querySelector('#deep-dive-1').scrollIntoView({behavior: 'smooth'}); document.querySelector('#deep-dive-1').classList.add('open');">
                 <div class="service-header">
                     <div class="service-number">PHASE 1</div>
@@ -635,18 +695,17 @@
                         </div>
                         <div class="info-item">
                             <div class="info-label">Investment</div>
-                            <div class="info-value"> From $3,500 </div>
+                            <div class="info-value">From $3,500</div>
                         </div>
                     </div>
                     <div class="features">
-                        <div class="feature">Visual "Chaos Map" of gaps & priorities</div>
+                        <div class="feature">Visual "Chaos Map" of gaps, risks, and priorities</div>
                         <div class="feature">90-day stabilization roadmap</div>
                         <div class="feature">Leadership strategy session</div>
                     </div>
                 </div>
             </div>
 
-            <!-- PHASE 2 -->
             <div class="service-card" onclick="document.querySelector('#deep-dive-2').scrollIntoView({behavior: 'smooth'}); document.querySelector('#deep-dive-2').classList.add('open');">
                 <div class="service-header">
                     <div class="service-number">PHASE 2</div>
@@ -672,7 +731,6 @@
                 </div>
             </div>
 
-            <!-- RETAINER -->
             <div class="service-card premium" onclick="document.querySelector('#deep-dive-3').scrollIntoView({behavior: 'smooth'}); document.querySelector('#deep-dive-3').classList.add('open');">
                 <div class="service-header">
                     <div class="service-number">RETAINER</div>
@@ -691,7 +749,7 @@
                         </div>
                     </div>
                     <div class="features">
-                        <div class="feature">Strategic guidance & crisis navigation</div>
+                        <div class="feature">Strategic guidance and crisis navigation</div>
                         <div class="feature">Hands-on systems support</div>
                         <div class="feature">3-month minimum commitment</div>
                     </div>
@@ -701,12 +759,11 @@
 
         <div class="page-break"></div>
 
-        <!-- PHASE 1 DEEP DIVE -->
         <div id="deep-dive-1" class="deep-dive">
             <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
                 <div class="deep-dive-header-content">
                     <h3>Phase 1: The Chaos-to-Clarity Scan</h3>
-                    <p>A focused diagnostic for organizations that need clarity on where to start.</p>
+                    <p>A focused diagnostic for organizations where HR is falling onto Ops, the CEO, or whoever is available.</p>
                 </div>
                 <div class="dive-toggle">↓</div>
             </div>
@@ -714,7 +771,8 @@
                 <div class="deep-dive-body">
                     <div class="deep-dive-section">
                         <h4>What it is</h4>
-                        <p>I review your existing people systems and workflows, identify the root causes of friction and risk, and debrief leadership with a clear 90-day stabilization roadmap.</p>
+                        <p>I review your existing people systems and workflows, identify the root causes of friction, inconsistency, and risk, and debrief leadership with a clear 90-day stabilization roadmap.</p>
+                        <p>This is best for teams that know they have people-ops problems but need clarity on what is broken, what matters most, and where to start without overbuilding.</p>
                     </div>
 
                     <div class="deep-dive-section">
@@ -722,24 +780,24 @@
 
                         <div class="roadmap-item">
                             <span class="roadmap-week">Week 1: Kickoff & Access</span>
-                            <span class="roadmap-desc">A 60-minute download with the Founder/CEO to hear the biggest pain points and "wish list."</span>
-                            <span class="roadmap-line">The "Mixed Signals" Scan: Review core documents (Handbook, Onboarding Checklist, Values Statement, recent job descriptions).</span>
+                            <span class="roadmap-desc">A 60-minute download with the Founder, CEO, or Ops lead to hear the biggest pain points, recurring headaches, and what leadership wishes were running more smoothly.</span>
+                            <span class="roadmap-line">The "Mixed Signals" Scan: Review core documents such as your handbook, onboarding checklist, values statement, and recent job descriptions.</span>
                             <span class="roadmap-goal">Goal: Understand what the org says it does vs. what is actually written down.</span>
                         </div>
 
                         <div class="roadmap-item">
                             <span class="roadmap-week">Week 2: Stakeholder Pulse Calls</span>
-                            <span class="roadmap-desc">Conversations with a diverse group of key players (e.g., an Ops lead, a Manager, a new hire).</span>
-                            <span class="roadmap-line">One Process Walkthrough: Pick one chaotic workflow (usually Hiring or Performance Reviews) and walk through it with org leaders live.</span>
-                            <span class="roadmap-goal">Goal: Identify where the work actually gets stuck and how the team feels.</span>
+                            <span class="roadmap-desc">Conversations with a diverse group of key players such as an Ops lead, a manager, and a newer hire.</span>
+                            <span class="roadmap-line">One Process Walkthrough: Pick one chaotic workflow — usually hiring, onboarding, or performance support — and walk through it with org leaders live.</span>
+                            <span class="roadmap-goal">Goal: Identify where the work actually gets stuck, where leadership gets pulled in, and how the team experiences the system.</span>
                         </div>
 
                         <div class="roadmap-item">
                             <span class="roadmap-week">Week 3: Connecting the Dots</span>
-                            <span class="roadmap-desc">Analyze the gap between Week 1 (what is written) and Week 2 (what is happening).</span>
-                            <span class="roadmap-line">Draft the 90-Day Stabilization Plan with the 3–5 "no-regrets" actions.</span>
-                            <span class="roadmap-line">The Leadership Debrief: A 60–90 minute strategy session to present the Chaos Map and recommended next steps.</span>
-                            <span class="roadmap-goal">Goal: Synthesize findings into the "Chaos Map" and a clear action plan.</span>
+                            <span class="roadmap-desc">Analyze the gap between what is documented and what is actually happening inside the organization.</span>
+                            <span class="roadmap-line">Draft the 90-Day Stabilization Plan with the 3–5 highest-priority actions.</span>
+                            <span class="roadmap-line">The Leadership Debrief: A 60–90 minute strategy session to present the Chaos Map and recommend next steps.</span>
+                            <span class="roadmap-goal">Goal: Give leadership a clear picture of what is causing the chaos and what to fix first.</span>
                         </div>
                     </div>
 
@@ -765,19 +823,18 @@
                     </div>
 
                     <div class="phase1-cta">
-                        <p>This is usually where people say <em>"this is exactly what we need."</em></p>
-                        <a href="https://cal.com/danielareinoso/discovery-call" class="cta-button primary" target="_blank">Let's Start Here →</a>
+                        <p>This is often the right starting point when your team knows something is off but cannot yet see the whole pattern.</p>
+                        <a href="https://cal.com/danielareinoso/discovery-call" class="cta-button primary" target="_blank">Start With the Scan →</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- PHASE 2 DEEP DIVE -->
         <div id="deep-dive-2" class="deep-dive">
             <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
                 <div class="deep-dive-header-content">
                     <h3>Phase 2: People Systems Launch</h3>
-                    <p>Implement the systems your team needs — then embed them so they stick.</p>
+                    <p>Build the systems your organization needs next — then embed them so they stick.</p>
                 </div>
                 <div class="dive-toggle">↓</div>
             </div>
@@ -786,8 +843,8 @@
                     <div class="deep-dive-section">
                         <h4>What it is</h4>
                         <p>Phase 2 is where we build and launch the People & Culture systems your organization actually needs — not a corporate template dropped into your Notion. Most clients come here directly after Phase 1, using the Chaos Map as their blueprint. Some come directly with a clear priority already in mind.</p>
-                        <p>This is a fixed-fee, outcome-based engagement. We agree on the scope upfront, work toward a defined launch, and build in the rollout support so that what we create doesn't just live in a folder — it gets used.</p>
-                        <p>Phase 2 is not task-based HR administration or "small fixes." It's systems implementation and leadership enablement, designed for organizations ready to operate more sustainably.</p>
+                        <p>This is a fixed-fee, outcome-based engagement. We agree on the scope upfront, work toward a defined launch, and build in the rollout support so that what we create does not just live in a folder — it gets used.</p>
+                        <p>Phase 2 is for organizations that are ready to stop improvising and put a few essential people systems in place without overcomplicating how they work.</p>
                     </div>
 
                     <div class="deep-dive-section">
@@ -796,19 +853,19 @@
                         <div class="step-item">
                             <div class="step-number">1</div>
                             <div class="step-body">
-                                <strong>Define</strong> — We confirm exactly which system(s) we're building, what success looks like, who owns which decisions, and what "done" means. This prevents the engagement from drifting and keeps everyone aligned before a single document is drafted.
+                                <strong>Define</strong> — We confirm exactly which system or systems we are building, what success looks like, who owns which decisions, and what "done" means.
                             </div>
                         </div>
                         <div class="step-item">
                             <div class="step-number">2</div>
                             <div class="step-body">
-                                <strong>Build + Launch v1</strong> — We implement the minimum-viable version of the system: the one your team can actually use now, not the perfect version that gets abandoned. Think simple, usable, low-admin — and real enough to survive first contact with your organization.
+                                <strong>Build + Launch v1</strong> — We implement the minimum-viable version of the system: the one your team can actually use now, not the perfect version that gets abandoned.
                             </div>
                         </div>
                         <div class="step-item">
                             <div class="step-number">3</div>
                             <div class="step-body">
-                                <strong>Embed</strong> — A launch without rollout support is just a document. This step covers the communications, manager enablement, and first-cycle support that makes the system stick. We then transition into a retainer cadence for iteration — because no system is perfect on day one.
+                                <strong>Embed</strong> — This step covers the communications, manager enablement, and first-cycle support that makes the system stick.
                             </div>
                         </div>
                     </div>
@@ -816,18 +873,18 @@
                     <div class="deep-dive-section">
                         <h4>What we might build</h4>
                         <p style="font-style: italic; color: #666; margin-bottom: 16px;">Scoped to what you actually need — not a menu you order from.</p>
-                        <div class="feature"><strong>Manager operating cadence + feedback expectations</strong> — so managers know what's expected of them and teams know what to expect from managers</div>
+                        <div class="feature"><strong>Manager operating cadence + feedback expectations</strong> — so managers know what is expected of them and teams know what to expect from managers</div>
                         <div class="feature"><strong>Onboarding system + tools</strong> — a first-90-days experience that actually prepares people to do the job</div>
-                        <div class="feature"><strong>Performance-lite check-ins</strong> — simple, usable, low-admin — built for organizations that don't have the bandwidth for quarterly review cycles</div>
+                        <div class="feature"><strong>Performance-lite check-ins</strong> — simple, usable, low-admin support for teams that do not have bandwidth for heavy review cycles</div>
                         <div class="feature"><strong>Policy & process foundations</strong> — practical, not legalese — the documents your team will actually read and follow</div>
-                        <div class="feature"><strong>Role clarity / leveling-lite</strong> — to reduce confusion, pay inequity, and the "is that my job?" conversations that slow everything down</div>
+                        <div class="feature"><strong>Role clarity / leveling-lite</strong> — to reduce confusion, pay inequity, and the “is that my job?” conversations that slow everything down</div>
                         <div class="feature"><strong>Hiring structure</strong> — scorecards, interview guides, workflow — so you stop hiring on gut and start hiring on criteria</div>
-                        <div class="feature"><strong>Culture & engagement listening loops</strong> — structured ways to hear from your team and actually act on what you hear</div>
+                        <div class="feature"><strong>Culture & engagement listening loops</strong> — structured ways to hear from your team and act on what you hear</div>
                     </div>
 
                     <div class="deep-dive-section">
                         <h4>Investment</h4>
-                        <p>Fixed-fee, scoped before we start. The range depends on how many systems we're building, how complex your stakeholder environment is, whether you have distributed teams across multiple countries, and how much rollout support is needed.</p>
+                        <p>Fixed-fee, scoped before we start. The range depends on how many systems we are building, how complex your stakeholder environment is, whether you have distributed teams across multiple countries, and how much rollout support is needed.</p>
                         <table class="pricing-table">
                             <tr>
                                 <th>Tier</th>
@@ -857,14 +914,13 @@
                     </div>
 
                     <div class="phase1-cta">
-                        <p>Not sure which tier fits? That's what the discovery call is for.</p>
+                        <p>Not sure which tier fits? That is what the discovery call is for.</p>
                         <a href="https://cal.com/danielareinoso/discovery-call" class="cta-button primary" target="_blank">Book a Discovery Call →</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- RETAINER DEEP DIVE -->
         <div id="deep-dive-3" class="deep-dive">
             <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
                 <div class="deep-dive-header-content">
@@ -877,7 +933,7 @@
                 <div class="deep-dive-body">
                     <div class="deep-dive-section">
                         <h4>Best for</h4>
-                        <p>Teams with someone handling HR logistics internally (Ops / Admin / HR Coordinator) who want senior oversight, decision support, and systems that scale. This retainer scales with you — light touch when things are stable, more intensive when you're navigating change.</p>
+                        <p>Teams with someone handling HR logistics internally — usually Ops, Admin, or a coordinator — who need senior oversight, decision support, and systems that scale. This is especially useful when the organization needs leadership support but is not ready for a full-time senior HR hire.</p>
                     </div>
 
                     <div class="deep-dive-section">
@@ -896,7 +952,7 @@
                             <tr>
                                 <td><strong>Embedded Fractional</strong> <span class="popular-badge">Most Popular</span></td>
                                 <td>10 hrs/week</td>
-                                <td>Hands-on support + weekly cadence; systems build in-flight</td>
+                                <td>Hands-on support + weekly cadence; systems build in flight</td>
                             </tr>
                             <tr>
                                 <td><strong>Embedded Fractional+</strong></td>
@@ -914,8 +970,8 @@
 
                     <div class="deep-dive-section">
                         <h4>What I handle</h4>
-                        <div class="feature"><strong>Crisis navigation</strong> — sensitive employee relations, investigations, conflicts</div>
-                        <div class="feature"><strong>Strategic sounding board</strong> — weekly syncs with CEO/COO, decision support</div>
+                        <div class="feature"><strong>Crisis navigation</strong> — sensitive employee relations, investigations, and conflicts</div>
+                        <div class="feature"><strong>Strategic sounding board</strong> — weekly syncs with CEO or COO, decision support</div>
                         <div class="feature"><strong>Systems iteration</strong> — refining tools and workflows based on real use</div>
                         <div class="feature"><strong>Manager enablement</strong> — supporting leaders through real-life people challenges</div>
                     </div>
@@ -923,7 +979,6 @@
             </div>
         </div>
 
-        <!-- AD-HOC ADVISORY -->
         <div id="deep-dive-4" class="deep-dive">
             <div class="deep-dive-header" onclick="this.parentElement.classList.toggle('open')">
                 <div class="deep-dive-header-content">
@@ -966,34 +1021,31 @@
         <div class="about-section">
             <h3>Why Work With Me</h3>
             <div class="about-grid">
-
                 <div class="about-item">
-                    <h4>The Global Edge</h4>
-                    <p>Most consultants stumble when borders are crossed. I have operationalized people systems across <strong>13+ countries</strong>. I navigate the messy reality of remote teams, cross-border compliance, and cultural nuance so you can hire the best talent anywhere — without the legal risk.</p>
+                    <h4>Built Inside Mission-driven Teams</h4>
+                    <p>I have built HR systems from the inside for growing mission-driven organizations that needed structure fast. I understand what happens when leadership is covering HR gaps, Ops is carrying people work, and the team has outgrown informal ways of working.</p>
                 </div>
 
                 <div class="about-item">
-                    <h4>No Corporate Bureaucracy</h4>
-                    <p>I build "minimum viable policies" — the simplest version of a system that protects your organization without killing your culture. Just enough structure to stop the chaos. Nothing more.</p>
+                    <h4>Enough Structure, No Bloat</h4>
+                    <p>I build minimum-viable systems — the simplest version of a people process that protects your organization, supports your team, and is realistic for a small nonprofit to maintain.</p>
                 </div>
 
                 <div class="about-item">
-                    <h4>Why Clients Choose Me</h4>
-                    <p>I bridge the gap between "corporate efficiency" and "non-profit empathy." I don't just write policies; I turn ad-hoc chaos into <strong>self-running systems</strong> — freeing you from the day-to-day noise.</p>
+                    <h4>Global Complexity, Practical Execution</h4>
+                    <p>I have operationalized people systems across <strong>13+ countries</strong>. I can navigate distributed teams, cross-border complexity, and cultural nuance without losing sight of the practical systems your organization needs right now.</p>
                 </div>
-
             </div>
         </div>
 
         <div class="cta-section">
-            <h2>Ready to stabilize your team?</h2>
-            <p>Let's find out if we're a match. Book a free discovery call or shoot me an email.</p>
+            <h2>Ready to get leadership out of HR cleanup mode?</h2>
+            <p>If your team has outgrown ad hoc people operations and you need stronger systems without full-time senior HR overhead, let’s talk.</p>
             <div class="cta-buttons">
                 <a href="https://cal.com/danielareinoso/discovery-call" class="cta-button primary" target="_blank">Book Discovery Call</a>
                 <a href="mailto:daniela@danielareinoso.co" class="cta-button secondary">Email Me</a>
             </div>
         </div>
-
     </div>
 
     <div class="footer">
@@ -1004,7 +1056,7 @@
                 LinkedIn
             </a>
             <a href="mailto:daniela@danielareinoso.co">
-                <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <svg class="footer-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-1.99-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 daniela@danielareinoso.co
             </a>
             <a href="https://danielareinoso.co" target="_blank">
