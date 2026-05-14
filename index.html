@@ -502,7 +502,7 @@
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 50px;
+            gap: 25px;
             margin-bottom: 30px;
         }
         .about-item {
@@ -618,6 +618,34 @@
             fill: white;
         }
 
+                /* WHY SECTION */
+        .why-section {
+            background: var(--beige);
+            border-bottom: 1px solid var(--border);
+            padding: 60px 40px;
+        }
+        .why-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .why-inner h2 {
+            font-family: 'Merriweather Sans', sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--teal);
+            margin-bottom: 25px;
+        }
+        .why-inner p {
+            font-size: 17px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+        .why-inner p:last-child { margin-bottom: 0; }
+        @media (max-width: 768px) {
+            .why-section { padding: 40px 20px; }
+        }
+
         .page-break { height: 60px; display: flex; align-items: center; justify-content: center; margin: 60px 0; color: var(--border); font-size: 12px; }
 
         @media (max-width: 768px) {
@@ -697,6 +725,15 @@
                 </div>
             </div>
         </div>
+    <div class="why-section">
+        <div class="why-inner">
+            <h2>Why I Do This Work</h2>
+            <p>I started this work after seeing the same pattern across growing social impact organizations: powerful missions, committed teams, and people systems held together by goodwill, memory, and whoever had capacity that week.</p>
+            <p>I recognized the pattern because I had lived inside it. Early in my HR career, I stepped into an international nonprofit where people operations needed to be built from the ground up. Leadership needed structure, staff needed clarity, and the organization needed people systems that matched the complexity of the work.</p>
+            <p>That experience shaped how I work today. I believe mission-driven organizations deserve practical, fair HR infrastructure that can carry the weight of growth — without adding bureaucracy or losing the humanity at the center of the mission.</p>
+        </div>
+    </div>
+
     <div class="container">
         <div class="intro">
             <h2>How We Can Work Together</h2>
