@@ -30,16 +30,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
         :root {
-            --teal: #0f4c5c;
-            --terracotta: #cb6b4b;
-            --beige: #f6f3ef;
-            --text-dark: #333333;
-            --white: #ffffff;
-            --card-light-bg: #FDF9F4;
-            --bg-color: var(--beige);
-            --text-main: var(--text-dark);
-            --border: #e0dbd3;
-        }
+    --teal: #0F4C5C;
+    --coral: #CB6B4B;
+    --ink: #2A2A2A;
+    --cream: #F8F3EC;
+    --clay: #E8D5C8;
+    --white: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --bg-color: var(--cream);
+    --text-main: var(--ink);
+    --border: #d4c8bc;
+}
 
         body {
             font-family: 'Inter', sans-serif;
@@ -87,7 +88,7 @@
         }
 
         .intro-bio {
-            background: var(--white);
+            background: var(--clay);
             border-bottom: 1px solid var(--border);
             padding: 50px 40px;
         }
@@ -107,7 +108,7 @@
             object-fit: cover;
             object-position: center top;
             flex-shrink: 0;
-            border: 4px solid var(--beige);
+            border: 4px solid var(--cream);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
@@ -119,7 +120,7 @@
         }
 
         .fit-strip {
-            background: #f9f6f1;
+            background: var(--clay);
             border-bottom: 1px solid var(--border);
             padding: 44px 40px;
         }
@@ -160,7 +161,7 @@
 
         .fit-card h3 {
             font-size: 16px;
-            color: var(--terracotta);
+            color: var(--coral);
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: .04em;
@@ -206,7 +207,7 @@
         }
 
         .service-card {
-            background: var(--card-light-bg);
+            background: var(--card-bg);
             border: 1px solid rgba(51,51,51,.12);
             box-shadow: 0 10px 25px rgba(0,0,0,.08);
             border-radius: 16px;
@@ -224,7 +225,7 @@
         }
 
         .service-card.premium {
-            border: 2px solid var(--terracotta);
+            border: 2px solid var(--coral);
             box-shadow: 0 14px 35px rgba(0,0,0,.14);
             position: relative;
         }
@@ -240,7 +241,7 @@
             font-weight: 700;
             letter-spacing: .05em;
             background: #E9C7BB;
-            color: #333;
+            color: var(--ink);
         }
 
        .service-header {
@@ -319,7 +320,7 @@
         }
         .feature::before {
             content: '→';
-            color: var(--terracotta);
+            color: var(--coral);
             font-weight: bold;
             margin-right: 10px;
             flex-shrink: 0;
@@ -345,7 +346,7 @@
         .deep-dive-header:hover { background: #fdfdfd; }
         .deep-dive-header-content h3 { font-size: 22px; color: var(--teal); margin-bottom: 5px; }
         .deep-dive-header-content p { font-size: 14px; color: #666; }
-        .dive-toggle { font-size: 24px; color: var(--terracotta); transition: transform 0.3s; }
+        .dive-toggle { font-size: 24px; color: var(--coral); transition: transform 0.3s; }
         .deep-dive.open .dive-toggle { transform: rotate(180deg); }
         .deep-dive-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
         .deep-dive.open .deep-dive-content { max-height: 3000px; }
@@ -355,7 +356,7 @@
             font-size: 18px;
             margin-bottom: 15px;
             color: var(--teal);
-            border-bottom: 2px solid var(--beige);
+            border-bottom: 2px solid var(--cream);
             padding-bottom: 10px;
             display: inline-block;
             font-weight: 700;
@@ -363,11 +364,11 @@
         .deep-dive-section p { font-size: 15px; line-height: 1.7; color: #444; margin-bottom: 15px; }
 
         .roadmap-item {
-            background: var(--beige);
+            background: var(--cream);
             padding: 25px;
             border-radius: 8px;
             margin-bottom: 20px;
-            border-left: 5px solid var(--terracotta);
+            border-left: 5px solid var(--coral);
         }
         .roadmap-week {
             font-family: 'Merriweather Sans', sans-serif;
@@ -453,7 +454,7 @@
         .pricing-table .popular-badge {
             display: inline-block;
             background: #E9C7BB;
-            color: #333;
+            color: var(--ink);
             font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -465,8 +466,8 @@
         }
 
         .note-box {
-            background: var(--beige);
-            border-left: 4px solid var(--terracotta);
+            background: var(--cream);
+            border-left: 4px solid var(--coral);
             padding: 16px 20px;
             border-radius: 0 8px 8px 0;
             font-size: 14px;
@@ -510,7 +511,7 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            background: var(--card-light-bg);
+            background: var(--card-bg);
             border: 1px solid rgba(51,51,51,.08);
             border-radius: 12px;
             padding: 28px 24px;
@@ -518,7 +519,7 @@
         .about-item h4 {
             font-weight: 800;
             font-size: 18px;
-            color: var(--terracotta);
+            color: var(--coral);
             margin-bottom: 0;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -568,13 +569,13 @@
             display: inline-block;
         }
         .cta-button.primary {
-            background-color: var(--terracotta);
+            background-color: var(--teal);
             color: white;
-            border: 2px solid var(--terracotta);
+            border: 2px solid var(--teal);
         }
         .cta-button.primary:hover {
-            background-color: #b55a3d;
-            border-color: #b55a3d;
+            background-color: #0a3a47;
+            border-color: #0a3a47;
         }
         .cta-button.secondary {
             background-color: transparent;
@@ -625,7 +626,7 @@
 
                 /* WHY SECTION */
         .why-section {
-            background: var(--beige);
+            background: var(--clay);
             border-bottom: 1px solid var(--border);
             padding: 60px 40px;
         }
@@ -663,6 +664,30 @@
             .cta-buttons { flex-direction: column; gap: 15px; }
             .pricing-table { font-size: 13px; }
             .pricing-table th, .pricing-table td { padding: 10px 12px; }
+        }
+
+        /* ─── PALETTE REFINEMENTS ─── */
+        .service-card {
+            background: var(--card-bg);
+        }
+        .about-item {
+            background: var(--card-bg);
+        }
+        /* Section dividers */
+        .intro, .services, .about-section, .roadmap-section, .investment-section {
+            border-bottom: 1px solid var(--border);
+        }
+        /* Numbered steps in roadmap */
+        .roadmap-number {
+            background: var(--teal);
+            color: var(--white);
+        }
+        /* Coral stays on small accents only — arrows, premium border, dividers */
+        hr.accent-divider {
+            border: none;
+            border-top: 2px solid var(--coral);
+            width: 48px;
+            margin: 0 auto 24px;
         }
     </style>
 </head>
