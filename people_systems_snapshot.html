@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>People Systems Snapshot — Daniela Reinoso</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal: #0f4c5c;
+      --teal-light: #1a6b7f;
+      --terracotta: #cb6b4b;
+      --beige: #f6f3ef;
+      --card: #FDF9F4;
+      --text: #333333;
+      --text-muted: #6b7280;
+      --white: #ffffff;
+      --border: #e5e0d8;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--beige);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+
+    .logo-mark {
+      display: inline-block;
+      width: 48px;
+      height: 4px;
+      background: var(--terracotta);
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      color: var(--teal);
+      font-weight: normal;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .header h1 span {
+      color: var(--terracotta);
+    }
+
+    .header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    /* ── Progress bar ── */
+    .progress-wrap {
+      width: 100%;
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 4px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--terracotta);
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    /* ── Question card ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 620px;
+      width: 100%;
+      box-shadow: 0 2px 16px rgba(15,76,92,0.06);
+    }
+
+    .question-number {
+      font-size: 0.75rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+
+    .question-text {
+      font-size: 1.25rem;
+      color: var(--teal);
+      line-height: 1.45;
+      margin-bottom: 8px;
+    }
+
+    .question-subtext {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-family: 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* ── Options ── */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.1s;
+      background: var(--white);
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    .option:hover {
+      border-color: var(--teal-light);
+      background: #f0f7f9;
+      transform: translateY(-1px);
+    }
+
+    .option.selected {
+      border-color: var(--teal);
+      background: #e8f2f5;
+    }
+
+    .option-dot {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .option.selected .option-dot {
+      border-color: var(--teal);
+      background: var(--teal);
+    }
+
+    .option.selected .option-dot::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .option-text {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── Navigation ── */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+    }
+
+    .btn {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      padding: 12px 28px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s, transform 0.1s;
+      letter-spacing: 0.02em;
+    }
+
+    .btn:active { transform: scale(0.98); }
+
+    .btn-primary {
+      background: var(--teal);
+      color: white;
+    }
+
+    .btn-primary:hover { background: var(--teal-light); }
+
+    .btn-primary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover { background: var(--beige); }
+
+    /* ── Results ── */
+    .results {
+      display: none;
+      max-width: 620px;
+      width: 100%;
+    }
+
+    .result-header {
+      background: var(--teal);
+      border-radius: 16px 16px 0 0;
+      padding: 40px;
+      text-align: center;
+      color: white;
+    }
+
+    .result-tag {
+      display: inline-block;
+      background: rgba(203,107,75,0.25);
+      color: var(--terracotta);
+      border: 1px solid rgba(203,107,75,0.4);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      margin-bottom: 16px;
+    }
+
+    .result-title {
+      font-size: 1.7rem;
+      font-weight: normal;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .result-subtitle {
+      font-size: 0.95rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    .result-body {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 16px 16px;
+      padding: 40px;
+    }
+
+    .result-section {
+      margin-bottom: 28px;
+    }
+
+    .result-section-label {
+      font-size: 0.75rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 10px;
+    }
+
+    .result-section p {
+      font-size: 0.95rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .signal-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .signal-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.93rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .signal-list li::before {
+      content: '→';
+      color: var(--terracotta);
+      font-size: 0.85rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+
+    .cta-block {
+      background: linear-gradient(135deg, #e8f2f5 0%, #f6f3ef 100%);
+      border: 1px solid rgba(15,76,92,0.15);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .cta-block h3 {
+      font-size: 1.1rem;
+      color: var(--teal);
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .cta-block p {
+      font-size: 0.88rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: var(--terracotta);
+      color: white;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-cta:hover { background: #b85c3d; transform: translateY(-1px); }
+
+    .restart-link {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text-muted);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .restart-link:hover { color: var(--teal); }
+
+    /* ── Email capture ── */
+    .email-capture {
+      background: var(--beige);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+    }
+
+    .email-capture h4 {
+      font-size: 1rem;
+      color: var(--teal);
+      font-weight: normal;
+      margin-bottom: 6px;
+    }
+
+    .email-capture p {
+      font-size: 0.85rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .email-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .email-input {
+      flex: 1;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9rem;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .email-input:focus { border-color: var(--teal); }
+
+    .btn-email-submit {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 11px 20px;
+      background: var(--teal);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .btn-email-submit:hover { background: var(--teal-light); }
+
+    .email-thanks {
+      display: none;
+      font-size: 0.9rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--teal);
+      margin-top: 12px;
+    }
+
+    /* ── PDF download button ── */
+    .btn-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+
+    .btn-pdf:hover { color: var(--teal); border-color: var(--teal); }
+
+    /* ── Print styles ── */
+    @media print {
+      body { background: white; padding: 0; }
+      .header, #quiz-screen, #intro-screen, .email-capture, .cta-block, .restart-link, .btn-pdf, .result-tag { display: none !important; }
+      .results { display: block !important; max-width: 100%; }
+      .result-header { border-radius: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .result-body { border-radius: 0; border: none; }
+      .score-meter { display: none; }
+    }
+
+    /* ── Score meter ── */
+    .score-meter {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin: 16px 0 8px;
+    }
+
+    .score-pip {
+      width: 32px;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.25);
+    }
+
+    .score-pip.filled { background: var(--terracotta); }
+
+    /* ── Intro screen ── */
+    .intro {
+      max-width: 620px;
+      width: 100%;
+    }
+
+    .intro .card {
+      text-align: center;
+    }
+
+    .time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(203,107,75,0.1);
+      color: var(--terracotta);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-weight: 500;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+
+    .intro-title {
+      font-size: 1.5rem;
+      color: var(--teal);
+      font-weight: normal;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .intro-body {
+      font-size: 0.95rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .intro-points {
+      text-align: left;
+      background: var(--beige);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .intro-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+      padding: 6px 0;
+    }
+
+    .intro-point .dot {
+      width: 6px;
+      height: 6px;
+      min-width: 6px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      margin-top: 6px;
+    }
+
+    .footer-note {
+      font-size: 0.78rem;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: var(--text-muted);
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 24px 16px 60px; }
+      .header h1 { font-size: 1.6rem; }
+      .card { padding: 28px 20px; }
+      .result-header, .result-body { padding: 28px 20px; }
+      .question-text { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<div class="header">
+  <div class="logo-mark"></div>
+  <h1>People Systems <span>Snapshot</span></h1>
+  <p>A quick diagnostic to reveal how your people systems are actually holding up — and where the friction is hiding.</p>
+</div>
+
+<!-- ── Intro Screen ── -->
+<div class="intro" id="intro-screen">
+  <div class="card">
+    <div class="time-badge">⏱ 3 minutes</div>
+    <h2 class="intro-title">Is your organization's people infrastructure keeping pace with your mission?</h2>
+    <p class="intro-body">Most social impact leaders don't have an HR problem — they have a <em>systems</em> problem. This short snapshot helps surface what's really going on so we can have a focused, useful conversation about what matters most.</p>
+    <div class="intro-points">
+      <div class="intro-point"><span class="dot"></span><span>5 questions, no right or wrong answers</span></div>
+      <div class="intro-point"><span class="dot"></span><span>You'll get a named pattern + specific signals to watch for</span></div>
+      <div class="intro-point"><span class="dot"></span><span>Designed for founders, EDs, COOs, and ops leads at growing social impact orgs</span></div>
+    </div>
+    <button class="btn btn-primary" onclick="startQuiz()" style="width:100%; padding: 14px;">Begin the Snapshot →</button>
+    <p class="footer-note">Built by Daniela Reinoso · danielareinoso.co</p>
+  </div>
+</div>
+
+<!-- ── Quiz Screen ── -->
+<div id="quiz-screen" style="display:none; width:100%; max-width:620px;">
+
+  <div class="progress-wrap">
+    <div class="progress-label">
+      <span id="progress-text">Question 1 of 5</span>
+      <span id="progress-pct">20%</span>
+    </div>
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progress-fill" style="width:20%"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question-number" id="q-number">Question 1</div>
+    <div class="question-text" id="q-text"></div>
+    <div class="question-subtext" id="q-subtext"></div>
+    <div class="options" id="q-options"></div>
+
+    <div class="nav">
+      <button class="btn btn-ghost" id="btn-back" onclick="prevQuestion()">← Back</button>
+      <button class="btn btn-primary" id="btn-next" onclick="nextQuestion()" disabled>Next →</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Results Screen ── -->
+<div class="results" id="results-screen">
+  <div class="result-header">
+    <div class="result-tag" id="result-tag">Your Pattern</div>
+    <div class="score-meter" id="score-meter"></div>
+    <h2 class="result-title" id="result-title"></h2>
+    <p class="result-subtitle" id="result-subtitle"></p>
+  </div>
+  <div class="result-body">
+    <div class="result-section">
+      <div class="result-section-label">What this pattern looks like</div>
+      <p id="result-description"></p>
+    </div>
+    <hr class="divider">
+    <div class="result-section">
+      <div class="result-section-label">Signals to watch for</div>
+      <ul class="signal-list" id="result-signals"></ul>
+    </div>
+    <hr class="divider">
+    <div class="result-section">
+      <div class="result-section-label">What usually helps most</div>
+      <p id="result-help"></p>
+    </div>
+    <hr class="divider">
+    <div class="email-capture">
+      <h4>Want Daniela to follow up with you?</h4>
+      <p>Leave your email and she'll reach out with a note specific to your pattern — no pitch, just a useful next thought.</p>
+      <div class="email-row">
+        <input type="email" class="email-input" id="email-input" placeholder="your@email.com" />
+        <button class="btn-email-submit" onclick="submitEmail()">Send →</button>
+      </div>
+      <div class="email-thanks" id="email-thanks">Thanks — Daniela will be in touch soon.</div>
+    </div>
+    <div class="cta-block">
+      <h3>Ready to go deeper?</h3>
+      <p>A 30-minute People Systems Conversation can turn this snapshot into a clear picture of what to prioritize — and whether a full Scan makes sense for where you are right now.</p>
+      <p style="font-style: italic; margin-bottom: 20px;">If your result named something you've been feeling but haven't had language for, that's usually a sign it's time to look deeper.</p>
+      <button class="btn-cta" onclick="showContact()">Talk through your Snapshot results →</button>
+      <div id="contact-reveal" style="display:none; margin-top:16px; background:white; border:1px solid var(--border); border-radius:10px; padding:16px 20px; text-align:left;">
+        <p style="font-size:0.85rem; font-family:'Helvetica Neue',sans-serif; color:var(--text-muted); margin-bottom:8px;">Send Daniela an email directly:</p>
+        <a href="mailto:daniela@danielareinoso.co?subject=People%20Systems%20Snapshot" style="font-size:1rem; font-family:'Helvetica Neue',sans-serif; color:var(--teal); font-weight:500; display:block; margin-bottom:10px;">daniela@danielareinoso.co</a>
+        <a href="https://mail.google.com/mail/?view=cm&to=daniela%40danielareinoso.co&subject=People%20Systems%20Snapshot" target="_blank" style="font-size:0.82rem; font-family:'Helvetica Neue',sans-serif; color:var(--text-muted); text-decoration:underline;">Open in Gmail →</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 16px;">
+      <button class="btn-pdf" onclick="window.print()">⬇ Save as PDF</button>
+    </div>
+    <span class="restart-link" onclick="restartQuiz()">Start over</span>
+  </div>
+</div>
+
+<script>
+  const questions = [
+    {
+      text: "Who currently handles people & HR work in your organization?",
+      subtext: "Think about who actually owns the day-to-day decisions — hiring, onboarding, performance conversations, conflicts.",
+      options: [
+        { text: "It lands on me (the founder, ED, or ops lead) on top of everything else.", score: 1 },
+        { text: "We have someone part-time, a generalist, or a shared responsibility — it's patchwork.", score: 2 },
+        { text: "We have dedicated HR capacity, but it's not fully integrated with how we operate.", score: 3 }
+      ]
+    },
+    {
+      text: "What triggered the need for HR or people systems support right now?",
+      subtext: "What made this feel urgent or necessary at this moment?",
+      options: [
+        { text: "We've been in crisis mode — a departure, a conflict, a compliance issue, or a hiring mess.", score: 1 },
+        { text: "We're growing and the informal ways of doing things are starting to break down.", score: 2 },
+        { text: "Things are mostly working, but our systems don't reflect who we've become as an organization.", score: 3 }
+      ]
+    },
+    {
+      text: "When a people issue comes up — a conflict, a performance concern, a difficult exit — what usually happens?",
+      subtext: "Be honest about the default pattern, not the ideal.",
+      options: [
+        { text: "It gets handled reactively, often inconsistently, and takes way more time than it should.", score: 1 },
+        { text: "There's a loose process, but it depends on who's involved and how they handle it.", score: 2 },
+        { text: "There's a process, but it feels disconnected from our values or culture.", score: 3 }
+      ]
+    },
+    {
+      text: "How would you describe the connection between your team culture and your organizational mission?",
+      subtext: "Not the mission statement — the lived experience of people inside the organization.",
+      options: [
+        { text: "We're too consumed by operational chaos to think much about culture.", score: 1 },
+        { text: "Culture is important to us but hasn't been intentionally designed — it's evolved informally.", score: 2 },
+        { text: "We talk about culture a lot, but the systems and structures don't always match what we say we value.", score: 3 }
+      ]
+    },
+    {
+      text: "If you had a clear people systems roadmap in 30 days, what would change most?",
+      subtext: "This reveals where the real leverage point is for your organization.",
+      options: [
+        { text: "I'd finally have headspace back — I'd stop being the default answer to every people question.", score: 1 },
+        { text: "Our team would have more clarity and consistency — less confusion, less reinventing the wheel.", score: 2 },
+        { text: "Our culture and values would actually show up in how we hire, develop, and support people.", score: 3 }
+      ]
+    }
+  ];
+
+  const archetypes = [
+    {
+      min: 5, max: 7,
+      tag: "Pattern: The Founder's Burden",
+      title: "HR is sitting on your shoulders — and it's getting heavier.",
+      subtitle: "You're the default answer to every people question, and it's consuming capacity you can't afford to lose.",
+      description: "This is the most common pattern at social impact orgs in the 10–40 person range. The organization's growth has outpaced its people infrastructure, and the founder or ops lead has quietly absorbed all of it. It's not that you don't care about HR — it's that there's no system to hand it to. Every hire, every conflict, every onboarding is improvised from scratch. This works until it doesn't.",
+      signals: [
+        "You've delayed a hiring decision because the process felt too messy to start",
+        "A team member came to you with a performance concern and you weren't sure what to do with it",
+        "Onboarding looks different for every person who joins",
+        "You've said 'we need to fix this' about the same issue more than twice"
+      ],
+      help: "The highest-leverage starting point is usually a quick diagnostic to name what's actually broken — not a policy manual, not an HRIS. A People Systems Scan can identify the 2–3 root issues creating the most drag, and give you a clear sequence for what to address first. Most leaders in this pattern are surprised by how quickly things can shift once the right things are named."
+    },
+    {
+      min: 8, max: 11,
+      tag: "Pattern: The Growing Pains Stage",
+      title: "You have systems — they're just starting to crack under the weight of growth.",
+      subtitle: "The informal approaches that got you here are showing their limits. You're not in crisis, but you can feel it coming.",
+      description: "This pattern shows up at organizations that have been intentional but are now scaling faster than their HR infrastructure. Things work most of the time, but consistency is becoming a problem. Different managers handle the same situations differently. Onboarding works for some roles and not others. Compensation decisions feel ad hoc. The cracks aren't disasters yet — but they're getting harder to ignore.",
+      signals: [
+        "Performance conversations are happening inconsistently across the team",
+        "You've lost someone and weren't sure if the exit could have been prevented",
+        "Hiring takes longer than it should because there's no clear, repeatable process",
+        "You've added headcount but haven't updated how you onboard or develop people"
+      ],
+      help: "Organizations at this stage usually need structure more than they need new ideas. The work is about taking what's working informally and making it replicable — building the infrastructure around the culture that already exists. A People Systems Scan is designed exactly for this moment: it tells you what to build first, what to wait on, and what's creating the most drag right now."
+    },
+    {
+      min: 12, max: 15,
+      tag: "Pattern: The Culture-Systems Gap",
+      title: "Your values are clear. Your systems haven't caught up to them yet.",
+      subtitle: "There's a growing gap between how your organization talks about its culture and how people actually experience it.",
+      description: "This is the most nuanced pattern — and often the most frustrating for leaders who care deeply about their organizations. The values are articulated. The intention is real. But somewhere between the all-hands and the day-to-day, something gets lost. Hiring doesn't always bring in people who match the culture. Performance conversations feel awkward because the criteria aren't clear. People sense the gap even when they can't name it.",
+      signals: [
+        "Your employee engagement looks fine on paper but something feels off in the team",
+        "You've made a hire that 'checked the boxes' but didn't fit the culture",
+        "DEI commitments aren't reflected in how you actually hire, promote, or develop people",
+        "There's a difference between what leadership says it values and what gets rewarded"
+      ],
+      help: "The work here is alignment — connecting the people systems (how you hire, how you develop, how you recognize, how you exit) to the values the organization has already defined. A People Systems Scan will map where that gap is largest and what would close it most effectively. The goal isn't more values work — it's building systems that make the values real."
+    }
+  ];
+
+  let current = 0;
+  let answers = new Array(5).fill(null);
+
+  function startQuiz() {
+    document.getElementById('intro-screen').style.display = 'none';
+    document.getElementById('quiz-screen').style.display = 'block';
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = questions[current];
+    const pct = Math.round(((current + 1) / 5) * 100);
+
+    document.getElementById('progress-text').textContent = `Question ${current + 1} of 5`;
+    document.getElementById('progress-pct').textContent = `${pct}%`;
+    document.getElementById('progress-fill').style.width = `${pct}%`;
+    document.getElementById('q-number').textContent = `Question ${current + 1}`;
+    document.getElementById('q-text').textContent = q.text;
+    document.getElementById('q-subtext').textContent = q.subtext;
+
+    const optionsEl = document.getElementById('q-options');
+    optionsEl.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const div = document.createElement('div');
+      div.className = 'option' + (answers[current] === i ? ' selected' : '');
+      div.innerHTML = `
+        <div class="option-dot"></div>
+        <div class="option-text">${opt.text}</div>
+      `;
+      div.addEventListener('click', () => selectOption(i));
+      optionsEl.appendChild(div);
+    });
+
+    document.getElementById('btn-back').style.visibility = current === 0 ? 'hidden' : 'visible';
+    document.getElementById('btn-next').textContent = current === 4 ? 'See my results →' : 'Next →';
+    document.getElementById('btn-next').disabled = answers[current] === null;
+  }
+
+  function selectOption(i) {
+    answers[current] = i;
+    document.querySelectorAll('.option').forEach((el, idx) => {
+      el.classList.toggle('selected', idx === i);
+    });
+    document.getElementById('btn-next').disabled = false;
+  }
+
+  function nextQuestion() {
+    if (answers[current] === null) return;
+    if (current < 4) {
+      current++;
+      renderQuestion();
+    } else {
+      showResults();
+    }
+  }
+
+  function prevQuestion() {
+    if (current > 0) {
+      current--;
+      renderQuestion();
+    }
+  }
+
+  function showResults() {
+    const totalScore = answers.reduce((sum, ans, i) => sum + questions[i].options[ans].score, 0);
+    const archetype = archetypes.find(a => totalScore >= a.min && totalScore <= a.max);
+
+    document.getElementById('quiz-screen').style.display = 'none';
+    const resultsEl = document.getElementById('results-screen');
+    resultsEl.style.display = 'block';
+
+    document.getElementById('result-tag').textContent = archetype.tag;
+    document.getElementById('result-title').textContent = archetype.title;
+    document.getElementById('result-subtitle').textContent = archetype.subtitle;
+    document.getElementById('result-description').textContent = archetype.description;
+    document.getElementById('result-help').textContent = archetype.help;
+
+    // Score meter (5 pips)
+    const meterEl = document.getElementById('score-meter');
+    meterEl.innerHTML = '';
+    const normalized = Math.round(((totalScore - 5) / 10) * 5);
+    for (let i = 0; i < 5; i++) {
+      const pip = document.createElement('div');
+      pip.className = 'score-pip' + (i < normalized ? ' filled' : '');
+      meterEl.appendChild(pip);
+    }
+
+    const signalsList = document.getElementById('result-signals');
+    signalsList.innerHTML = '';
+    archetype.signals.forEach(s => {
+      const li = document.createElement('li');
+      li.textContent = s;
+      signalsList.appendChild(li);
+    });
+
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function showContact() {
+    const el = document.getElementById('contact-reveal');
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function submitEmail() {
+    const emailEl = document.getElementById('email-input');
+    const email = emailEl.value.trim();
+    if (!email || !email.includes('@')) {
+      emailEl.focus();
+      return;
+    }
+    const archetype = document.getElementById('result-tag').textContent;
+    window.location.href = `mailto:daniela@danielareinoso.co?subject=People Systems Snapshot follow-up&body=Hi Daniela,%0D%0A%0D%0AMy email is ${encodeURIComponent(email)} and my snapshot result was: ${encodeURIComponent(archetype)}.%0D%0A%0D%0AI'd love to connect.`;
+    document.getElementById('email-thanks').style.display = 'block';
+    emailEl.disabled = true;
+    document.querySelector('.btn-email-submit').disabled = true;
+  }
+
+  function restartQuiz() {
+    current = 0;
+    answers = new Array(5).fill(null);
+    document.getElementById('results-screen').style.display = 'none';
+    document.getElementById('quiz-screen').style.display = 'block';
+    renderQuestion();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
