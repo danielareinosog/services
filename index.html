@@ -91,6 +91,23 @@
         .pain-callout { margin-top: 36px; padding: 22px 28px; border-left: 3px solid var(--teal); background: var(--white); border-radius: 0 8px 8px 0; }
         .pain-callout p { font-size: 17px; font-weight: 600; color: var(--ink); margin: 0; font-style: italic; }
 
+        /* COST OF NOT ACTING */
+        .cost { background: var(--clay); padding: 88px 48px; border-bottom: 1px solid var(--border); }
+        .cost-inner { max-width: 980px; margin: 0 auto; }
+        .cost-inner h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; max-width: 700px; }
+        .cost-intro { font-size: 17px; color: var(--ink-mid); max-width: 700px; line-height: 1.7; margin-bottom: 44px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+        .stat-card { background: var(--white); border: 1px solid var(--border-light); border-radius: 10px; padding: 32px 28px; display: flex; flex-direction: column; }
+        .stat-number { font-size: 38px; font-weight: 800; color: var(--teal); letter-spacing: -0.02em; line-height: 1; margin-bottom: 14px; }
+        .stat-card p { font-size: 15px; color: var(--ink-mid); line-height: 1.65; margin-bottom: 14px; }
+        .stat-breakdown { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 14px; }
+        .stat-breakdown li { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--ink-mid); line-height: 1.4; }
+        .stat-breakdown .stat-pct { font-weight: 800; color: var(--coral); flex-shrink: 0; }
+        .stat-source { font-size: 12px; color: var(--ink-soft); font-style: italic; margin-top: auto; }
+        .cost-callout { padding: 24px 28px; border-left: 3px solid var(--coral); background: var(--white); border-radius: 0 8px 8px 0; }
+        .cost-callout p { font-size: 16px; color: var(--ink); line-height: 1.7; font-style: italic; }
+        .cost-callout p:last-child { margin-top: 8px; font-size: 13px; color: var(--ink-soft); font-style: normal; }
+
         /* SCAN SECTION */
         .scan { background: var(--clay); padding: 88px 48px; border-bottom: 1px solid var(--border); }
         .scan-inner { max-width: 980px; margin: 0 auto; }
@@ -187,7 +204,8 @@
             nav { padding: 0 20px; }
             .nav-hamburger { display: flex; }
             .nav-links { display: none; }
-            .hero, .pain, .scan, .process, .next, .approach, .founder, .pricing, .final-cta, footer { padding-left: 20px; padding-right: 20px; }
+            .hero, .pain, .cost, .scan, .process, .next, .approach, .founder, .pricing, .final-cta, footer { padding-left: 20px; padding-right: 20px; }
+            .stat-grid { grid-template-columns: 1fr; }
             .cred-strip { padding: 16px 20px; }
             .cred-inner { flex-wrap: wrap; gap: 14px; justify-content: flex-start; }
             .cred-item { border-right: none !important; padding: 0; }
@@ -227,7 +245,7 @@
     <div class="hero-inner">
         <p class="hero-eyebrow">People Systems Consulting</p>
         <h1>People systems for growing social impact organizations that have outgrown <em>ad hoc HR.</em></h1>
-        <p class="hero-sub">I help growing social impact organizations get their ED, founder, COO, and ops lead out of the HR chaos by building practical people systems that actually reflect their mission — without adding corporate bloat.</p>
+        <p class="hero-sub">I help growing social impact organizations get their Founder, CEO, COO, and managers out of the HR chaos by building practical people systems that actually reflect their mission — without adding corporate bloat.</p>
         <div class="hero-actions">
             <a href="#scan" class="btn btn-primary">Start With the People Systems Scan</a>
             <a href="#services" class="btn btn-ghost">See if this is the right fit</a>
@@ -258,7 +276,42 @@
             <li>Your CEO, COO, or Ops lead has quietly become the HR department — slowing down strategic work, creating decision bottlenecks, and putting too much people risk on one already-stretched leader.</li>
         </ul>
         <div class="pain-callout">
-            <p>That is usually not a people problem. It is a sign your people systems have not caught up to your growth.</p>
+            <p>That is usually not a people problem. It is a systems problem.</p>
+        </div>
+    </div>
+</section>
+
+<!-- COST OF NOT ACTING -->
+<section class="cost">
+    <div class="cost-inner">
+        <span class="section-label">Why This Matters Now</span>
+        <h2>Ad hoc HR is not a quirk. It is a cost you are already paying.</h2>
+        <p class="cost-intro">It rarely shows up as a single dramatic failure. It shows up as turnover you can't quite explain, a hire that goes sideways, or a values statement that doesn't match the last hard decision your team watched you make.</p>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-number">30–200%</div>
+                <p>Replacing one employee costs 30–200% of their annual salary once recruiting, onboarding, lost productivity, and team disruption are counted.</p>
+                <span class="stat-source">Nonprofit Leadership Alliance; Inspirus</span>
+            </div>
+            <div class="stat-card">
+                <p style="margin-bottom: 12px; font-weight: 600; color: var(--ink);">Top reasons people leave — all symptoms of missing systems, not missing mission:</p>
+                <ul class="stat-breakdown">
+                    <li><span>Too much work, too little support</span><span class="stat-pct">59%</span></li>
+                    <li><span>Limited growth</span><span class="stat-pct">54%</span></li>
+                    <li><span>Unsupportive management</span><span class="stat-pct">52%</span></li>
+                    <li><span>Inadequate pay/benefits</span><span class="stat-pct">50%</span></li>
+                </ul>
+                <span class="stat-source">Social Impact Staff Retention Project, 2023–2024</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2.7x</div>
+                <p>Purpose is the single strongest predictor of retention across 59 factors studied — but only when the mission is visible in how decisions actually get made, not just in a values statement.</p>
+                <span class="stat-source">The Strategy Group LLC</span>
+            </div>
+        </div>
+        <div class="cost-callout">
+            <p>"Leaders consistently say their stated values are hardest to see — not in the mission statement, but in the rushed decisions made under pressure: who gets hired, who gets a raise, who gets let go, and how."</p>
+            <p>Howard Consulting</p>
         </div>
     </div>
 </section>
@@ -384,7 +437,7 @@
             </div>
             <div class="approach-card">
                 <div class="approach-card-bar"></div>
-                <h3>Built for the realities of mission-driven growth</h3>
+                <h3>Built for social impact realities</h3>
                 <p>I understand lean teams, donor pressure, distributed work, global complexity, and values-driven cultures where the people experience has to reflect the mission.</p>
             </div>
         </div>
@@ -418,7 +471,7 @@
             <div class="price-card featured">
                 <span class="price-badge">Start Here</span>
                 <h3>The People Systems Scan</h3>
-                <div class="price-amount">$3,500+</div>
+                <div class="price-amount">$3,500</div>
                 <p class="price-note">3-week diagnostic. Fixed scope, fixed investment.</p>
                 <div class="price-divider"></div>
                 <ul class="price-features">
