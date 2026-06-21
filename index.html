@@ -175,6 +175,12 @@
         .price-features li::before { content: '→'; color: var(--coral); font-weight: 700; flex-shrink: 0; }
         .price-credit { font-size: 13px; color: var(--ink-soft); font-style: italic; line-height: 1.6; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-light); }
         .access-badge { display: inline-block; background: var(--teal-light); color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 4px; margin-bottom: 16px; }
+        .price-typical { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); margin-bottom: 6px; }
+        .price-context { font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-light); }
+        .pricing-note-box { background: var(--teal-light); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; margin-bottom: 44px; }
+        .pricing-note-box h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+        .pricing-note-box p { font-size: 15px; color: var(--ink-mid); line-height: 1.75; }
+        .pricing-note-box p + p { margin-top: 10px; }
 
         /* FINAL CTA */
         .final-cta { background: var(--teal); padding: 88px 48px; text-align: center; }
@@ -467,12 +473,18 @@
             <span class="section-label">Investment</span>
             <h2>How we can work together</h2>
         </div>
+        <div class="pricing-note-box">
+            <h4>A note on pricing</h4>
+            <p>My pricing is value-based and scope-based. The ranges below reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing may be calibrated based on local market context, organizational budget, and scope.</p>
+            <p>The goal is a fair engagement: one that reflects the value of the work, the complexity of the problem, and the realities of the organization.</p>
+        </div>
         <div class="pricing-grid">
             <div class="price-card featured">
                 <span class="price-badge">Start Here</span>
                 <h3>The People Systems Scan</h3>
-                <div class="price-amount">$3,500</div>
-                <p class="price-note">3-week diagnostic. Fixed scope, fixed investment.</p>
+                <p class="price-typical">Typical investment</p>
+                <div class="price-amount">USD $3,500+</div>
+                <p class="price-note">A focused 3-week diagnostic for growing organizations experiencing recurring people-ops friction, unclear ownership, inconsistent processes, or leadership time being pulled into preventable issues.</p>
                 <div class="price-divider"></div>
                 <ul class="price-features">
                     <li>People systems gap map</li>
@@ -482,12 +494,13 @@
                     <li>Recommendations: build, delegate, or defer</li>
                 </ul>
                 <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary" style="width:100%;text-align:center;">Start With the Scan</a>
-                <p class="price-credit">If you move from the Scan into a People Systems Launch within 60 days, part of your Scan investment may be credited toward Phase 2. We'll confirm the exact structure in your proposal.</p>
+                <p class="price-context">Pricing is calibrated based on organization size, country/market context, urgency, and the level of support needed. Ecuador-based and Latin America-based organizations may qualify for market-adjusted pricing.</p>
             </div>
             <div class="price-card">
                 <h3>People Systems Build</h3>
-                <div class="price-amount">$8,000 – $18,000</div>
-                <p class="price-note">Project-based. Scope determined after the Scan.</p>
+                <p class="price-typical">Typical investment</p>
+                <div class="price-amount">USD $8,000–$20,000+</div>
+                <p class="price-note">For organizations ready to build or improve priority people systems such as hiring, onboarding, role clarity, performance rhythms, manager support, or policy foundations.</p>
                 <div class="price-divider"></div>
                 <ul class="price-features">
                     <li>Build highest-priority people systems</li>
@@ -497,11 +510,13 @@
                     <li>Implementation support &amp; team handoff</li>
                 </ul>
                 <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline" style="width:100%;text-align:center;">Let's Talk</a>
+                <p class="price-context">Final pricing depends on the number of systems involved, team size, stakeholder complexity, implementation support, and market context. Ecuador-based and Latin America-based organizations may qualify for adjusted pricing.</p>
             </div>
             <div class="price-card">
-                <h3>Fractional People Leadership</h3>
-                <div class="price-amount">from $5,000/mo</div>
-                <p class="price-note">Ongoing support. Final scope depends on capacity, urgency, and level of embedded support.</p>
+                <h3>Ongoing Advisory</h3>
+                <p class="price-typical">Typical investment</p>
+                <div class="price-amount">USD $2,500–$6,000/mo</div>
+                <p class="price-note">For leaders who need steady support while implementing people systems, making people decisions, and reducing recurring escalations.</p>
                 <div class="price-divider"></div>
                 <ul class="price-features">
                     <li>Senior People &amp; Culture guidance</li>
@@ -511,7 +526,7 @@
                     <li>Flexible embedded engagement</li>
                 </ul>
                 <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline" style="width:100%;text-align:center;">Let's Talk</a>
-                <div class="access-badge" style="margin-top:16px;">Access Rate — limited availability for qualifying social impact organizations</div>
+                <p class="price-context">Advisory pricing depends on cadence, response time, team complexity, and whether the engagement is local, regional, or global in scope.</p>
             </div>
         </div>
     </div>
@@ -520,9 +535,9 @@
 <!-- FINAL CTA -->
 <section class="final-cta">
     <div class="final-cta-inner">
-        <h2>Ready to build the people systems your mission needs next?</h2>
-        <p>Start with a 3-week People Systems Scan and leave with a clear picture of what is creating friction, what to fix first, and how to stabilize your team without overbuilding.</p>
-        <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-white">Start With the Scan</a>
+        <h2>Start with a fit conversation.</h2>
+        <p>We'll talk through what is creating drag, risk, or confusion in your people systems, what kind of support would be most useful, and whether the investment range makes sense for your organization's context.</p>
+        <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-white">Book a Fit Conversation</a>
     </div>
 </section>
 
