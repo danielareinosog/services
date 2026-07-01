@@ -885,18 +885,14 @@
     };
 
     try {
-      const res = await fetch('https://script.google.com/macros/s/AKfycbyMunmkVJdZNXi7hieyWLAmmknljpPtfQoA2scE_H_NwFJnaUpM1nOOYhPHE8NDiX__bQ/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbyMunmkVJdZNXi7hieyWLAmmknljpPtfQoA2scE_H_NwFJnaUpM1nOOYhPHE8NDiX__bQ/exec', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(payload)
       });
-      if (res.ok) {
-        document.getElementById('email-capture-block').style.display = 'none';
-        document.getElementById('email-thanks').style.display = 'block';
-      } else {
-        submitBtn.textContent = 'Try again';
-        submitBtn.disabled = false;
-      }
+      document.getElementById('email-capture-block').style.display = 'none';
+      document.getElementById('email-thanks').style.display = 'block';
     } catch (e) {
       submitBtn.textContent = 'Try again';
       submitBtn.disabled = false;
