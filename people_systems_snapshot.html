@@ -670,13 +670,16 @@
     </div>
     <hr class="divider">
     <div class="email-capture">
-      <h4>Want Daniela to follow up with you?</h4>
-      <p>Leave your email and she'll reach out with a note specific to your pattern — no pitch, just a useful next thought.</p>
-      <div class="email-row">
-        <input type="email" class="email-input" id="email-input" placeholder="your@email.com" />
-        <button class="btn-email-submit" onclick="submitEmail()">Send →</button>
+      <h4>Get a copy of your results</h4>
+      <p>Leave your name and email — Daniela will send you a short note specific to your pattern. No pitch, just a useful next thought.</p>
+      <div class="email-row" style="flex-direction: column; gap: 8px;">
+        <input type="text" class="email-input" id="name-input" placeholder="Your name" />
+        <div style="display: flex; gap: 10px;">
+          <input type="email" class="email-input" id="email-input" placeholder="your@email.com" />
+          <button class="btn-email-submit" onclick="submitEmail()">Send →</button>
+        </div>
       </div>
-      <div class="email-thanks" id="email-thanks">Thanks — Daniela will be in touch soon.</div>
+      <div class="email-thanks" id="email-thanks">Got it — Daniela will be in touch soon.</div>
     </div>
     <div class="cta-block">
       <h3>Ready to go deeper?</h3>
@@ -893,18 +896,40 @@
     el.style.display = el.style.display === 'none' ? 'block' : 'none';
   }
 
-  function submitEmail() {
+  async function submitEmail() {
+    const nameEl = document.getElementById('name-input');
     const emailEl = document.getElementById('email-input');
+    const submitBtn = document.querySelector('.btn-email-submit');
+    const name = nameEl.value.trim();
     const email = emailEl.value.trim();
-    if (!email || !email.includes('@')) {
-      emailEl.focus();
-      return;
+
+    if (!name) { nameEl.style.borderColor = 'var(--terracotta)'; nameEl.focus(); return; }
+    if (!email || !email.includes('@')) { emailEl.style.borderColor = 'var(--terracotta)'; emailEl.focus(); return; }
+
+    const pattern = document.getElementById('result-tag').textContent;
+    const resultTitle = document.getElementById('result-title').textContent;
+
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbyMunmkVJdZNXi7hieyWLAmmknljpPtfQoA2scE_H_NwFJnaUpM1nOOYhPHE8NDiX__bQ/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, pattern, result: resultTitle })
+      });
+      if (res.ok) {
+        document.getElementById('email-thanks').style.display = 'block';
+        nameEl.disabled = true;
+        emailEl.disabled = true;
+      } else {
+        submitBtn.textContent = 'Try again';
+        submitBtn.disabled = false;
+      }
+    } catch (e) {
+      submitBtn.textContent = 'Try again';
+      submitBtn.disabled = false;
     }
-    const archetype = document.getElementById('result-tag').textContent;
-    window.location.href = `mailto:daniela@danielareinoso.co?subject=People Systems Snapshot follow-up&body=Hi Daniela,%0D%0A%0D%0AMy email is ${encodeURIComponent(email)} and my snapshot result was: ${encodeURIComponent(archetype)}.%0D%0A%0D%0AI'd love to connect.`;
-    document.getElementById('email-thanks').style.display = 'block';
-    emailEl.disabled = true;
-    document.querySelector('.btn-email-submit').disabled = true;
   }
 
   function restartQuiz() {
