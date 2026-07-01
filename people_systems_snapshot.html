@@ -861,7 +861,7 @@
     resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  async function submitEmail() {
+  function submitEmail() {
     const nameEl = document.getElementById('name-input');
     const emailEl = document.getElementById('email-input');
     const submitBtn = document.getElementById('submit-btn');
@@ -874,29 +874,36 @@
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
 
-    const payload = {
+    const fields = {
       name,
       email,
       pattern: currentArchetype.tag,
       result: currentArchetype.title,
       description: currentArchetype.description,
-      signals: currentArchetype.signals,
+      signals: JSON.stringify(currentArchetype.signals),
       help: currentArchetype.help
     };
 
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbyMunmkVJdZNXi7hieyWLAmmknljpPtfQoA2scE_H_NwFJnaUpM1nOOYhPHE8NDiX__bQ/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(payload)
-      });
-      document.getElementById('email-capture-block').style.display = 'none';
-      document.getElementById('email-thanks').style.display = 'block';
-    } catch (e) {
-      submitBtn.textContent = 'Try again';
-      submitBtn.disabled = false;
-    }
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://script.google.com/macros/s/AKfycbyMunmkVJdZNXi7hieyWLAmmknljpPtfQoA2scE_H_NwFJnaUpM1nOOYhPHE8NDiX__bQ/exec';
+    form.target = 'hidden-submit-frame';
+    form.style.display = 'none';
+
+    Object.entries(fields).forEach(([key, val]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = val;
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    setTimeout(() => document.body.removeChild(form), 2000);
+
+    document.getElementById('email-capture-block').style.display = 'none';
+    document.getElementById('email-thanks').style.display = 'block';
   }
 
   function restartQuiz() {
@@ -908,5 +915,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
+<iframe name="hidden-submit-frame" style="display:none;" aria-hidden="true"></iframe>
 </body>
 </html>
