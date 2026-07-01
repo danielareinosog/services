@@ -651,51 +651,29 @@
     <div class="result-tag" id="result-tag">Your Pattern</div>
     <div class="score-meter" id="score-meter"></div>
     <h2 class="result-title" id="result-title"></h2>
-    <p class="result-subtitle" id="result-subtitle"></p>
   </div>
   <div class="result-body">
     <div class="result-section">
-      <div class="result-section-label">What this pattern looks like</div>
-      <p id="result-description"></p>
+      <div class="result-section-label">What this pattern means for you</div>
+      <p id="result-friction"></p>
     </div>
     <hr class="divider">
-    <div class="result-section">
-      <div class="result-section-label">Signals to watch for</div>
-      <ul class="signal-list" id="result-signals"></ul>
-    </div>
-    <hr class="divider">
-    <div class="result-section">
-      <div class="result-section-label">What usually helps most</div>
-      <p id="result-help"></p>
-    </div>
-    <hr class="divider">
-    <div class="email-capture">
-      <h4>Get a copy of your results</h4>
-      <p>Leave your name and email — Daniela will send you a short note specific to your pattern. No pitch, just a useful next thought.</p>
+    <div class="email-capture" id="email-capture-block">
+      <h4>Get the full breakdown</h4>
+      <p>The signals to watch for, what typically helps, and a clear next step — delivered to your inbox. No pitch. Just useful.</p>
       <div class="email-row" style="flex-direction: column; gap: 8px;">
         <input type="text" class="email-input" id="name-input" placeholder="Your name" />
         <div style="display: flex; gap: 10px;">
           <input type="email" class="email-input" id="email-input" placeholder="your@email.com" />
-          <button class="btn-email-submit" onclick="submitEmail()">Send →</button>
+          <button class="btn-email-submit" id="submit-btn" onclick="submitEmail()">Send →</button>
         </div>
       </div>
-      <div class="email-thanks" id="email-thanks">Got it — Daniela will be in touch soon.</div>
     </div>
-    <div class="cta-block">
-      <h3>Ready to go deeper?</h3>
-      <p>A 30-minute People Systems Conversation can turn this snapshot into a clear picture of what to prioritize — and whether a full Scan makes sense for where you are right now.</p>
-      <p style="font-style: italic; margin-bottom: 20px;">If your result named something you've been feeling but haven't had language for, that's usually a sign it's time to look deeper.</p>
-      <button class="btn-cta" onclick="showContact()">Talk through your Snapshot results →</button>
-      <div id="contact-reveal" style="display:none; margin-top:16px; background:white; border:1px solid var(--border); border-radius:10px; padding:16px 20px; text-align:left;">
-        <p style="font-size:0.85rem; font-family:'Helvetica Neue',sans-serif; color:var(--text-muted); margin-bottom:8px;">Send Daniela an email directly:</p>
-        <a href="mailto:daniela@danielareinoso.co?subject=People%20Systems%20Snapshot" style="font-size:1rem; font-family:'Helvetica Neue',sans-serif; color:var(--teal); font-weight:500; display:block; margin-bottom:10px;">daniela@danielareinoso.co</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=daniela%40danielareinoso.co&subject=People%20Systems%20Snapshot" target="_blank" style="font-size:0.82rem; font-family:'Helvetica Neue',sans-serif; color:var(--text-muted); text-decoration:underline;">Open in Gmail →</a>
-      </div>
+    <div id="email-thanks" style="display:none; text-align:center; padding: 24px 0 8px;">
+      <p style="font-size:1rem; color:var(--teal); font-family:'Helvetica Neue',sans-serif; margin-bottom:8px;">Your results are on their way.</p>
+      <p style="font-size:0.85rem; color:var(--text-muted); font-family:'Helvetica Neue',sans-serif;">Check your inbox — Daniela sent them directly to you.</p>
     </div>
-    <div style="text-align:center; margin-top: 16px;">
-      <button class="btn-pdf" onclick="window.print()">⬇ Save as PDF</button>
-    </div>
-    <span class="restart-link" onclick="restartQuiz()">Start over</span>
+    <span class="restart-link" onclick="restartQuiz()" style="margin-top: 28px;">Start over</span>
   </div>
 </div>
 
@@ -753,7 +731,7 @@
       min: 5, max: 7,
       tag: "Pattern: The Founder's Burden",
       title: "HR is sitting on your shoulders — and it's getting heavier.",
-      subtitle: "You're the default answer to every people question, and it's consuming capacity you can't afford to lose.",
+      friction: "Your organization has grown, but its people infrastructure hasn't. Every HR decision still lands on you — on top of everything else. That's not a character flaw; it's a structural gap. And it's costing you capacity you can't afford to lose.",
       description: "This is the most common pattern at social impact orgs in the 10–40 person range. The organization's growth has outpaced its people infrastructure, and the founder or ops lead has quietly absorbed all of it. It's not that you don't care about HR — it's that there's no system to hand it to. Every hire, every conflict, every onboarding is improvised from scratch. This works until it doesn't.",
       signals: [
         "You've delayed a hiring decision because the process felt too messy to start",
@@ -767,7 +745,7 @@
       min: 8, max: 11,
       tag: "Pattern: The Growing Pains Stage",
       title: "You have systems — they're just starting to crack under the weight of growth.",
-      subtitle: "The informal approaches that got you here are showing their limits. You're not in crisis, but you can feel it coming.",
+      friction: "You've built something that mostly works — but growth is exposing the seams. Things that used to be handled informally now need to be consistent, and they're not. You're not in crisis yet, but you can feel it coming.",
       description: "This pattern shows up at organizations that have been intentional but are now scaling faster than their HR infrastructure. Things work most of the time, but consistency is becoming a problem. Different managers handle the same situations differently. Onboarding works for some roles and not others. Compensation decisions feel ad hoc. The cracks aren't disasters yet — but they're getting harder to ignore.",
       signals: [
         "Performance conversations are happening inconsistently across the team",
@@ -781,7 +759,7 @@
       min: 12, max: 15,
       tag: "Pattern: The Culture-Systems Gap",
       title: "Your values are clear. Your systems haven't caught up to them yet.",
-      subtitle: "There's a growing gap between how your organization talks about its culture and how people actually experience it.",
+      friction: "Your values are articulated and your intention is real. But somewhere between the all-hands and the day-to-day, something gets lost. People sense the gap between what the organization says it values and how it actually operates — even when they can't name it.",
       description: "This is the most nuanced pattern — and often the most frustrating for leaders who care deeply about their organizations. The values are articulated. The intention is real. But somewhere between the all-hands and the day-to-day, something gets lost. Hiring doesn't always bring in people who match the culture. Performance conversations feel awkward because the criteria aren't clear. People sense the gap even when they can't name it.",
       signals: [
         "Your employee engagement looks fine on paper but something feels off in the team",
@@ -856,19 +834,19 @@
     }
   }
 
+  let currentArchetype = null;
+
   function showResults() {
     const totalScore = answers.reduce((sum, ans, i) => sum + questions[i].options[ans].score, 0);
-    const archetype = archetypes.find(a => totalScore >= a.min && totalScore <= a.max);
+    currentArchetype = archetypes.find(a => totalScore >= a.min && totalScore <= a.max);
 
     document.getElementById('quiz-screen').style.display = 'none';
     const resultsEl = document.getElementById('results-screen');
     resultsEl.style.display = 'block';
 
-    document.getElementById('result-tag').textContent = archetype.tag;
-    document.getElementById('result-title').textContent = archetype.title;
-    document.getElementById('result-subtitle').textContent = archetype.subtitle;
-    document.getElementById('result-description').textContent = archetype.description;
-    document.getElementById('result-help').textContent = archetype.help;
+    document.getElementById('result-tag').textContent = currentArchetype.tag;
+    document.getElementById('result-title').textContent = currentArchetype.title;
+    document.getElementById('result-friction').textContent = currentArchetype.friction;
 
     // Score meter (5 pips)
     const meterEl = document.getElementById('score-meter');
@@ -880,48 +858,41 @@
       meterEl.appendChild(pip);
     }
 
-    const signalsList = document.getElementById('result-signals');
-    signalsList.innerHTML = '';
-    archetype.signals.forEach(s => {
-      const li = document.createElement('li');
-      li.textContent = s;
-      signalsList.appendChild(li);
-    });
-
     resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  function showContact() {
-    const el = document.getElementById('contact-reveal');
-    el.style.display = el.style.display === 'none' ? 'block' : 'none';
   }
 
   async function submitEmail() {
     const nameEl = document.getElementById('name-input');
     const emailEl = document.getElementById('email-input');
-    const submitBtn = document.querySelector('.btn-email-submit');
+    const submitBtn = document.getElementById('submit-btn');
     const name = nameEl.value.trim();
     const email = emailEl.value.trim();
 
     if (!name) { nameEl.style.borderColor = 'var(--terracotta)'; nameEl.focus(); return; }
     if (!email || !email.includes('@')) { emailEl.style.borderColor = 'var(--terracotta)'; emailEl.focus(); return; }
 
-    const pattern = document.getElementById('result-tag').textContent;
-    const resultTitle = document.getElementById('result-title').textContent;
-
     submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
+
+    const payload = {
+      name,
+      email,
+      pattern: currentArchetype.tag,
+      result: currentArchetype.title,
+      description: currentArchetype.description,
+      signals: currentArchetype.signals,
+      help: currentArchetype.help
+    };
 
     try {
       const res = await fetch('https://script.google.com/macros/s/AKfycbyMunmkVJdZNXi7hieyWLAmmknljpPtfQoA2scE_H_NwFJnaUpM1nOOYhPHE8NDiX__bQ/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name, email, pattern, result: resultTitle })
+        body: JSON.stringify(payload)
       });
       if (res.ok) {
+        document.getElementById('email-capture-block').style.display = 'none';
         document.getElementById('email-thanks').style.display = 'block';
-        nameEl.disabled = true;
-        emailEl.disabled = true;
       } else {
         submitBtn.textContent = 'Try again';
         submitBtn.disabled = false;
