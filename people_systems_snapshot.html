@@ -911,6 +911,12 @@
     answers = new Array(5).fill(null);
     document.getElementById('results-screen').style.display = 'none';
     document.getElementById('quiz-screen').style.display = 'block';
+    document.getElementById('email-capture-block').style.display = 'block';
+    document.getElementById('email-thanks').style.display = 'none';
+    document.getElementById('name-input').value = '';
+    document.getElementById('email-input').value = '';
+    document.getElementById('submit-btn').textContent = 'Send →';
+    document.getElementById('submit-btn').disabled = false;
     renderQuestion();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
