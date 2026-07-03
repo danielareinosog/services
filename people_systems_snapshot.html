@@ -651,46 +651,20 @@
     <div class="result-tag" id="result-tag">Your Pattern</div>
     <div class="score-meter" id="score-meter"></div>
     <h2 class="result-title" id="result-title"></h2>
-    <p class="result-subtitle" id="result-subtitle"></p>
+    <p class="result-subtitle" id="result-friction"></p>
   </div>
   <div class="result-body">
-    <div class="result-section">
-      <div class="result-section-label">What this pattern looks like</div>
-      <p id="result-description"></p>
-    </div>
-    <hr class="divider">
-    <div class="result-section">
-      <div class="result-section-label">Signals to watch for</div>
-      <ul class="signal-list" id="result-signals"></ul>
-    </div>
-    <hr class="divider">
-    <div class="result-section">
-      <div class="result-section-label">What usually helps most</div>
-      <p id="result-help"></p>
-    </div>
-    <hr class="divider">
-    <div class="email-capture">
-      <h4>Want Daniela to follow up with you?</h4>
-      <p>Leave your email and she'll reach out with a note specific to your pattern — no pitch, just a useful next thought.</p>
+    <div id="email-capture-block" class="email-capture">
+      <h4>Get the full breakdown</h4>
+      <p>Enter your name and email to receive your complete results — what this pattern means, the signals to watch for, and what usually helps most.</p>
+      <input type="text" class="email-input" id="name-input" placeholder="Your name" style="margin-bottom:10px; width:100%;" />
       <div class="email-row">
         <input type="email" class="email-input" id="email-input" placeholder="your@email.com" />
-        <button class="btn-email-submit" onclick="submitEmail()">Send →</button>
-      </div>
-      <div class="email-thanks" id="email-thanks">Thanks — Daniela will be in touch soon.</div>
-    </div>
-    <div class="cta-block">
-      <h3>Ready to go deeper?</h3>
-      <p>A 30-minute People Systems Conversation can turn this snapshot into a clear picture of what to prioritize — and whether a full Scan makes sense for where you are right now.</p>
-      <p style="font-style: italic; margin-bottom: 20px;">If your result named something you've been feeling but haven't had language for, that's usually a sign it's time to look deeper.</p>
-      <button class="btn-cta" onclick="showContact()">Talk through your Snapshot results →</button>
-      <div id="contact-reveal" style="display:none; margin-top:16px; background:white; border:1px solid var(--border); border-radius:10px; padding:16px 20px; text-align:left;">
-        <p style="font-size:0.85rem; font-family:'Helvetica Neue',sans-serif; color:var(--text-muted); margin-bottom:8px;">Send Daniela an email directly:</p>
-        <a href="mailto:daniela@danielareinoso.co?subject=People%20Systems%20Snapshot" style="font-size:1rem; font-family:'Helvetica Neue',sans-serif; color:var(--teal); font-weight:500; display:block; margin-bottom:10px;">daniela@danielareinoso.co</a>
-        <a href="https://mail.google.com/mail/?view=cm&to=daniela%40danielareinoso.co&subject=People%20Systems%20Snapshot" target="_blank" style="font-size:0.82rem; font-family:'Helvetica Neue',sans-serif; color:var(--text-muted); text-decoration:underline;">Open in Gmail →</a>
+        <button class="btn-email-submit" id="submit-btn" onclick="submitEmail()">Send →</button>
       </div>
     </div>
-    <div style="text-align:center; margin-top: 16px;">
-      <button class="btn-pdf" onclick="window.print()">⬇ Save as PDF</button>
+    <div class="email-thanks" id="email-thanks" style="display:none; text-align:center; padding:20px 0;">
+      <p style="font-size:1rem; color:var(--teal); font-family:'Helvetica Neue',sans-serif;">You're all set. Check your inbox — the full breakdown is on its way.</p>
     </div>
     <span class="restart-link" onclick="restartQuiz()">Start over</span>
   </div>
@@ -872,68 +846,94 @@
     }
   }
 
+  let currentArchetype = null;
+
   function showResults() {
     const totalScore = answers.reduce((sum, ans, i) => sum + questions[i].options[ans].score, 0);
-    const archetype = archetypes.find(a => totalScore >= a.min && totalScore <= a.max);
+    currentArchetype = archetypes.find(a => totalScore >= a.min && totalScore <= a.max);
 
     document.getElementById('quiz-screen').style.display = 'none';
     const resultsEl = document.getElementById('results-screen');
     resultsEl.style.display = 'block';
 
-    document.getElementById('result-tag').textContent = archetype.tag;
-    document.getElementById('result-title').textContent = archetype.title;
-    document.getElementById('result-subtitle').textContent = archetype.subtitle;
-    document.getElementById('result-description').textContent = archetype.description;
-    document.getElementById('result-help').textContent = archetype.help;
+    document.getElementById('result-tag').textContent = currentArchetype.tag;
+    document.getElementById('result-title').textContent = currentArchetype.title;
+    document.getElementById('result-friction').textContent = currentArchetype.subtitle;
 
-    // Score meter (5 pips)
+    // Score meter — normalized over new range 5–20
     const meterEl = document.getElementById('score-meter');
     meterEl.innerHTML = '';
-    const normalized = Math.round(((totalScore - 5) / 10) * 5);
+    const normalized = Math.round(((totalScore - 5) / 15) * 5);
     for (let i = 0; i < 5; i++) {
       const pip = document.createElement('div');
       pip.className = 'score-pip' + (i < normalized ? ' filled' : '');
       meterEl.appendChild(pip);
     }
 
-    const signalsList = document.getElementById('result-signals');
-    signalsList.innerHTML = '';
-    archetype.signals.forEach(s => {
-      const li = document.createElement('li');
-      li.textContent = s;
-      signalsList.appendChild(li);
-    });
-
     resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function showContact() {
-    const el = document.getElementById('contact-reveal');
-    el.style.display = el.style.display === 'none' ? 'block' : 'none';
-  }
-
   function submitEmail() {
+    const nameEl = document.getElementById('name-input');
     const emailEl = document.getElementById('email-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const name = nameEl.value.trim();
     const email = emailEl.value.trim();
-    if (!email || !email.includes('@')) {
-      emailEl.focus();
-      return;
-    }
-    const archetype = document.getElementById('result-tag').textContent;
-    window.location.href = `mailto:daniela@danielareinoso.co?subject=People Systems Snapshot follow-up&body=Hi Daniela,%0D%0A%0D%0AMy email is ${encodeURIComponent(email)} and my snapshot result was: ${encodeURIComponent(archetype)}.%0D%0A%0D%0AI'd love to connect.`;
+
+    if (!name) { nameEl.style.borderColor = 'var(--terracotta)'; nameEl.focus(); return; }
+    if (!email || !email.includes('@')) { emailEl.style.borderColor = 'var(--terracotta)'; emailEl.focus(); return; }
+
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    var fields = {
+      name: name,
+      email: email,
+      pattern: currentArchetype.tag,
+      result: currentArchetype.title,
+      description: currentArchetype.description,
+      signals: JSON.stringify(currentArchetype.signals),
+      help: currentArchetype.help
+    };
+
+    var form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://script.google.com/macros/s/AKfycbyMunmkVJdZNXi7hieyWLAmmknljpPtfQoA2scE_H_NwFJnaUpM1nOOYhPHE8NDiX__bQ/exec';
+    form.target = 'hidden-submit-frame';
+    form.style.display = 'none';
+
+    Object.keys(fields).forEach(function(key) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = fields[key];
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    setTimeout(function() { document.body.removeChild(form); }, 2000);
+
+    document.getElementById('email-capture-block').style.display = 'none';
     document.getElementById('email-thanks').style.display = 'block';
-    emailEl.disabled = true;
-    document.querySelector('.btn-email-submit').disabled = true;
   }
 
   function restartQuiz() {
     current = 0;
     answers = new Array(5).fill(null);
+    currentArchetype = null;
     document.getElementById('results-screen').style.display = 'none';
     document.getElementById('quiz-screen').style.display = 'block';
+    document.getElementById('email-capture-block').style.display = 'block';
+    document.getElementById('email-thanks').style.display = 'none';
+    document.getElementById('name-input').value = '';
+    document.getElementById('email-input').value = '';
+    document.getElementById('submit-btn').textContent = 'Send →';
+    document.getElementById('submit-btn').disabled = false;
     renderQuestion();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 </script>
+<iframe name="hidden-submit-frame" style="display:none;" aria-hidden="true"></iframe>
 </body>
 </html>
