@@ -56,11 +56,12 @@
         .portrait img {
             width: 100%; height: auto; display: block;
             aspect-ratio: 0.88; object-fit: cover; object-position: 50% 32%;
-            filter: sepia(0.22) saturate(0.85) brightness(1.1) contrast(0.94);
+            filter: sepia(0.16) saturate(1.0) brightness(1.02) contrast(1.02);
         }
         .portrait::after {
             content: ''; position: absolute; inset: 0;
-            background: rgba(236, 210, 178, 0.12);
+            background: rgba(210, 160, 110, 0.08);
+            mix-blend-mode: multiply;
             pointer-events: none;
         }
         .about-copy { padding: 104px 72px; max-width: 720px; position: relative; }
