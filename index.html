@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Daniela Reinoso | Build the Workplace You Mean to Create">
-    <meta property="og:description" content="I help mission-driven organizations intentionally design people practices, leadership habits, and organizational systems that create clarity, build trust, and support sustainable growth.">
+    <meta property="og:description" content="I help mission-driven organizations intentionally design people practices, leadership structures, and organizational systems that create clarity and trust.">
     <meta property="og:image" content="https://danielareinosog.github.io/services/LIbanner.png">
-    <meta property="og:url" content="https://danielareinosog.github.io/services/">
+    <meta property="og:url" content="https://danielareinoso.co/">
     <meta property="og:type" content="website">
     <title>Daniela Reinoso | Build the Workplace You Mean to Create</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YZQYRTJQ9"></script>
@@ -19,502 +19,95 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --green: #234F45;
-            --green-deep: #1B3B34;
-            --teal: #0F4C5C;
-            --clay: #CB6B4B;
-            --clay-dark: #B85C3D;
-            --bg: #F6F3EF;
-            --card: #FDF9F4;
-            --ink: #333333;
-            --ink-soft: #6E675E;
-            --hairline: #E4DDD3;
-            --white: #FFFFFF;
-        }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: var(--bg);
-            color: var(--ink);
-            line-height: 1.75;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-        }
-        ::selection { background: rgba(203,107,75,0.18); }
-        h1, h2 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-weight: 500;
-            color: var(--green);
-        }
-
-        /* ── NAV ── */
-        nav {
-            background: rgba(246,243,239,0.94);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--hairline);
-            padding: 0 48px;
-            display: flex; align-items: center; justify-content: space-between;
-            height: 84px;
-            position: sticky; top: 0; z-index: 100;
-        }
-        .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-        .nav-brand svg { flex-shrink: 0; }
-        .brand-word {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 17px; font-weight: 600; letter-spacing: 0.24em;
-            text-transform: uppercase; color: var(--green); line-height: 1.35;
-        }
-        .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
-        .nav-links a {
-            font-size: 11.5px; font-weight: 500; color: var(--ink);
-            letter-spacing: 0.14em; text-transform: uppercase;
-            text-decoration: none; transition: color 0.25s;
-        }
-        .nav-links a:hover { color: var(--clay); }
-        .nav-cta {
-            background: var(--clay);
-            color: var(--white) !important;
-            padding: 12px 24px;
-            border-radius: 3px;
-            transition: background 0.25s !important;
-        }
-        .nav-cta:hover { background: var(--clay-dark); color: var(--white) !important; }
-
-        /* ── BUTTONS ── */
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            font-size: 11.5px; font-weight: 500;
-            letter-spacing: 0.14em; text-transform: uppercase;
-            text-decoration: none; cursor: pointer;
-            border: 1px solid transparent; border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-        .btn-primary { background: var(--green); color: var(--bg); border-color: var(--green); }
-        .btn-primary:hover { background: var(--green-deep); border-color: var(--green-deep); }
-        .btn-outline { background: transparent; color: var(--ink); border-color: #B9B2A6; }
-        .btn-outline:hover { border-color: var(--green); color: var(--green); }
-        .btn-clay { background: var(--clay); color: var(--white); border-color: var(--clay); }
-        .btn-clay:hover { background: var(--clay-dark); border-color: var(--clay-dark); }
-        .text-link {
-            font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-            color: var(--green); text-decoration: none;
-            transition: color 0.25s;
-        }
-        .text-link:hover { color: var(--clay); }
-        .text-link .arr { display: inline-block; transition: transform 0.25s; margin-left: 6px; }
-        .text-link:hover .arr { transform: translateX(4px); }
-
-        /* ── LAYOUT ── */
-        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
-        .eyebrow {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
-            text-transform: uppercase; color: var(--clay);
-            margin-bottom: 22px; display: block;
-        }
-        h2 { font-size: clamp(32px, 3.8vw, 44px); line-height: 1.18; }
-
-        /* ── HERO ── */
-        .hero { padding: 0; }
         .hero-grid {
             max-width: 1240px; margin: 0 auto;
             display: grid; grid-template-columns: 1.05fr 1fr;
             align-items: center; gap: 64px;
             padding: 0 48px;
-            min-height: 560px;
+            min-height: 620px;
         }
-        .hero-copy { padding: 80px 0; max-width: 520px; }
-        .hero h1 {
-            font-size: clamp(42px, 4.8vw, 58px);
-            line-height: 1.12;
-            margin-bottom: 0;
-        }
-        .hero h1 em { font-style: normal; color: var(--clay); }
-        .hero-rule { width: 40px; height: 2px; background: var(--clay); border: none; margin: 30px 0; }
-        .hero-sub {
-            font-size: 16px; line-height: 1.85; color: var(--ink-soft);
-            margin-bottom: 40px;
-        }
-        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-        .hero-photo { height: 100%; min-height: 560px; position: relative; }
-        .hero-photo img {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%; object-fit: cover;
-            display: block;
-        }
-
-        /* ── VALUES STRIP ── */
-        .values { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 72px 0; }
-        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-        .value { padding: 0 40px; text-align: left; }
-        .value + .value { border-left: 1px solid var(--hairline); }
-        .value-icon { width: 44px; height: 44px; margin-bottom: 20px; }
-        .value h3 {
-            font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em;
-            text-transform: uppercase; color: var(--ink); margin-bottom: 12px;
-        }
-        .value p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
-
-        /* ── ABOUT INTRO ── */
-        .about-intro { padding: 0; position: relative; overflow: hidden; }
-        .about-grid {
-            display: grid; grid-template-columns: 0.95fr 1.05fr;
-            align-items: center; gap: 88px;
-        }
-        .about-photo { min-height: 520px; position: relative; }
-        .about-photo img {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%; object-fit: cover; display: block;
-        }
-        .about-copy { padding: 88px 48px 88px 0; max-width: 620px; position: relative; z-index: 1; }
-        .about-copy h2 { margin-bottom: 26px; }
-        .about-copy p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 18px; }
-        .about-facts { margin: 30px 0 34px; display: flex; gap: 32px; flex-wrap: wrap; }
-        .about-facts span {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
-            text-transform: uppercase; color: var(--green);
-        }
-        .botanical {
-            position: absolute; right: -190px; bottom: -50px;
-            width: 220px; opacity: 0.3; pointer-events: none;
-        }
-        @media (max-width: 1280px) { .botanical { display: none; } }
-
-        /* ── WHAT I DO ── */
-        .whatido { padding: 110px 0; text-align: center; }
-        .whatido .eyebrow { text-align: center; }
-        .whatido h2 { max-width: 640px; margin: 0 auto 64px; }
-        .wid-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: left; }
-        .wid-card {
-            background: var(--card);
-            border: 1px solid var(--hairline);
-            border-radius: 6px;
-            padding: 36px 28px 30px;
-            display: flex; flex-direction: column;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .wid-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(35,79,69,0.08); }
-        .wid-icon {
-            width: 52px; height: 52px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 22px;
-        }
-        .wid-icon.green { background: var(--green); }
-        .wid-icon.clay { background: var(--clay); }
-        .wid-card h3 {
-            font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
-            text-transform: uppercase; color: var(--ink); margin-bottom: 12px;
-        }
-        .wid-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 22px; }
-        .wid-card .text-link { margin-top: auto; font-size: 10.5px; }
-
-        /* ── SHARED SECTIONS ── */
-        section.block { padding: 110px 0; }
-        .block-alt { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-        .lede { font-size: 17px; color: var(--ink-soft); line-height: 1.85; }
-
-        /* ── PAIN ── */
-        .pain-inner { max-width: 700px; }
-        .pain-inner h2 { margin-bottom: 44px; }
-        .pain-list { list-style: none; }
-        .pain-list li {
-            font-size: 16px; color: var(--ink); line-height: 1.7;
-            padding: 18px 0 18px 34px; position: relative;
-            border-top: 1px solid var(--hairline);
-        }
-        .pain-list li:last-child { border-bottom: 1px solid var(--hairline); }
-        .pain-list li::before { content: '—'; position: absolute; left: 0; top: 18px; color: var(--clay); }
-        .pain-callout {
+        .hero-copy { padding: 80px 0; max-width: 540px; }
+        .hero-copy h1 { font-size: clamp(42px, 4.8vw, 60px); line-height: 1.1; }
+        .hero-copy h1 em { font-style: normal; color: var(--clay); }
+        .hero-sub { font-size: 16.5px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 40px; }
+        .hero-actions { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
+        .hero-photo { height: 100%; min-height: 620px; position: relative; }
+        .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+        .pattern-callout {
             margin-top: 52px;
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(22px, 2.6vw, 28px); font-style: italic;
+            font-size: clamp(22px, 2.6vw, 28px);
             color: var(--green); line-height: 1.45;
         }
-
-        /* ── COST ── */
-        .cost h2 { max-width: 660px; margin-bottom: 22px; }
-        .cost-intro { max-width: 620px; margin-bottom: 72px; }
-        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .stat {
-            background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
-            padding: 38px 32px; display: flex; flex-direction: column;
-        }
-        .stat-number {
+        .intro-grid { display: grid; grid-template-columns: 300px 1fr; gap: 80px; align-items: center; }
+        .intro-photo img { width: 100%; height: auto; display: block; border-radius: 4px; }
+        .intro-copy h2 { margin-bottom: 28px; }
+        .intro-copy p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 18px; }
+        .intro-copy .pov { color: var(--ink); }
+        .story-quote {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 52px; font-weight: 500; color: var(--green);
-            line-height: 1; margin-bottom: 18px;
+            font-size: clamp(23px, 2.8vw, 30px); color: var(--green);
+            line-height: 1.5; max-width: 780px; margin: 0 auto 30px; text-align: center;
         }
-        .stat p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 16px; }
-        .stat-lead { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.65; margin-bottom: 18px; }
-        .stat-breakdown { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
-        .stat-breakdown li {
-            display: flex; justify-content: space-between; gap: 12px;
-            font-size: 13.5px; color: var(--ink-soft); line-height: 1.5;
-            padding-bottom: 10px; border-bottom: 1px solid var(--hairline);
+        .story-attr {
+            text-align: center; font-size: 10.5px; font-weight: 600;
+            letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
         }
-        .stat-breakdown .stat-pct { font-weight: 600; color: var(--clay); flex-shrink: 0; }
-        .stat-source { font-size: 11.5px; color: var(--ink-soft); font-style: italic; opacity: 0.75; margin-top: auto; }
-
-        /* ── FAMILIAR ── */
-        .familiar-inner { max-width: 700px; }
-        .familiar-inner h2 { margin-bottom: 44px; }
-        .familiar-note {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 20px; font-style: italic; color: var(--ink-soft);
-            line-height: 1.55; margin-top: 40px;
-        }
-        .familiar-inner .btn { margin-top: 36px; }
-
-        /* ── SCAN ── */
-        .scan-header { max-width: 700px; margin-bottom: 64px; }
-        .scan-header h2 { margin-bottom: 22px; }
-        .scan-body { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start; }
-        .scan-desc p { font-size: 16px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 36px; }
-        .scan-deliverables {
-            background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
-            padding: 42px 40px;
-        }
-        .scan-deliverables h3 {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--green); margin-bottom: 24px;
-        }
-        .del-list { list-style: none; }
-        .del-list li {
-            font-size: 14.5px; color: var(--ink); line-height: 1.6;
-            padding: 12px 0 12px 26px; position: relative;
-            border-top: 1px solid var(--hairline);
-        }
-        .del-list li:first-child { border-top: none; padding-top: 0; }
-        .del-list li:first-child::before { top: 0; }
-        .del-list li::before { content: '—'; position: absolute; left: 0; top: 12px; color: var(--clay); }
-
-        /* ── PROCESS / SERVICES / APPROACH ── */
-        .section-heading { margin-bottom: 60px; }
-        .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-        .soft-card {
-            background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
-            padding: 36px 30px;
-        }
-        .block-alt .soft-card { background: var(--bg); }
-        .card-kicker {
-            font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em;
-            text-transform: uppercase; color: var(--clay); margin-bottom: 14px; display: block;
-        }
-        .soft-card h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 23px; font-weight: 500; color: var(--green);
-            line-height: 1.25; margin-bottom: 12px;
-        }
-        .soft-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; }
-
-        /* ── PRICING ── */
-        .pricing-note { max-width: 700px; margin-bottom: 64px; }
-        .pricing-note h4 {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--green); margin-bottom: 14px;
-        }
-        .pricing-note p { font-size: 15px; color: var(--ink-soft); line-height: 1.85; }
-        .pricing-note p + p { margin-top: 12px; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .price-card {
-            background: var(--bg); border: 1px solid var(--hairline); border-radius: 6px;
-            padding: 44px 34px 38px;
-            display: flex; flex-direction: column;
-        }
-        .price-card.featured { border-color: var(--green); }
-        .price-kicker {
-            font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--clay); margin-bottom: 14px; min-height: 15px;
-        }
-        .price-card h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 24px; font-weight: 500; color: var(--green);
-            line-height: 1.2; margin-bottom: 18px;
-        }
-        .price-typical {
-            font-size: 10px; font-weight: 500; letter-spacing: 0.16em;
-            text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px;
-        }
-        .price-amount {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 30px; font-weight: 500; color: var(--ink); margin-bottom: 4px;
-        }
-        .price-note { font-size: 13.5px; color: var(--ink-soft); margin: 16px 0 22px; line-height: 1.7; }
-        .price-features { list-style: none; margin-bottom: 30px; }
-        .price-features li {
-            font-size: 13.5px; color: var(--ink); line-height: 1.55;
-            padding: 10px 0 10px 24px; position: relative;
-            border-top: 1px solid var(--hairline);
-        }
-        .price-features li::before { content: '—'; position: absolute; left: 0; top: 10px; color: var(--clay); }
-        .price-card .btn { text-align: center; margin-top: auto; }
-        .price-context {
-            font-size: 12px; color: var(--ink-soft); line-height: 1.65;
-            margin-top: 20px; font-style: italic; opacity: 0.85;
-        }
-
-        /* ── QUOTE BAND ── */
-        .quote-band { background: var(--green); padding: 88px 0; }
-        .quote-grid {
-            display: grid; grid-template-columns: 1.4fr 1fr;
-            gap: 80px; align-items: center;
-        }
-        .quote-left { position: relative; padding-left: 70px; }
-        .quote-marks {
-            position: absolute; left: 0; top: -8px;
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 90px; line-height: 1; color: var(--clay); font-weight: 600;
-        }
-        .quote-left blockquote {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(22px, 2.6vw, 29px); color: var(--bg);
-            line-height: 1.45; margin-bottom: 20px;
-        }
-        .quote-left cite {
-            font-style: normal; font-size: 10.5px; font-weight: 600;
-            letter-spacing: 0.2em; text-transform: uppercase;
-            color: rgba(246,243,239,0.6);
-        }
-        .quote-cta { border-left: 1px solid rgba(246,243,239,0.2); padding-left: 60px; }
-        .quote-cta-icon {
-            width: 56px; height: 56px; border-radius: 50%;
-            border: 1px solid rgba(246,243,239,0.4);
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 24px;
-        }
-        .quote-cta p {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 26px; color: var(--bg); line-height: 1.35; margin-bottom: 24px;
-        }
-        .quote-cta a {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
-            text-transform: uppercase; color: #E7C3AF; text-decoration: none;
-            transition: color 0.25s;
-        }
-        .quote-cta a:hover { color: var(--white); }
-
-        /* ── FOOTER ── */
-        footer { background: var(--bg); padding: 72px 0 44px; text-align: center; }
-        .footer-logo { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 34px; }
-        .footer-logo .brand-word { font-size: 15px; }
-        .footer-nav { display: flex; gap: 34px; justify-content: center; list-style: none; margin-bottom: 34px; flex-wrap: wrap; }
-        .footer-nav a {
-            font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-            color: var(--ink-soft); text-decoration: none; transition: color 0.25s;
-        }
-        .footer-nav a:hover { color: var(--clay); }
-        .footer-social { display: flex; gap: 18px; justify-content: center; margin-bottom: 40px; }
-        .footer-social a {
-            width: 38px; height: 38px; border-radius: 50%;
-            border: 1px solid var(--hairline);
-            display: flex; align-items: center; justify-content: center;
-            transition: border-color 0.25s;
-        }
-        .footer-social a:hover { border-color: var(--clay); }
-        .footer-bottom {
-            border-top: 1px solid var(--hairline);
-            padding-top: 26px;
-            font-size: 12px; color: var(--ink-soft);
-        }
-        .footer-bottom a { color: var(--ink-soft); text-decoration: none; }
-        .footer-bottom a:hover { color: var(--clay); }
-
-        /* ── RESPONSIVE ── */
-        .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
-        .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--green); }
-        .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--hairline); padding: 16px 24px; gap: 4px; }
-        .nav-mobile a { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 13px 0; border-bottom: 1px solid var(--hairline); display: block; }
-        .nav-mobile a:last-child { border-bottom: none; }
-        .nav-mobile a.nav-cta { background: var(--clay); color: var(--white) !important; padding: 13px 20px; border-radius: 3px; text-align: center; margin-top: 12px; }
-
         @media (max-width: 960px) {
             .hero-grid { grid-template-columns: 1fr; gap: 0; padding: 0; min-height: 0; }
             .hero-copy { padding: 64px 24px 56px; max-width: 100%; }
             .hero-photo { min-height: 340px; }
-            .values-grid { grid-template-columns: 1fr 1fr; gap: 40px 0; }
-            .value { padding: 0 28px; }
-            .value:nth-child(3) { border-left: none; }
-            .about-grid { grid-template-columns: 1fr; gap: 0; padding: 0; }
-            .about-photo { min-height: 380px; }
-            .about-copy { padding: 56px 24px; max-width: 100%; }
-            .wid-grid { grid-template-columns: 1fr 1fr; }
-            .quote-grid { grid-template-columns: 1fr; gap: 48px; }
-            .quote-cta { border-left: none; padding-left: 70px; }
-        }
-        @media (max-width: 860px) {
-            nav { padding: 0 20px; }
-            .nav-hamburger { display: flex; }
-            .nav-links { display: none; }
-            .wrap { padding: 0 24px; }
-            section.block, .whatido { padding: 72px 0; }
-            .stat-grid, .cards-3, .pricing-grid, .wid-grid { grid-template-columns: 1fr; }
-            .cards-2 { grid-template-columns: 1fr; }
-            .scan-body { grid-template-columns: 1fr; gap: 44px; }
-            .quote-left, .quote-cta { padding-left: 0; }
-            .quote-marks { position: static; display: block; margin-bottom: 8px; font-size: 64px; }
-        }
-        @media (max-width: 560px) {
-            .values-grid { grid-template-columns: 1fr; gap: 36px; }
-            .value + .value { border-left: none; }
+            .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+            .intro-photo img { max-width: 280px; }
         }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-    <a href="#" class="nav-brand">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<nav class="site-nav">
+    <a href="index.html" class="nav-brand">
+        <svg width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20" cy="20" r="12" stroke="#234F45" stroke-width="1"/>
             <line x1="20" y1="8" x2="9" y2="26" stroke="#234F45" stroke-width="0.8"/>
             <line x1="20" y1="8" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
             <line x1="9" y1="26" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
-            <line x1="20" y1="8" x2="20" y2="32" stroke="#234F45" stroke-width="0.8"/>
             <circle cx="20" cy="8" r="3" fill="#234F45"/>
             <circle cx="9" cy="26" r="3" fill="#CB6B4B"/>
             <circle cx="31" cy="26" r="3" fill="#6E675E"/>
-            <circle cx="20" cy="32" r="2.4" fill="#234F45"/>
         </svg>
         <span class="brand-word">Daniela<br>Reinoso</span>
     </a>
     <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#approach">Approach</a></li>
-        <li><a href="#scan">The Scan</a></li>
-        <li><a href="#pricing">Investment</a></li>
-        <li><a href="people_systems_snapshot.html">Resources</a></li>
-        <li><a href="mailto:daniela@danielareinoso.co" class="nav-cta">Let's Connect</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="approach.html">Approach</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="scan.html">The Scan</a></li>
+        <li><a href="work-together.html" class="nav-cta">Work Together</a></li>
     </ul>
-    <button class="nav-hamburger" onclick="document.getElementById('mobile-menu').style.display = document.getElementById('mobile-menu').style.display === 'flex' ? 'none' : 'flex'" aria-label="Menu">
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
     </button>
 </nav>
 <div id="mobile-menu" class="nav-mobile">
-    <a href="#about" onclick="document.getElementById('mobile-menu').style.display='none'">About</a>
-    <a href="#services" onclick="document.getElementById('mobile-menu').style.display='none'">Services</a>
-    <a href="#approach" onclick="document.getElementById('mobile-menu').style.display='none'">Approach</a>
-    <a href="#scan" onclick="document.getElementById('mobile-menu').style.display='none'">The Scan</a>
-    <a href="#pricing" onclick="document.getElementById('mobile-menu').style.display='none'">Investment</a>
-    <a href="people_systems_snapshot.html">Resources</a>
-    <a href="mailto:daniela@danielareinoso.co" class="nav-cta">Let's Connect</a>
+    <a href="about.html">About</a>
+    <a href="approach.html">Approach</a>
+    <a href="services.html">Services</a>
+    <a href="scan.html">The Scan</a>
+    <a href="work-together.html" class="nav-cta">Work Together</a>
 </div>
 
-<!-- HERO -->
+<!-- 1 · HERO -->
 <section class="hero">
     <div class="hero-grid">
-        <div class="hero-copy">
+        <div class="hero-copy reveal">
             <h1>Build the workplace you <em>mean</em> to create.</h1>
-            <hr class="hero-rule">
-            <p class="hero-sub">I help mission-driven organizations intentionally design people practices, leadership habits, and organizational systems that create clarity, build trust, and support sustainable growth.</p>
+            <hr class="rule">
+            <p class="hero-sub">I help mission-driven organizations intentionally design people practices, leadership structures, and organizational systems that create clarity and trust.</p>
             <div class="hero-actions">
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary">Work With Me</a>
-                <a href="#scan" class="btn btn-outline">Learn More</a>
+                <a href="work-together.html" class="btn btn-primary">Start a Conversation</a>
+                <a href="approach.html" class="text-link">The approach<span class="arr">→</span></a>
             </div>
         </div>
         <div class="hero-photo">
@@ -523,390 +116,94 @@
     </div>
 </section>
 
-<!-- VALUES STRIP -->
-<section class="values">
-    <div class="wrap">
-        <div class="values-grid">
-            <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="22" cy="22" r="17" stroke="#234F45" stroke-width="1.4"/>
-                    <path d="M28 16L24 24L16 28L20 20L28 16Z" stroke="#234F45" stroke-width="1.4" stroke-linejoin="round"/>
-                </svg>
-                <h3>Clarity</h3>
-                <p>We bring clarity to the people side of your mission and strategy.</p>
-            </div>
-            <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="16" cy="17" r="5" stroke="#CB6B4B" stroke-width="1.4"/>
-                    <circle cx="29" cy="19" r="4" stroke="#CB6B4B" stroke-width="1.4"/>
-                    <path d="M7 33C7 28 11 25 16 25C21 25 25 28 25 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
-                    <path d="M27 26C31.5 26 36 28.5 36 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
-                <h3>Trust</h3>
-                <p>We build the foundations for trust, transparency, and accountability.</p>
-            </div>
-            <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="11" y="8" width="22" height="28" rx="2" stroke="#234F45" stroke-width="1.4"/>
-                    <path d="M16 16L18 18L21.5 14.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="25" y1="16.5" x2="29" y2="16.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
-                    <path d="M16 24L18 26L21.5 22.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="25" y1="24.5" x2="29" y2="24.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
-                <h3>Effective Systems</h3>
-                <p>We design people systems that are practical, efficient, and built to last.</p>
-            </div>
-            <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 35C22 35 8 27 8 17.5C8 12.8 11.8 9 16.5 9C19 9 21 10.5 22 12C23 10.5 25 9 27.5 9C32.2 9 36 12.8 36 17.5C36 27 22 35 22 35Z" stroke="#CB6B4B" stroke-width="1.4" stroke-linejoin="round"/>
-                </svg>
-                <h3>Care</h3>
-                <p>We lead with empathy and respect for the people at the heart of your work.</p>
-            </div>
-        </div>
+<!-- 2 · PHILOSOPHY -->
+<section class="statement block-alt">
+    <div class="wrap reveal">
+        <p>Organizations don't become places people trust by accident.</p>
+        <p class="sub">They're shaped by the decisions leaders make every week — who to hire, how to decide, what to put in writing. My work is making that shaping intentional.</p>
     </div>
 </section>
 
-<!-- ABOUT INTRO -->
-<section class="about-intro" id="about">
-    <div class="about-grid">
-        <div class="about-photo">
-            <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
-        </div>
-        <div class="about-copy">
-            <span class="eyebrow">Hi, I'm Daniela</span>
-            <h2>I believe intentional organizations create lasting impact.</h2>
-            <p>With over a decade in people strategy and organizational development across the nonprofit and mission-driven sector, I partner with leaders to navigate complexity, align their teams, and build workplaces where people can thrive.</p>
-            <p>I recognized the pattern because I lived inside it: powerful missions, committed teams, and people systems held together by goodwill, memory, and whoever had capacity that week. Organizations doing mission-critical work deserve practical, fair infrastructure that carries the weight of growth — without losing the humanity at the center of the mission.</p>
-            <div class="about-facts">
-                <span>10+ years in People &amp; Culture</span>
-                <span>13+ countries</span>
-            </div>
-            <a href="https://linkedin.com/in/danielareinoso" target="_blank" class="text-link">More about me<span class="arr">→</span></a>
-            <svg class="botanical" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100 250C100 250 95 150 100 20" stroke="#CB6B4B" stroke-width="1"/>
-                <path d="M100 60C100 60 130 50 145 25" stroke="#CB6B4B" stroke-width="1"/>
-                <path d="M100 100C100 100 65 90 50 65" stroke="#CB6B4B" stroke-width="1"/>
-                <path d="M100 140C100 140 135 130 152 105" stroke="#CB6B4B" stroke-width="1"/>
-                <path d="M100 180C100 180 62 170 46 145" stroke="#CB6B4B" stroke-width="1"/>
-                <ellipse cx="148" cy="22" rx="7" ry="14" transform="rotate(40 148 22)" stroke="#CB6B4B" stroke-width="1"/>
-                <ellipse cx="47" cy="62" rx="7" ry="14" transform="rotate(-40 47 62)" stroke="#CB6B4B" stroke-width="1"/>
-                <ellipse cx="155" cy="102" rx="7" ry="14" transform="rotate(40 155 102)" stroke="#CB6B4B" stroke-width="1"/>
-                <ellipse cx="43" cy="142" rx="7" ry="14" transform="rotate(-40 43 142)" stroke="#CB6B4B" stroke-width="1"/>
-            </svg>
-        </div>
+<!-- 3 · THE PATTERN -->
+<section class="block">
+    <div class="wrap-narrow reveal">
+        <span class="eyebrow">The Pattern</span>
+        <h2>You may have noticed.</h2>
+        <ul class="dash-list" style="margin-top: 44px;">
+            <li>Hiring takes longer than it should.</li>
+            <li>The same people problems keep coming back.</li>
+            <li>One leader has quietly become the person everything lands on.</li>
+        </ul>
+        <p class="pattern-callout">That's not a people problem. It's a systems problem — and it's fixable.</p>
+        <a href="scan.html" class="text-link" style="display: inline-block; margin-top: 36px;">See the pattern clearly<span class="arr">→</span></a>
     </div>
 </section>
 
-<!-- WHAT I DO -->
-<section class="whatido">
-    <div class="wrap">
-        <span class="eyebrow">What I Do</span>
-        <h2>Strategic support for the people side of your mission.</h2>
-        <div class="wid-grid">
-            <div class="wid-card">
-                <div class="wid-icon green">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#F6F3EF" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="2.3" stroke="#F6F3EF" stroke-width="1.5"/><path d="M3.5 19C3.5 15.7 6 13.7 9 13.7C12 13.7 14.5 15.7 14.5 19" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14.2C18.4 14.2 20.5 15.8 20.5 18.4" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/></svg>
-                </div>
-                <h3>People Strategy</h3>
-                <p>Align your people practices with your mission, values, and growth goals.</p>
-                <a href="#scan" class="text-link">Learn more<span class="arr">→</span></a>
-            </div>
-            <div class="wid-card">
-                <div class="wid-icon clay">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="9.5" y="3.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><rect x="3.5" y="15.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><rect x="15.5" y="15.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><path d="M12 8V12M12 12H6V15.5M12 12H18V15.5" stroke="#FDF9F4" stroke-width="1.5"/></svg>
-                </div>
-                <h3>Organizational Design</h3>
-                <p>Design structure, roles, and processes that support clarity, collaboration, and impact.</p>
-                <a href="#services" class="text-link">Learn more<span class="arr">→</span></a>
-            </div>
-            <div class="wid-card">
-                <div class="wid-icon green">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 20C12 14 12 10 12 8" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/><path d="M12 11C12 8 9.5 5.5 5.5 5.5C5.5 9.5 8 11.5 12 11.5" stroke="#F6F3EF" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 14.5C12 11.5 14.5 9 18.5 9C18.5 13 16 15 12 15" stroke="#F6F3EF" stroke-width="1.5" stroke-linejoin="round"/></svg>
-                </div>
-                <h3>Culture &amp; Leadership</h3>
-                <p>Strengthen culture and leadership to build trust, engagement, and belonging.</p>
-                <a href="#approach" class="text-link">Learn more<span class="arr">→</span></a>
-            </div>
-            <div class="wid-card">
-                <div class="wid-icon clay">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3.5H14L18.5 8V20.5H6V3.5Z" stroke="#FDF9F4" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 3.5V8H18.5" stroke="#FDF9F4" stroke-width="1.5" stroke-linejoin="round"/><line x1="9" y1="12" x2="15.5" y2="12" stroke="#FDF9F4" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="15.5" x2="15.5" y2="15.5" stroke="#FDF9F4" stroke-width="1.5" stroke-linecap="round"/></svg>
-                </div>
-                <h3>Policies &amp; Systems</h3>
-                <p>Create practical policies and systems that support people and reduce risk.</p>
-                <a href="#pricing" class="text-link">Learn more<span class="arr">→</span></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PAIN -->
+<!-- 4 · HI, I'M DANIELA -->
 <section class="block block-alt">
     <div class="wrap">
-        <div class="pain-inner">
-            <span class="eyebrow">The Problem</span>
-            <h2>When people systems are held together by goodwill, growth gets harder.</h2>
-            <ul class="pain-list">
-                <li>Hiring takes longer than it should.</li>
-                <li>Managers are improvising.</li>
-                <li>People decisions feel inconsistent.</li>
-                <li>Culture depends on good intentions instead of clear and fair systems.</li>
-                <li>Your CEO, COO, or Ops lead has quietly become the HR department — slowing down strategic work, creating decision bottlenecks, and putting too much people risk on one already-stretched leader.</li>
-            </ul>
-            <p class="pain-callout">That is usually not a people problem. It is a systems problem.</p>
-        </div>
-    </div>
-</section>
-
-<!-- COST OF NOT ACTING -->
-<section class="block cost">
-    <div class="wrap">
-        <span class="eyebrow">Why This Matters Now</span>
-        <h2>Ad hoc HR is not a quirk. It is a cost you are already paying.</h2>
-        <p class="lede cost-intro" style="margin-top: 20px;">It rarely shows up as a single dramatic failure. It shows up as turnover you can't quite explain, a hire that goes sideways, or a values statement that doesn't match the last hard decision your team watched you make.</p>
-        <div class="stat-grid">
-            <div class="stat">
-                <div class="stat-number">30–200%</div>
-                <p>Replacing one employee costs 30–200% of their annual salary once recruiting, onboarding, lost productivity, and team disruption are counted.</p>
-                <span class="stat-source">Nonprofit Leadership Alliance; Inspirus</span>
+        <div class="intro-grid reveal">
+            <div class="intro-photo">
+                <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
             </div>
-            <div class="stat">
-                <p class="stat-lead">Top reasons people leave — all symptoms of missing systems, not missing mission:</p>
-                <ul class="stat-breakdown">
-                    <li><span>Too much work, too little support</span><span class="stat-pct">59%</span></li>
-                    <li><span>Limited growth</span><span class="stat-pct">54%</span></li>
-                    <li><span>Unsupportive management</span><span class="stat-pct">52%</span></li>
-                    <li><span>Inadequate pay/benefits</span><span class="stat-pct">50%</span></li>
-                </ul>
-                <span class="stat-source">Social Impact Staff Retention Project, 2023–2024</span>
-            </div>
-            <div class="stat">
-                <div class="stat-number">2.7×</div>
-                <p>Purpose is the single strongest predictor of retention across 59 factors studied — but only when the mission is visible in how decisions actually get made, not just in a values statement.</p>
-                <span class="stat-source">The Strategy Group LLC</span>
+            <div class="intro-copy">
+                <span class="eyebrow">Hi, I'm Daniela</span>
+                <h2>I've built these systems inside the organizations that needed them.</h2>
+                <p>For over a decade I led people and culture work across nonprofits and international NGOs — including building the people function from scratch at an international human rights organization, supporting teams across 13 countries. I started this practice because I kept seeing capable, mission-driven teams held back by the same structural gaps, and leaders carrying weight a well-designed system should carry instead.</p>
+                <p class="pov">My point of view is simple: structure is not bureaucracy. Done well, it's what protects the mission — and the people doing the work.</p>
+                <a href="about.html" class="text-link" style="display: inline-block; margin-top: 12px;">More about me<span class="arr">→</span></a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- THIS IS PROBABLY HAPPENING IF -->
+<!-- 5 · HOW I HELP -->
+<section class="block">
+    <div class="wrap reveal">
+        <span class="eyebrow">How I Help</span>
+        <h2 style="margin-bottom: 64px;">Three ways we can work together.</h2>
+        <ul class="rows">
+            <li>
+                <span class="num">01</span>
+                <h3>See clearly</h3>
+                <p>A three-week diagnostic that identifies what's actually creating the drag — and what to fix first.</p>
+            </li>
+            <li>
+                <span class="num">02</span>
+                <h3>Build what holds</h3>
+                <p>Hiring, onboarding, role clarity, decision structures — the systems your team needs, and nothing more.</p>
+            </li>
+            <li>
+                <span class="num">03</span>
+                <h3>Stay steady</h3>
+                <p>Ongoing counsel as you implement, make decisions, and lead through change.</p>
+            </li>
+        </ul>
+        <a href="services.html" class="text-link" style="display: inline-block; margin-top: 44px;">Explore the work<span class="arr">→</span></a>
+    </div>
+</section>
+
+<!-- 6 · ONE STORY -->
 <section class="block block-alt">
-    <div class="wrap">
-        <div class="familiar-inner">
-            <span class="eyebrow">Sound Familiar?</span>
-            <h2>This is probably happening if…</h2>
-            <ul class="pain-list">
-                <li>Your ED, COO, or ops lead has become the default HR department.</li>
-                <li>Hiring, onboarding, performance, or compensation works differently depending on who handles it.</li>
-                <li>Your values are clear on paper, but harder to translate into daily people decisions.</li>
-                <li>You have payroll, admin, or a fiscal sponsor — but no one owns the people system.</li>
-                <li>One conflict, underperformance issue, or messy exit has revealed how much is unwritten.</li>
-            </ul>
-            <p class="familiar-note">Or maybe things feel mostly fine — and you're not sure whether that's actually true or just that no one's had time to look.</p>
-            <a href="people_systems_snapshot.html" class="btn btn-outline">Take the 3-Minute Snapshot</a>
-        </div>
+    <div class="wrap reveal">
+        <p class="story-quote">"A growing education nonprofit came to the Scan with a stretched team and every people decision improvised from scratch. Three weeks later, leadership had a clear map of what was breaking, what it was costing them, and a 90-day plan for what to fix first."</p>
+        <p class="story-attr">From a People Systems Scan engagement, 2026</p>
     </div>
 </section>
 
-<!-- PEOPLE SYSTEMS SCAN -->
-<section class="block" id="scan">
-    <div class="wrap">
-        <div class="scan-header">
-            <span class="eyebrow">Where We Start</span>
-            <h2>The People Systems Scan</h2>
-            <p class="lede" style="margin-top: 20px;">A focused 3-week diagnostic for growing, mission-driven organizations that need to understand what is creating people-ops friction — and what to fix first.</p>
-        </div>
-        <div class="scan-body">
-            <div class="scan-desc">
-                <p>The Scan helps you see where your people systems are creating drag, risk, or confusion. We identify the recurring patterns, clarify the highest-priority gaps, and translate the findings into a practical 90-day stabilization roadmap your team can actually use.</p>
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary">Start With the Scan</a>
-            </div>
-            <div class="scan-deliverables">
-                <h3>Deliverables</h3>
-                <ul class="del-list">
-                    <li>People systems gap map</li>
-                    <li>Priority risk areas</li>
-                    <li>Leadership debrief</li>
-                    <li>90-day stabilization roadmap</li>
-                    <li>Recommendations for what to build, delegate, or defer</li>
-                </ul>
-            </div>
-        </div>
+<!-- 7 · INVITATION -->
+<section class="cta-band">
+    <div class="wrap reveal">
+        <h2>Ready to build with <em>intention</em>?</h2>
+        <p>One conversation. No pitch — a clear read on what's happening in your organization and whether I can help.</p>
+        <a href="work-together.html" class="btn btn-cream">Book a Conversation</a>
     </div>
 </section>
 
-<!-- 3-WEEK PROCESS -->
-<section class="block block-alt">
-    <div class="wrap">
-        <div class="section-heading">
-            <span class="eyebrow">How It Works</span>
-            <h2>The 3-week process</h2>
-        </div>
-        <div class="cards-3">
-            <div class="soft-card">
-                <span class="card-kicker">Week One</span>
-                <h3>Listen + Review</h3>
-                <p>Kickoff with leadership, review core documents, and identify the gap between what the organization says and what is written down.</p>
-            </div>
-            <div class="soft-card">
-                <span class="card-kicker">Week Two</span>
-                <h3>Pulse + Process Walkthrough</h3>
-                <p>Speak with key stakeholders and walk through one high-friction workflow, such as hiring, onboarding, or performance support.</p>
-            </div>
-            <div class="soft-card">
-                <span class="card-kicker">Week Three</span>
-                <h3>Connect the Dots</h3>
-                <p>Analyze patterns, build the Chaos Map, and deliver a 90-day stabilization roadmap in a leadership debrief.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SERVICES -->
-<section class="block" id="services">
-    <div class="wrap">
-        <div class="section-heading">
-            <span class="eyebrow">Services</span>
-            <h2>How we work together</h2>
-        </div>
-        <div class="cards-3">
-            <div class="soft-card">
-                <span class="card-kicker">01</span>
-                <h3>People Systems Scan</h3>
-                <p>Diagnose what is creating drag, risk, and confusion. A focused 3-week engagement that gives you a clear picture of what to fix first.</p>
-            </div>
-            <div class="soft-card">
-                <span class="card-kicker">02</span>
-                <h3>People Systems Build</h3>
-                <p>Build the highest-priority systems: hiring, onboarding, role clarity, performance rhythms, manager support, and policy foundations.</p>
-            </div>
-            <div class="soft-card">
-                <span class="card-kicker">03</span>
-                <h3>Ongoing Advisory</h3>
-                <p>Support leaders as they implement, make people decisions, and stabilize the system — without becoming the person who gets pulled into everything.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- APPROACH -->
-<section class="block block-alt" id="approach">
-    <div class="wrap">
-        <div class="section-heading">
-            <span class="eyebrow">How I Work</span>
-            <h2>Why my approach is different</h2>
-        </div>
-        <div class="cards-2">
-            <div class="soft-card">
-                <h3>Deep diagnosis before templates</h3>
-                <p>I do not start by handing you generic HR documents. I look for the patterns underneath the recurring problems.</p>
-            </div>
-            <div class="soft-card">
-                <h3>Enough structure, no bloat</h3>
-                <p>I build people systems small teams can actually use — clear, practical, and proportionate to your stage.</p>
-            </div>
-            <div class="soft-card">
-                <h3>Fairness with practicality</h3>
-                <p>The goal is not HR for HR's sake. It is clearer decisions, lower risk, and a workplace where people know what to expect.</p>
-            </div>
-            <div class="soft-card">
-                <h3>Built for mission-driven realities</h3>
-                <p>I understand lean teams, donor pressure, distributed work, global complexity, and values-driven cultures where the people experience has to reflect the mission.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PRICING -->
-<section class="block" id="pricing">
-    <div class="wrap">
-        <div class="section-heading">
-            <span class="eyebrow">Investment</span>
-            <h2>How we can work together</h2>
-        </div>
-        <div class="pricing-note">
-            <h4>A note on pricing</h4>
-            <p>My pricing is value-based and scope-based. The ranges below reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing may be calibrated based on local market context, organizational budget, and scope.</p>
-            <p>The goal is a fair engagement: one that reflects the value of the work, the complexity of the problem, and the realities of the organization.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-card featured">
-                <p class="price-kicker">Start Here</p>
-                <h3>The People Systems Scan</h3>
-                <p class="price-typical">Typical investment</p>
-                <div class="price-amount">USD $3,500+</div>
-                <p class="price-note">A focused 3-week diagnostic for growing organizations experiencing recurring people-ops friction, unclear ownership, inconsistent processes, or leadership time being pulled into preventable issues.</p>
-                <ul class="price-features">
-                    <li>People systems gap map</li>
-                    <li>Priority risk areas</li>
-                    <li>Leadership debrief</li>
-                    <li>90-day stabilization roadmap</li>
-                    <li>Recommendations: build, delegate, or defer</li>
-                </ul>
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary">Start With the Scan</a>
-                <p class="price-context">Pricing is calibrated based on organization size, country/market context, urgency, and the level of support needed. Ecuador-based and Latin America-based organizations may qualify for market-adjusted pricing.</p>
-            </div>
-            <div class="price-card">
-                <p class="price-kicker"></p>
-                <h3>People Systems Build</h3>
-                <p class="price-typical">Typical investment</p>
-                <div class="price-amount">USD $8,000–$20,000+</div>
-                <p class="price-note">For organizations ready to build or improve priority people systems such as hiring, onboarding, role clarity, performance rhythms, manager support, or policy foundations.</p>
-                <ul class="price-features">
-                    <li>Build highest-priority people systems</li>
-                    <li>Hiring, onboarding, role clarity</li>
-                    <li>Performance rhythms &amp; manager support</li>
-                    <li>Policy foundations</li>
-                    <li>Implementation support &amp; team handoff</li>
-                </ul>
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline">Let's Talk</a>
-                <p class="price-context">Final pricing depends on the number of systems involved, team size, stakeholder complexity, implementation support, and market context. Ecuador-based and Latin America-based organizations may qualify for adjusted pricing.</p>
-            </div>
-            <div class="price-card">
-                <p class="price-kicker"></p>
-                <h3>Ongoing Advisory</h3>
-                <p class="price-typical">Typical investment</p>
-                <div class="price-amount">USD $2,500–$6,000/mo</div>
-                <p class="price-note">For leaders who need steady support while implementing people systems, making people decisions, and reducing recurring escalations.</p>
-                <ul class="price-features">
-                    <li>Senior People &amp; Culture guidance</li>
-                    <li>Ongoing systems implementation</li>
-                    <li>Leadership advisory support</li>
-                    <li>Team friction &amp; culture work</li>
-                    <li>Flexible embedded engagement</li>
-                </ul>
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline">Let's Talk</a>
-                <p class="price-context">Advisory pricing depends on cadence, response time, team complexity, and whether the engagement is local, regional, or global in scope.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- QUOTE BAND -->
-<section class="quote-band">
-    <div class="wrap">
-        <div class="quote-grid">
-            <div class="quote-left">
-                <span class="quote-marks">&ldquo;</span>
-                <blockquote>Leaders consistently say their stated values are hardest to see — not in the mission statement, but in the rushed decisions made under pressure: who gets hired, who gets a raise, who gets let go, and how.</blockquote>
-                <cite>Howard Consulting</cite>
-            </div>
-            <div class="quote-cta">
-                <div class="quote-cta-icon">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 22C13 15 13 11 13 8.5" stroke="#F6F3EF" stroke-width="1.3" stroke-linecap="round"/><path d="M13 12C13 8.5 10 5.5 5.5 5.5C5.5 10 8.5 12.5 13 12.5" stroke="#F6F3EF" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 15.5C13 12 16 9.5 20.5 9.5C20.5 14 17.5 16 13 16" stroke="#F6F3EF" stroke-width="1.3" stroke-linejoin="round"/></svg>
-                </div>
-                <p>Ready to build an organization with intention?</p>
-                <a href="https://cal.com/danielareinoso/discovery-call">Let's Connect <span class="arr">→</span></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
+<footer class="site-footer">
     <div class="wrap">
         <div class="footer-logo">
-            <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="20" cy="20" r="12" stroke="#234F45" stroke-width="1"/>
                 <line x1="20" y1="8" x2="9" y2="26" stroke="#234F45" stroke-width="0.8"/>
                 <line x1="20" y1="8" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
@@ -918,11 +215,11 @@
             <span class="brand-word">Daniela<br>Reinoso</span>
         </div>
         <ul class="footer-nav">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#approach">Approach</a></li>
-            <li><a href="#pricing">Investment</a></li>
-            <li><a href="people_systems_snapshot.html">Resources</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="approach.html">Approach</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="scan.html">The Scan</a></li>
+            <li><a href="people_systems_snapshot.html">The Snapshot</a></li>
         </ul>
         <div class="footer-social">
             <a href="https://linkedin.com/in/danielareinoso" target="_blank" aria-label="LinkedIn">
@@ -933,10 +230,11 @@
             </a>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 Daniela Reinoso Consulting &nbsp;|&nbsp; <a href="https://danielareinoso.co">danielareinoso.co</a> &nbsp;|&nbsp; <a href="mailto:daniela@danielareinoso.co">daniela@danielareinoso.co</a>
+            &copy; 2026 Daniela Reinoso &nbsp;|&nbsp; <a href="https://danielareinoso.co">danielareinoso.co</a> &nbsp;|&nbsp; <a href="mailto:daniela@danielareinoso.co">daniela@danielareinoso.co</a>
         </div>
     </div>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>
