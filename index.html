@@ -25,6 +25,7 @@
             --green-deep: #1B3B34;
             --teal: #0F4C5C;
             --clay: #CB6B4B;
+            --clay-dark: #B85C3D;
             --bg: #F6F3EF;
             --card: #FDF9F4;
             --ink: #333333;
@@ -39,13 +40,11 @@
             background: var(--bg);
             color: var(--ink);
             line-height: 1.75;
-            font-size: 16.5px;
-            font-weight: 400;
+            font-size: 16px;
             -webkit-font-smoothing: antialiased;
         }
         ::selection { background: rgba(203,107,75,0.18); }
-
-        h1, h2, h3.serif {
+        h1, h2 {
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-weight: 500;
             color: var(--green);
@@ -53,373 +52,415 @@
 
         /* ── NAV ── */
         nav {
-            background: rgba(246,243,239,0.92);
+            background: rgba(246,243,239,0.94);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--hairline);
-            padding: 0 56px;
+            padding: 0 48px;
             display: flex; align-items: center; justify-content: space-between;
-            height: 78px;
+            height: 84px;
             position: sticky; top: 0; z-index: 100;
         }
-        .nav-brand {
+        .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .nav-brand svg { flex-shrink: 0; }
+        .brand-word {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 21px; font-weight: 600; letter-spacing: 0.02em;
-            color: var(--green); text-decoration: none;
+            font-size: 17px; font-weight: 600; letter-spacing: 0.24em;
+            text-transform: uppercase; color: var(--green); line-height: 1.35;
         }
-        .nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
+        .nav-links { display: flex; gap: 34px; list-style: none; align-items: center; }
         .nav-links a {
-            font-size: 13.5px; font-weight: 400; color: var(--ink);
-            text-decoration: none; letter-spacing: 0.01em;
-            transition: color 0.25s;
+            font-size: 11.5px; font-weight: 500; color: var(--ink);
+            letter-spacing: 0.14em; text-transform: uppercase;
+            text-decoration: none; transition: color 0.25s;
         }
         .nav-links a:hover { color: var(--clay); }
         .nav-cta {
-            border: 1px solid var(--green);
-            color: var(--green) !important;
-            padding: 10px 24px;
-            font-size: 12px !important;
-            letter-spacing: 0.12em !important;
-            text-transform: uppercase;
-            transition: all 0.25s !important;
+            background: var(--clay);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 3px;
+            transition: background 0.25s !important;
         }
-        .nav-cta:hover { background: var(--green); color: var(--bg) !important; }
+        .nav-cta:hover { background: var(--clay-dark); color: var(--white) !important; }
 
         /* ── BUTTONS ── */
         .btn {
             display: inline-block;
-            padding: 17px 38px;
-            font-size: 12.5px; font-weight: 500;
+            padding: 16px 32px;
+            font-size: 11.5px; font-weight: 500;
             letter-spacing: 0.14em; text-transform: uppercase;
             text-decoration: none; cursor: pointer;
-            border: 1px solid transparent;
+            border: 1px solid transparent; border-radius: 3px;
             transition: all 0.3s ease;
         }
         .btn-primary { background: var(--green); color: var(--bg); border-color: var(--green); }
         .btn-primary:hover { background: var(--green-deep); border-color: var(--green-deep); }
-        .btn-outline { background: transparent; color: var(--green); border-color: var(--green); }
-        .btn-outline:hover { background: var(--green); color: var(--bg); }
-        .btn-cream { background: var(--bg); color: var(--green); border-color: var(--bg); }
-        .btn-cream:hover { background: transparent; color: var(--bg); border-color: var(--bg); }
+        .btn-outline { background: transparent; color: var(--ink); border-color: #B9B2A6; }
+        .btn-outline:hover { border-color: var(--green); color: var(--green); }
+        .btn-clay { background: var(--clay); color: var(--white); border-color: var(--clay); }
+        .btn-clay:hover { background: var(--clay-dark); border-color: var(--clay-dark); }
         .text-link {
-            font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-            color: var(--clay); text-decoration: none;
-            border-bottom: 1px solid rgba(203,107,75,0.35);
-            padding-bottom: 3px;
-            transition: border-color 0.25s;
+            font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--green); text-decoration: none;
+            transition: color 0.25s;
         }
-        .text-link:hover { border-color: var(--clay); }
+        .text-link:hover { color: var(--clay); }
+        .text-link .arr { display: inline-block; transition: transform 0.25s; margin-left: 6px; }
+        .text-link:hover .arr { transform: translateX(4px); }
 
         /* ── LAYOUT ── */
-        .wrap { max-width: 1060px; margin: 0 auto; padding: 0 56px; }
-        section { padding: 128px 0; }
-        .section-label {
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+        .eyebrow {
             font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
             text-transform: uppercase; color: var(--clay);
-            margin-bottom: 26px; display: block;
+            margin-bottom: 22px; display: block;
         }
-        .rule {
-            width: 44px; height: 1px; background: var(--clay);
-            border: none; margin: 34px 0 0;
-        }
-        h2 {
-            font-size: clamp(34px, 4.2vw, 50px);
-            line-height: 1.15;
-            letter-spacing: -0.005em;
-        }
-        .lede { font-size: 18px; color: var(--ink-soft); line-height: 1.8; }
+        h2 { font-size: clamp(32px, 3.8vw, 44px); line-height: 1.18; }
 
         /* ── HERO ── */
-        .hero { background: var(--bg); padding: 130px 0 110px; }
-        .hero-inner { max-width: 880px; }
+        .hero { padding: 0; }
+        .hero-grid {
+            max-width: 1240px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.05fr 1fr;
+            align-items: center; gap: 64px;
+            padding: 0 48px;
+            min-height: 560px;
+        }
+        .hero-copy { padding: 80px 0; max-width: 520px; }
         .hero h1 {
-            font-size: clamp(48px, 7vw, 78px);
-            line-height: 1.06;
-            letter-spacing: -0.01em;
+            font-size: clamp(42px, 4.8vw, 58px);
+            line-height: 1.12;
             margin-bottom: 0;
         }
-        .hero h1 em { font-style: italic; color: var(--clay); }
-        .hero .rule { margin: 42px 0; }
+        .hero h1 em { font-style: normal; color: var(--clay); }
+        .hero-rule { width: 40px; height: 2px; background: var(--clay); border: none; margin: 30px 0; }
         .hero-sub {
-            font-size: 18.5px; line-height: 1.85; color: var(--ink-soft);
-            max-width: 560px; margin-bottom: 52px;
+            font-size: 16px; line-height: 1.85; color: var(--ink-soft);
+            margin-bottom: 40px;
         }
-        .hero-actions { display: flex; gap: 36px; align-items: center; flex-wrap: wrap; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-photo { height: 100%; min-height: 560px; position: relative; }
+        .hero-photo img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%; object-fit: cover;
+            display: block;
+        }
 
-        /* ── VALUES ── */
-        .values { padding: 96px 0; border-top: 1px solid var(--hairline); }
-        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 56px; }
+        /* ── VALUES STRIP ── */
+        .values { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 72px 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .value { padding: 0 40px; text-align: left; }
+        .value + .value { border-left: 1px solid var(--hairline); }
+        .value-icon { width: 44px; height: 44px; margin-bottom: 20px; }
         .value h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 11.5px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--green);
-            margin-bottom: 14px;
+            font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--ink); margin-bottom: 12px;
         }
-        .value p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; }
-        .value::before {
-            content: ''; display: block;
-            width: 28px; height: 1px; background: var(--clay);
+        .value p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+
+        /* ── ABOUT INTRO ── */
+        .about-intro { padding: 0; position: relative; overflow: hidden; }
+        .about-grid {
+            display: grid; grid-template-columns: 0.95fr 1.05fr;
+            align-items: center; gap: 88px;
+        }
+        .about-photo { min-height: 520px; position: relative; }
+        .about-photo img {
+            position: absolute; inset: 0;
+            width: 100%; height: 100%; object-fit: cover; display: block;
+        }
+        .about-copy { padding: 88px 48px 88px 0; max-width: 620px; position: relative; z-index: 1; }
+        .about-copy h2 { margin-bottom: 26px; }
+        .about-copy p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 18px; }
+        .about-facts { margin: 30px 0 34px; display: flex; gap: 32px; flex-wrap: wrap; }
+        .about-facts span {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+            text-transform: uppercase; color: var(--green);
+        }
+        .botanical {
+            position: absolute; right: -190px; bottom: -50px;
+            width: 220px; opacity: 0.3; pointer-events: none;
+        }
+        @media (max-width: 1280px) { .botanical { display: none; } }
+
+        /* ── WHAT I DO ── */
+        .whatido { padding: 110px 0; text-align: center; }
+        .whatido .eyebrow { text-align: center; }
+        .whatido h2 { max-width: 640px; margin: 0 auto 64px; }
+        .wid-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: left; }
+        .wid-card {
+            background: var(--card);
+            border: 1px solid var(--hairline);
+            border-radius: 6px;
+            padding: 36px 28px 30px;
+            display: flex; flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .wid-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(35,79,69,0.08); }
+        .wid-icon {
+            width: 52px; height: 52px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
             margin-bottom: 22px;
         }
+        .wid-icon.green { background: var(--green); }
+        .wid-icon.clay { background: var(--clay); }
+        .wid-card h3 {
+            font-size: 12px; font-weight: 600; letter-spacing: 0.16em;
+            text-transform: uppercase; color: var(--ink); margin-bottom: 12px;
+        }
+        .wid-card p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 22px; }
+        .wid-card .text-link { margin-top: auto; font-size: 10.5px; }
+
+        /* ── SHARED SECTIONS ── */
+        section.block { padding: 110px 0; }
+        .block-alt { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+        .lede { font-size: 17px; color: var(--ink-soft); line-height: 1.85; }
 
         /* ── PAIN ── */
-        .pain { background: var(--card); border-top: 1px solid var(--hairline); }
-        .pain-inner { max-width: 720px; }
-        .pain h2 { margin-bottom: 56px; }
+        .pain-inner { max-width: 700px; }
+        .pain-inner h2 { margin-bottom: 44px; }
         .pain-list { list-style: none; }
         .pain-list li {
-            font-size: 17px; color: var(--ink); line-height: 1.7;
-            padding: 22px 0 22px 36px; position: relative;
+            font-size: 16px; color: var(--ink); line-height: 1.7;
+            padding: 18px 0 18px 34px; position: relative;
             border-top: 1px solid var(--hairline);
         }
         .pain-list li:last-child { border-bottom: 1px solid var(--hairline); }
-        .pain-list li::before {
-            content: '—'; position: absolute; left: 0; top: 22px;
-            color: var(--clay);
-        }
+        .pain-list li::before { content: '—'; position: absolute; left: 0; top: 18px; color: var(--clay); }
         .pain-callout {
-            margin-top: 64px;
+            margin-top: 52px;
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(24px, 3vw, 32px); font-style: italic;
-            color: var(--green); line-height: 1.4;
+            font-size: clamp(22px, 2.6vw, 28px); font-style: italic;
+            color: var(--green); line-height: 1.45;
         }
 
         /* ── COST ── */
-        .cost { border-top: 1px solid var(--hairline); }
-        .cost h2 { max-width: 700px; margin-bottom: 24px; }
-        .cost-intro { max-width: 640px; margin-bottom: 88px; }
-        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
-        .stat { border-top: 1px solid var(--green); padding-top: 34px; }
+        .cost h2 { max-width: 660px; margin-bottom: 22px; }
+        .cost-intro { max-width: 620px; margin-bottom: 72px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .stat {
+            background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
+            padding: 38px 32px; display: flex; flex-direction: column;
+        }
         .stat-number {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 60px; font-weight: 500; color: var(--green);
-            line-height: 1; margin-bottom: 22px; letter-spacing: -0.01em;
+            font-size: 52px; font-weight: 500; color: var(--green);
+            line-height: 1; margin-bottom: 18px;
         }
-        .stat p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 18px; }
-        .stat-lead { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.65; margin-bottom: 20px; }
-        .stat-breakdown { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        .stat p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 16px; }
+        .stat-lead { font-size: 14px; font-weight: 500; color: var(--ink); line-height: 1.65; margin-bottom: 18px; }
+        .stat-breakdown { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
         .stat-breakdown li {
-            display: flex; justify-content: space-between; gap: 14px;
-            font-size: 14px; color: var(--ink-soft); line-height: 1.5;
-            padding-bottom: 12px; border-bottom: 1px solid var(--hairline);
+            display: flex; justify-content: space-between; gap: 12px;
+            font-size: 13.5px; color: var(--ink-soft); line-height: 1.5;
+            padding-bottom: 10px; border-bottom: 1px solid var(--hairline);
         }
         .stat-breakdown .stat-pct { font-weight: 600; color: var(--clay); flex-shrink: 0; }
-        .stat-source { font-size: 12px; color: var(--ink-soft); font-style: italic; opacity: 0.75; }
-        .cost-quote { max-width: 760px; margin: 104px auto 0; text-align: center; }
-        .cost-quote blockquote {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(23px, 2.8vw, 30px); font-style: italic;
-            color: var(--green); line-height: 1.45; margin-bottom: 26px;
-        }
-        .cost-quote cite {
-            font-family: 'Inter', sans-serif; font-style: normal;
-            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--ink-soft);
-        }
+        .stat-source { font-size: 11.5px; color: var(--ink-soft); font-style: italic; opacity: 0.75; margin-top: auto; }
 
         /* ── FAMILIAR ── */
-        .familiar { background: var(--card); border-top: 1px solid var(--hairline); }
-        .familiar-inner { max-width: 720px; }
-        .familiar h2 { margin-bottom: 56px; }
+        .familiar-inner { max-width: 700px; }
+        .familiar-inner h2 { margin-bottom: 44px; }
         .familiar-note {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 22px; font-style: italic; color: var(--ink-soft);
-            line-height: 1.55; margin-top: 48px; max-width: 620px;
+            font-size: 20px; font-style: italic; color: var(--ink-soft);
+            line-height: 1.55; margin-top: 40px;
         }
-        .familiar .btn { margin-top: 44px; }
+        .familiar-inner .btn { margin-top: 36px; }
 
         /* ── SCAN ── */
-        .scan { border-top: 1px solid var(--hairline); }
-        .scan-header { margin-bottom: 80px; max-width: 720px; }
-        .scan-header h2 { margin-bottom: 26px; }
-        .scan-body { display: grid; grid-template-columns: 1.1fr 1fr; gap: 96px; align-items: start; }
-        .scan-desc p { font-size: 16.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 44px; }
+        .scan-header { max-width: 700px; margin-bottom: 64px; }
+        .scan-header h2 { margin-bottom: 22px; }
+        .scan-body { display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start; }
+        .scan-desc p { font-size: 16px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 36px; }
         .scan-deliverables {
-            background: var(--card);
-            border: 1px solid var(--hairline);
-            padding: 48px 44px;
+            background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
+            padding: 42px 40px;
         }
         .scan-deliverables h3 {
-            font-family: 'Inter', sans-serif;
             font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--green); margin-bottom: 30px;
+            text-transform: uppercase; color: var(--green); margin-bottom: 24px;
         }
         .del-list { list-style: none; }
         .del-list li {
-            font-size: 15px; color: var(--ink); line-height: 1.6;
-            padding: 14px 0 14px 26px; position: relative;
+            font-size: 14.5px; color: var(--ink); line-height: 1.6;
+            padding: 12px 0 12px 26px; position: relative;
             border-top: 1px solid var(--hairline);
         }
         .del-list li:first-child { border-top: none; padding-top: 0; }
         .del-list li:first-child::before { top: 0; }
-        .del-list li::before {
-            content: '—'; position: absolute; left: 0; top: 14px; color: var(--clay);
-        }
+        .del-list li::before { content: '—'; position: absolute; left: 0; top: 12px; color: var(--clay); }
 
-        /* ── PROCESS / SERVICES / APPROACH shared ── */
-        .section-heading { margin-bottom: 76px; }
-        .cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
-        .cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 64px 88px; }
-        .col-item { border-top: 1px solid var(--hairline); padding-top: 34px; }
-        .col-num {
+        /* ── PROCESS / SERVICES / APPROACH ── */
+        .section-heading { margin-bottom: 60px; }
+        .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .soft-card {
+            background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
+            padding: 36px 30px;
+        }
+        .block-alt .soft-card { background: var(--bg); }
+        .card-kicker {
+            font-size: 10.5px; font-weight: 600; letter-spacing: 0.18em;
+            text-transform: uppercase; color: var(--clay); margin-bottom: 14px; display: block;
+        }
+        .soft-card h3 {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 30px; font-style: italic; color: var(--clay);
-            line-height: 1; margin-bottom: 20px; display: block;
+            font-size: 23px; font-weight: 500; color: var(--green);
+            line-height: 1.25; margin-bottom: 12px;
         }
-        .col-kicker {
-            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--clay); margin-bottom: 18px; display: block;
-        }
-        .col-item h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 25px; font-weight: 500; color: var(--green);
-            line-height: 1.25; margin-bottom: 16px;
-        }
-        .col-item p { font-size: 15px; color: var(--ink-soft); line-height: 1.8; }
-
-        .process { background: var(--card); border-top: 1px solid var(--hairline); }
-        .next { border-top: 1px solid var(--hairline); }
-        .approach { background: var(--card); border-top: 1px solid var(--hairline); }
-
-        /* ── FOUNDER ── */
-        .founder { border-top: 1px solid var(--hairline); }
-        .founder-inner { display: grid; grid-template-columns: 300px 1fr; gap: 96px; align-items: start; }
-        .founder-photo img {
-            width: 100%; height: auto; display: block;
-            border-radius: 2px;
-        }
-        .founder-content h2 { margin-bottom: 36px; }
-        .founder-content p { font-size: 16.5px; color: var(--ink-soft); line-height: 1.9; margin-bottom: 24px; }
-        .founder-facts {
-            margin-top: 44px; padding-top: 30px;
-            border-top: 1px solid var(--hairline);
-            display: flex; gap: 40px; flex-wrap: wrap;
-        }
-        .founder-facts span {
-            font-size: 11.5px; font-weight: 600; letter-spacing: 0.16em;
-            text-transform: uppercase; color: var(--green);
-        }
+        .soft-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; }
 
         /* ── PRICING ── */
-        .pricing { background: var(--card); border-top: 1px solid var(--hairline); }
-        .pricing-note {
-            max-width: 720px; margin-bottom: 88px;
-        }
+        .pricing-note { max-width: 700px; margin-bottom: 64px; }
         .pricing-note h4 {
             font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--green); margin-bottom: 18px;
+            text-transform: uppercase; color: var(--green); margin-bottom: 14px;
         }
-        .pricing-note p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; }
-        .pricing-note p + p { margin-top: 14px; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .pricing-note p { font-size: 15px; color: var(--ink-soft); line-height: 1.85; }
+        .pricing-note p + p { margin-top: 12px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .price-card {
-            background: var(--bg);
-            border: 1px solid var(--hairline);
-            padding: 52px 40px 44px;
+            background: var(--bg); border: 1px solid var(--hairline); border-radius: 6px;
+            padding: 44px 34px 38px;
             display: flex; flex-direction: column;
         }
         .price-card.featured { border-color: var(--green); }
         .price-kicker {
             font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em;
-            text-transform: uppercase; color: var(--clay); margin-bottom: 16px;
-            min-height: 16px;
+            text-transform: uppercase; color: var(--clay); margin-bottom: 14px; min-height: 15px;
         }
         .price-card h3 {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 26px; font-weight: 500; color: var(--green);
-            line-height: 1.2; margin-bottom: 22px;
+            font-size: 24px; font-weight: 500; color: var(--green);
+            line-height: 1.2; margin-bottom: 18px;
+        }
+        .price-typical {
+            font-size: 10px; font-weight: 500; letter-spacing: 0.16em;
+            text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px;
         }
         .price-amount {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 34px; font-weight: 500; color: var(--ink);
-            margin-bottom: 4px; letter-spacing: -0.01em;
+            font-size: 30px; font-weight: 500; color: var(--ink); margin-bottom: 4px;
         }
-        .price-typical {
-            font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em;
-            text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px;
-        }
-        .price-note { font-size: 14px; color: var(--ink-soft); margin: 18px 0 26px; line-height: 1.7; }
-        .price-features { list-style: none; margin-bottom: 36px; }
+        .price-note { font-size: 13.5px; color: var(--ink-soft); margin: 16px 0 22px; line-height: 1.7; }
+        .price-features { list-style: none; margin-bottom: 30px; }
         .price-features li {
-            font-size: 14px; color: var(--ink); line-height: 1.55;
-            padding: 11px 0 11px 24px; position: relative;
+            font-size: 13.5px; color: var(--ink); line-height: 1.55;
+            padding: 10px 0 10px 24px; position: relative;
             border-top: 1px solid var(--hairline);
         }
-        .price-features li::before {
-            content: '—'; position: absolute; left: 0; top: 11px; color: var(--clay);
-        }
+        .price-features li::before { content: '—'; position: absolute; left: 0; top: 10px; color: var(--clay); }
         .price-card .btn { text-align: center; margin-top: auto; }
         .price-context {
-            font-size: 12.5px; color: var(--ink-soft); line-height: 1.7;
-            margin-top: 24px; font-style: italic; opacity: 0.85;
+            font-size: 12px; color: var(--ink-soft); line-height: 1.65;
+            margin-top: 20px; font-style: italic; opacity: 0.85;
         }
 
-        /* ── FINAL CTA ── */
-        .final-cta { background: var(--green); text-align: center; padding: 140px 0; }
-        .final-cta-inner { max-width: 680px; margin: 0 auto; }
-        .final-cta h2 {
-            color: var(--bg);
-            font-size: clamp(38px, 5vw, 58px);
-            margin-bottom: 30px;
+        /* ── QUOTE BAND ── */
+        .quote-band { background: var(--green); padding: 88px 0; }
+        .quote-grid {
+            display: grid; grid-template-columns: 1.4fr 1fr;
+            gap: 80px; align-items: center;
         }
-        .final-cta h2 em { font-style: italic; color: #E7C3AF; }
-        .final-cta p {
-            font-size: 17px; color: rgba(246,243,239,0.75);
-            line-height: 1.85; margin-bottom: 52px;
-            max-width: 560px; margin-left: auto; margin-right: auto;
+        .quote-left { position: relative; padding-left: 70px; }
+        .quote-marks {
+            position: absolute; left: 0; top: -8px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 90px; line-height: 1; color: var(--clay); font-weight: 600;
         }
+        .quote-left blockquote {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(22px, 2.6vw, 29px); color: var(--bg);
+            line-height: 1.45; margin-bottom: 20px;
+        }
+        .quote-left cite {
+            font-style: normal; font-size: 10.5px; font-weight: 600;
+            letter-spacing: 0.2em; text-transform: uppercase;
+            color: rgba(246,243,239,0.6);
+        }
+        .quote-cta { border-left: 1px solid rgba(246,243,239,0.2); padding-left: 60px; }
+        .quote-cta-icon {
+            width: 56px; height: 56px; border-radius: 50%;
+            border: 1px solid rgba(246,243,239,0.4);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 24px;
+        }
+        .quote-cta p {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 26px; color: var(--bg); line-height: 1.35; margin-bottom: 24px;
+        }
+        .quote-cta a {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.18em;
+            text-transform: uppercase; color: #E7C3AF; text-decoration: none;
+            transition: color 0.25s;
+        }
+        .quote-cta a:hover { color: var(--white); }
 
         /* ── FOOTER ── */
-        footer { background: var(--green-deep); padding: 72px 0 48px; }
-        .footer-inner {
-            max-width: 1060px; margin: 0 auto; padding: 0 56px;
-            display: flex; justify-content: space-between; align-items: flex-start;
-            gap: 40px; flex-wrap: wrap;
+        footer { background: var(--bg); padding: 72px 0 44px; text-align: center; }
+        .footer-logo { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 34px; }
+        .footer-logo .brand-word { font-size: 15px; }
+        .footer-nav { display: flex; gap: 34px; justify-content: center; list-style: none; margin-bottom: 34px; flex-wrap: wrap; }
+        .footer-nav a {
+            font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+            color: var(--ink-soft); text-decoration: none; transition: color 0.25s;
         }
-        .footer-brand h3 {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 22px; font-weight: 500; color: var(--bg); margin-bottom: 10px;
+        .footer-nav a:hover { color: var(--clay); }
+        .footer-social { display: flex; gap: 18px; justify-content: center; margin-bottom: 40px; }
+        .footer-social a {
+            width: 38px; height: 38px; border-radius: 50%;
+            border: 1px solid var(--hairline);
+            display: flex; align-items: center; justify-content: center;
+            transition: border-color 0.25s;
         }
-        .footer-brand p { font-size: 13.5px; color: rgba(246,243,239,0.55); max-width: 300px; line-height: 1.7; }
-        .footer-contact { font-size: 13.5px; line-height: 2.3; color: rgba(246,243,239,0.55); }
-        .footer-contact a { color: rgba(246,243,239,0.75); text-decoration: none; transition: color 0.25s; }
-        .footer-contact a:hover { color: var(--bg); }
+        .footer-social a:hover { border-color: var(--clay); }
         .footer-bottom {
-            max-width: 1060px; margin: 48px auto 0; padding: 28px 56px 0;
-            border-top: 1px solid rgba(246,243,239,0.12);
-            font-size: 12px; color: rgba(246,243,239,0.35);
+            border-top: 1px solid var(--hairline);
+            padding-top: 26px;
+            font-size: 12px; color: var(--ink-soft);
         }
+        .footer-bottom a { color: var(--ink-soft); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--clay); }
 
         /* ── RESPONSIVE ── */
         .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
-        .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--green); transition: all 0.3s; }
+        .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--green); }
         .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--hairline); padding: 16px 24px; gap: 4px; }
-        .nav-mobile a { font-size: 15px; color: var(--ink); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--hairline); display: block; }
+        .nav-mobile a { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 13px 0; border-bottom: 1px solid var(--hairline); display: block; }
         .nav-mobile a:last-child { border-bottom: none; }
-        .nav-mobile a.nav-cta { border: 1px solid var(--green); color: var(--green) !important; padding: 12px 20px; text-align: center; margin-top: 12px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+        .nav-mobile a.nav-cta { background: var(--clay); color: var(--white) !important; padding: 13px 20px; border-radius: 3px; text-align: center; margin-top: 12px; }
 
+        @media (max-width: 960px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 0; padding: 0; min-height: 0; }
+            .hero-copy { padding: 64px 24px 56px; max-width: 100%; }
+            .hero-photo { min-height: 340px; }
+            .values-grid { grid-template-columns: 1fr 1fr; gap: 40px 0; }
+            .value { padding: 0 28px; }
+            .value:nth-child(3) { border-left: none; }
+            .about-grid { grid-template-columns: 1fr; gap: 0; padding: 0; }
+            .about-photo { min-height: 380px; }
+            .about-copy { padding: 56px 24px; max-width: 100%; }
+            .wid-grid { grid-template-columns: 1fr 1fr; }
+            .quote-grid { grid-template-columns: 1fr; gap: 48px; }
+            .quote-cta { border-left: none; padding-left: 70px; }
+        }
         @media (max-width: 860px) {
-            nav { padding: 0 24px; }
+            nav { padding: 0 20px; }
             .nav-hamburger { display: flex; }
             .nav-links { display: none; }
             .wrap { padding: 0 24px; }
-            section { padding: 80px 0; }
-            .hero { padding: 80px 0 72px; }
-            .hero .rule { margin: 32px 0; }
-            .values { padding: 64px 0; }
-            .values-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-            .stat-grid, .cols-3, .pricing-grid { grid-template-columns: 1fr; gap: 48px; }
-            .cols-2 { grid-template-columns: 1fr; gap: 48px; }
-            .scan-body { grid-template-columns: 1fr; gap: 56px; }
-            .founder-inner { grid-template-columns: 1fr; gap: 48px; }
-            .founder-photo img { max-width: 280px; }
-            .footer-inner { flex-direction: column; gap: 28px; padding: 0 24px; }
-            .footer-bottom { padding: 28px 24px 0; }
-            .final-cta { padding: 96px 0; }
+            section.block, .whatido { padding: 72px 0; }
+            .stat-grid, .cards-3, .pricing-grid, .wid-grid { grid-template-columns: 1fr; }
+            .cards-2 { grid-template-columns: 1fr; }
+            .scan-body { grid-template-columns: 1fr; gap: 44px; }
+            .quote-left, .quote-cta { padding-left: 0; }
+            .quote-marks { position: static; display: block; margin-bottom: 8px; font-size: 64px; }
         }
-        @media (max-width: 480px) {
-            .values-grid { grid-template-columns: 1fr; }
-            .hero-actions { gap: 24px; }
+        @media (max-width: 560px) {
+            .values-grid { grid-template-columns: 1fr; gap: 36px; }
+            .value + .value { border-left: none; }
         }
     </style>
 </head>
@@ -427,14 +468,27 @@
 
 <!-- NAV -->
 <nav>
-    <a href="#" class="nav-brand">Daniela Reinoso</a>
+    <a href="#" class="nav-brand">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="12" stroke="#234F45" stroke-width="1"/>
+            <line x1="20" y1="8" x2="9" y2="26" stroke="#234F45" stroke-width="0.8"/>
+            <line x1="20" y1="8" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
+            <line x1="9" y1="26" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
+            <line x1="20" y1="8" x2="20" y2="32" stroke="#234F45" stroke-width="0.8"/>
+            <circle cx="20" cy="8" r="3" fill="#234F45"/>
+            <circle cx="9" cy="26" r="3" fill="#CB6B4B"/>
+            <circle cx="31" cy="26" r="3" fill="#6E675E"/>
+            <circle cx="20" cy="32" r="2.4" fill="#234F45"/>
+        </svg>
+        <span class="brand-word">Daniela<br>Reinoso</span>
+    </a>
     <ul class="nav-links">
-        <li><a href="#scan">The Scan</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#approach">Approach</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#scan">The Scan</a></li>
         <li><a href="#pricing">Investment</a></li>
-        <li><a href="people_systems_snapshot.html">Snapshot</a></li>
+        <li><a href="people_systems_snapshot.html">Resources</a></li>
         <li><a href="mailto:daniela@danielareinoso.co" class="nav-cta">Let's Connect</a></li>
     </ul>
     <button class="nav-hamburger" onclick="document.getElementById('mobile-menu').style.display = document.getElementById('mobile-menu').style.display === 'flex' ? 'none' : 'flex'" aria-label="Menu">
@@ -442,47 +496,70 @@
     </button>
 </nav>
 <div id="mobile-menu" class="nav-mobile">
-    <a href="#scan" onclick="document.getElementById('mobile-menu').style.display='none'">The Scan</a>
+    <a href="#about" onclick="document.getElementById('mobile-menu').style.display='none'">About</a>
     <a href="#services" onclick="document.getElementById('mobile-menu').style.display='none'">Services</a>
     <a href="#approach" onclick="document.getElementById('mobile-menu').style.display='none'">Approach</a>
-    <a href="#about" onclick="document.getElementById('mobile-menu').style.display='none'">About</a>
+    <a href="#scan" onclick="document.getElementById('mobile-menu').style.display='none'">The Scan</a>
     <a href="#pricing" onclick="document.getElementById('mobile-menu').style.display='none'">Investment</a>
-    <a href="people_systems_snapshot.html">Snapshot</a>
+    <a href="people_systems_snapshot.html">Resources</a>
     <a href="mailto:daniela@danielareinoso.co" class="nav-cta">Let's Connect</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="wrap">
-        <div class="hero-inner">
+    <div class="hero-grid">
+        <div class="hero-copy">
             <h1>Build the workplace you <em>mean</em> to create.</h1>
-            <hr class="rule">
+            <hr class="hero-rule">
             <p class="hero-sub">I help mission-driven organizations intentionally design people practices, leadership habits, and organizational systems that create clarity, build trust, and support sustainable growth.</p>
             <div class="hero-actions">
                 <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary">Work With Me</a>
-                <a href="#scan" class="text-link">Explore the work</a>
+                <a href="#scan" class="btn btn-outline">Learn More</a>
             </div>
+        </div>
+        <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1774364830987-d18b6b063ab7?q=80&w=1400&auto=format&fit=crop" alt="A white ceramic vase with dried grasses resting on books in warm natural light">
         </div>
     </div>
 </section>
 
-<!-- VALUES -->
+<!-- VALUES STRIP -->
 <section class="values">
     <div class="wrap">
         <div class="values-grid">
             <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="17" stroke="#234F45" stroke-width="1.4"/>
+                    <path d="M28 16L24 24L16 28L20 20L28 16Z" stroke="#234F45" stroke-width="1.4" stroke-linejoin="round"/>
+                </svg>
                 <h3>Clarity</h3>
                 <p>We bring clarity to the people side of your mission and strategy.</p>
             </div>
             <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="17" r="5" stroke="#CB6B4B" stroke-width="1.4"/>
+                    <circle cx="29" cy="19" r="4" stroke="#CB6B4B" stroke-width="1.4"/>
+                    <path d="M7 33C7 28 11 25 16 25C21 25 25 28 25 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M27 26C31.5 26 36 28.5 36 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
                 <h3>Trust</h3>
                 <p>We build the foundations for trust, transparency, and accountability.</p>
             </div>
             <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="11" y="8" width="22" height="28" rx="2" stroke="#234F45" stroke-width="1.4"/>
+                    <path d="M16 16L18 18L21.5 14.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="25" y1="16.5" x2="29" y2="16.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M16 24L18 26L21.5 22.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="25" y1="24.5" x2="29" y2="24.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
                 <h3>Effective Systems</h3>
-                <p>We design people systems that are practical, fair, and built to last.</p>
+                <p>We design people systems that are practical, efficient, and built to last.</p>
             </div>
             <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 35C22 35 8 27 8 17.5C8 12.8 11.8 9 16.5 9C19 9 21 10.5 22 12C23 10.5 25 9 27.5 9C32.2 9 36 12.8 36 17.5C36 27 22 35 22 35Z" stroke="#CB6B4B" stroke-width="1.4" stroke-linejoin="round"/>
+                </svg>
                 <h3>Care</h3>
                 <p>We lead with empathy and respect for the people at the heart of your work.</p>
             </div>
@@ -490,13 +567,86 @@
     </div>
 </section>
 
+<!-- ABOUT INTRO -->
+<section class="about-intro" id="about">
+    <div class="about-grid">
+        <div class="about-photo">
+            <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
+        </div>
+        <div class="about-copy">
+            <span class="eyebrow">Hi, I'm Daniela</span>
+            <h2>I believe intentional organizations create lasting impact.</h2>
+            <p>With over a decade in people strategy and organizational development across the nonprofit and mission-driven sector, I partner with leaders to navigate complexity, align their teams, and build workplaces where people can thrive.</p>
+            <p>I recognized the pattern because I lived inside it: powerful missions, committed teams, and people systems held together by goodwill, memory, and whoever had capacity that week. Organizations doing mission-critical work deserve practical, fair infrastructure that carries the weight of growth — without losing the humanity at the center of the mission.</p>
+            <div class="about-facts">
+                <span>10+ years in People &amp; Culture</span>
+                <span>13+ countries</span>
+            </div>
+            <a href="https://linkedin.com/in/danielareinoso" target="_blank" class="text-link">More about me<span class="arr">→</span></a>
+            <svg class="botanical" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 250C100 250 95 150 100 20" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 60C100 60 130 50 145 25" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 100C100 100 65 90 50 65" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 140C100 140 135 130 152 105" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 180C100 180 62 170 46 145" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="148" cy="22" rx="7" ry="14" transform="rotate(40 148 22)" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="47" cy="62" rx="7" ry="14" transform="rotate(-40 47 62)" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="155" cy="102" rx="7" ry="14" transform="rotate(40 155 102)" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="43" cy="142" rx="7" ry="14" transform="rotate(-40 43 142)" stroke="#CB6B4B" stroke-width="1"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT I DO -->
+<section class="whatido">
+    <div class="wrap">
+        <span class="eyebrow">What I Do</span>
+        <h2>Strategic support for the people side of your mission.</h2>
+        <div class="wid-grid">
+            <div class="wid-card">
+                <div class="wid-icon green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#F6F3EF" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="2.3" stroke="#F6F3EF" stroke-width="1.5"/><path d="M3.5 19C3.5 15.7 6 13.7 9 13.7C12 13.7 14.5 15.7 14.5 19" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14.2C18.4 14.2 20.5 15.8 20.5 18.4" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>People Strategy</h3>
+                <p>Align your people practices with your mission, values, and growth goals.</p>
+                <a href="#scan" class="text-link">Learn more<span class="arr">→</span></a>
+            </div>
+            <div class="wid-card">
+                <div class="wid-icon clay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="9.5" y="3.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><rect x="3.5" y="15.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><rect x="15.5" y="15.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><path d="M12 8V12M12 12H6V15.5M12 12H18V15.5" stroke="#FDF9F4" stroke-width="1.5"/></svg>
+                </div>
+                <h3>Organizational Design</h3>
+                <p>Design structure, roles, and processes that support clarity, collaboration, and impact.</p>
+                <a href="#services" class="text-link">Learn more<span class="arr">→</span></a>
+            </div>
+            <div class="wid-card">
+                <div class="wid-icon green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 20C12 14 12 10 12 8" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/><path d="M12 11C12 8 9.5 5.5 5.5 5.5C5.5 9.5 8 11.5 12 11.5" stroke="#F6F3EF" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 14.5C12 11.5 14.5 9 18.5 9C18.5 13 16 15 12 15" stroke="#F6F3EF" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Culture &amp; Leadership</h3>
+                <p>Strengthen culture and leadership to build trust, engagement, and belonging.</p>
+                <a href="#approach" class="text-link">Learn more<span class="arr">→</span></a>
+            </div>
+            <div class="wid-card">
+                <div class="wid-icon clay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3.5H14L18.5 8V20.5H6V3.5Z" stroke="#FDF9F4" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 3.5V8H18.5" stroke="#FDF9F4" stroke-width="1.5" stroke-linejoin="round"/><line x1="9" y1="12" x2="15.5" y2="12" stroke="#FDF9F4" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="15.5" x2="15.5" y2="15.5" stroke="#FDF9F4" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Policies &amp; Systems</h3>
+                <p>Create practical policies and systems that support people and reduce risk.</p>
+                <a href="#pricing" class="text-link">Learn more<span class="arr">→</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- PAIN -->
-<section class="pain">
+<section class="block block-alt">
     <div class="wrap">
         <div class="pain-inner">
-            <span class="section-label">The Problem</span>
+            <span class="eyebrow">The Problem</span>
             <h2>When people systems are held together by goodwill, growth gets harder.</h2>
-            <ul class="pain-list" style="margin-top: 56px;">
+            <ul class="pain-list">
                 <li>Hiring takes longer than it should.</li>
                 <li>Managers are improvising.</li>
                 <li>People decisions feel inconsistent.</li>
@@ -509,11 +659,11 @@
 </section>
 
 <!-- COST OF NOT ACTING -->
-<section class="cost">
+<section class="block cost">
     <div class="wrap">
-        <span class="section-label">Why This Matters Now</span>
+        <span class="eyebrow">Why This Matters Now</span>
         <h2>Ad hoc HR is not a quirk. It is a cost you are already paying.</h2>
-        <p class="lede cost-intro" style="margin-top: 24px;">It rarely shows up as a single dramatic failure. It shows up as turnover you can't quite explain, a hire that goes sideways, or a values statement that doesn't match the last hard decision your team watched you make.</p>
+        <p class="lede cost-intro" style="margin-top: 20px;">It rarely shows up as a single dramatic failure. It shows up as turnover you can't quite explain, a hire that goes sideways, or a values statement that doesn't match the last hard decision your team watched you make.</p>
         <div class="stat-grid">
             <div class="stat">
                 <div class="stat-number">30–200%</div>
@@ -536,18 +686,14 @@
                 <span class="stat-source">The Strategy Group LLC</span>
             </div>
         </div>
-        <div class="cost-quote">
-            <blockquote>"Leaders consistently say their stated values are hardest to see — not in the mission statement, but in the rushed decisions made under pressure: who gets hired, who gets a raise, who gets let go, and how."</blockquote>
-            <cite>Howard Consulting</cite>
-        </div>
     </div>
 </section>
 
 <!-- THIS IS PROBABLY HAPPENING IF -->
-<section class="familiar">
+<section class="block block-alt">
     <div class="wrap">
         <div class="familiar-inner">
-            <span class="section-label">Sound Familiar?</span>
+            <span class="eyebrow">Sound Familiar?</span>
             <h2>This is probably happening if…</h2>
             <ul class="pain-list">
                 <li>Your ED, COO, or ops lead has become the default HR department.</li>
@@ -563,12 +709,12 @@
 </section>
 
 <!-- PEOPLE SYSTEMS SCAN -->
-<section class="scan" id="scan">
+<section class="block" id="scan">
     <div class="wrap">
         <div class="scan-header">
-            <span class="section-label">Where We Start</span>
+            <span class="eyebrow">Where We Start</span>
             <h2>The People Systems Scan</h2>
-            <p class="lede" style="margin-top: 24px;">A focused 3-week diagnostic for growing, mission-driven organizations that need to understand what is creating people-ops friction — and what to fix first.</p>
+            <p class="lede" style="margin-top: 20px;">A focused 3-week diagnostic for growing, mission-driven organizations that need to understand what is creating people-ops friction — and what to fix first.</p>
         </div>
         <div class="scan-body">
             <div class="scan-desc">
@@ -590,25 +736,25 @@
 </section>
 
 <!-- 3-WEEK PROCESS -->
-<section class="process">
+<section class="block block-alt">
     <div class="wrap">
         <div class="section-heading">
-            <span class="section-label">How It Works</span>
+            <span class="eyebrow">How It Works</span>
             <h2>The 3-week process</h2>
         </div>
-        <div class="cols-3">
-            <div class="col-item">
-                <span class="col-kicker">Week One</span>
+        <div class="cards-3">
+            <div class="soft-card">
+                <span class="card-kicker">Week One</span>
                 <h3>Listen + Review</h3>
                 <p>Kickoff with leadership, review core documents, and identify the gap between what the organization says and what is written down.</p>
             </div>
-            <div class="col-item">
-                <span class="col-kicker">Week Two</span>
+            <div class="soft-card">
+                <span class="card-kicker">Week Two</span>
                 <h3>Pulse + Process Walkthrough</h3>
                 <p>Speak with key stakeholders and walk through one high-friction workflow, such as hiring, onboarding, or performance support.</p>
             </div>
-            <div class="col-item">
-                <span class="col-kicker">Week Three</span>
+            <div class="soft-card">
+                <span class="card-kicker">Week Three</span>
                 <h3>Connect the Dots</h3>
                 <p>Analyze patterns, build the Chaos Map, and deliver a 90-day stabilization roadmap in a leadership debrief.</p>
             </div>
@@ -616,26 +762,26 @@
     </div>
 </section>
 
-<!-- WHAT CAN HAPPEN NEXT -->
-<section class="next" id="services">
+<!-- SERVICES -->
+<section class="block" id="services">
     <div class="wrap">
         <div class="section-heading">
-            <span class="section-label">Services</span>
+            <span class="eyebrow">Services</span>
             <h2>How we work together</h2>
         </div>
-        <div class="cols-3">
-            <div class="col-item">
-                <span class="col-num">01</span>
+        <div class="cards-3">
+            <div class="soft-card">
+                <span class="card-kicker">01</span>
                 <h3>People Systems Scan</h3>
                 <p>Diagnose what is creating drag, risk, and confusion. A focused 3-week engagement that gives you a clear picture of what to fix first.</p>
             </div>
-            <div class="col-item">
-                <span class="col-num">02</span>
+            <div class="soft-card">
+                <span class="card-kicker">02</span>
                 <h3>People Systems Build</h3>
                 <p>Build the highest-priority systems: hiring, onboarding, role clarity, performance rhythms, manager support, and policy foundations.</p>
             </div>
-            <div class="col-item">
-                <span class="col-num">03</span>
+            <div class="soft-card">
+                <span class="card-kicker">03</span>
                 <h3>Ongoing Advisory</h3>
                 <p>Support leaders as they implement, make people decisions, and stabilize the system — without becoming the person who gets pulled into everything.</p>
             </div>
@@ -644,26 +790,26 @@
 </section>
 
 <!-- APPROACH -->
-<section class="approach" id="approach">
+<section class="block block-alt" id="approach">
     <div class="wrap">
         <div class="section-heading">
-            <span class="section-label">How I Work</span>
+            <span class="eyebrow">How I Work</span>
             <h2>Why my approach is different</h2>
         </div>
-        <div class="cols-2">
-            <div class="col-item">
+        <div class="cards-2">
+            <div class="soft-card">
                 <h3>Deep diagnosis before templates</h3>
                 <p>I do not start by handing you generic HR documents. I look for the patterns underneath the recurring problems.</p>
             </div>
-            <div class="col-item">
+            <div class="soft-card">
                 <h3>Enough structure, no bloat</h3>
                 <p>I build people systems small teams can actually use — clear, practical, and proportionate to your stage.</p>
             </div>
-            <div class="col-item">
+            <div class="soft-card">
                 <h3>Fairness with practicality</h3>
                 <p>The goal is not HR for HR's sake. It is clearer decisions, lower risk, and a workplace where people know what to expect.</p>
             </div>
-            <div class="col-item">
+            <div class="soft-card">
                 <h3>Built for mission-driven realities</h3>
                 <p>I understand lean teams, donor pressure, distributed work, global complexity, and values-driven cultures where the people experience has to reflect the mission.</p>
             </div>
@@ -671,34 +817,11 @@
     </div>
 </section>
 
-<!-- FOUNDER STORY -->
-<section class="founder" id="about">
-    <div class="wrap">
-        <div class="founder-inner">
-            <div class="founder-photo">
-                <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
-            </div>
-            <div class="founder-content">
-                <span class="section-label">About</span>
-                <h2>Why I do this work</h2>
-                <p style="margin-top: 36px;">I started this work after seeing the same pattern across growing, mission-driven organizations: powerful missions, committed teams, and people systems held together by goodwill, memory, and whoever had capacity that week.</p>
-                <p>I recognized the pattern because I had lived inside it. Early in my HR career, I stepped into an international nonprofit where people operations needed to be built from the ground up. Leadership needed structure, staff needed clarity, and the organization needed people systems that matched the complexity of the work.</p>
-                <p>That experience shaped how I work today. I believe organizations doing mission-critical work deserve practical, fair people infrastructure that can carry the weight of growth — without adding bureaucracy or losing the humanity at the center of the mission.</p>
-                <div class="founder-facts">
-                    <span>10+ years in People &amp; Culture</span>
-                    <span>13+ countries</span>
-                    <span>Systems built from scratch</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- PRICING -->
-<section class="pricing" id="pricing">
+<section class="block" id="pricing">
     <div class="wrap">
         <div class="section-heading">
-            <span class="section-label">Investment</span>
+            <span class="eyebrow">Investment</span>
             <h2>How we can work together</h2>
         </div>
         <div class="pricing-note">
@@ -759,31 +882,60 @@
     </div>
 </section>
 
-<!-- FINAL CTA -->
-<section class="final-cta">
+<!-- QUOTE BAND -->
+<section class="quote-band">
     <div class="wrap">
-        <div class="final-cta-inner">
-            <h2>Ready to build with <em>intention</em>?</h2>
-            <p>We'll talk through what is creating drag, risk, or confusion in your people systems, what kind of support would be most useful, and whether the investment range makes sense for your organization's context.</p>
-            <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-cream">Book a Fit Conversation</a>
+        <div class="quote-grid">
+            <div class="quote-left">
+                <span class="quote-marks">&ldquo;</span>
+                <blockquote>Leaders consistently say their stated values are hardest to see — not in the mission statement, but in the rushed decisions made under pressure: who gets hired, who gets a raise, who gets let go, and how.</blockquote>
+                <cite>Howard Consulting</cite>
+            </div>
+            <div class="quote-cta">
+                <div class="quote-cta-icon">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 22C13 15 13 11 13 8.5" stroke="#F6F3EF" stroke-width="1.3" stroke-linecap="round"/><path d="M13 12C13 8.5 10 5.5 5.5 5.5C5.5 10 8.5 12.5 13 12.5" stroke="#F6F3EF" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 15.5C13 12 16 9.5 20.5 9.5C20.5 14 17.5 16 13 16" stroke="#F6F3EF" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </div>
+                <p>Ready to build an organization with intention?</p>
+                <a href="https://cal.com/danielareinoso/discovery-call">Let's Connect <span class="arr">→</span></a>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <h3>Daniela Reinoso</h3>
-            <p>Helping mission-driven organizations build the workplace they mean to create.</p>
+    <div class="wrap">
+        <div class="footer-logo">
+            <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="12" stroke="#234F45" stroke-width="1"/>
+                <line x1="20" y1="8" x2="9" y2="26" stroke="#234F45" stroke-width="0.8"/>
+                <line x1="20" y1="8" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
+                <line x1="9" y1="26" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
+                <circle cx="20" cy="8" r="3" fill="#234F45"/>
+                <circle cx="9" cy="26" r="3" fill="#CB6B4B"/>
+                <circle cx="31" cy="26" r="3" fill="#6E675E"/>
+            </svg>
+            <span class="brand-word">Daniela<br>Reinoso</span>
         </div>
-        <div class="footer-contact">
-            <div><a href="mailto:daniela@danielareinoso.co">daniela@danielareinoso.co</a></div>
-            <div><a href="https://danielareinoso.co" target="_blank">danielareinoso.co</a></div>
-            <div><a href="https://linkedin.com/in/danielareinoso" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="rgba(246,243,239,0.6)" style="flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>linkedin.com/in/danielareinoso</a></div>
+        <ul class="footer-nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#pricing">Investment</a></li>
+            <li><a href="people_systems_snapshot.html">Resources</a></li>
+        </ul>
+        <div class="footer-social">
+            <a href="https://linkedin.com/in/danielareinoso" target="_blank" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#6E675E"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:daniela@danielareinoso.co" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E675E" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5L12 13L21 6.5"/></svg>
+            </a>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Daniela Reinoso Consulting &nbsp;|&nbsp; <a href="https://danielareinoso.co">danielareinoso.co</a> &nbsp;|&nbsp; <a href="mailto:daniela@danielareinoso.co">daniela@danielareinoso.co</a>
         </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Daniela Reinoso. All rights reserved.</div>
 </footer>
 
 </body>
