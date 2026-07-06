@@ -28,20 +28,24 @@
             align-items: center; gap: 0;
             min-height: 560px;
         }
-        .hero-copy { padding: 80px 72px 80px 64px; max-width: 720px; justify-self: end; }
-        .hero-copy h1 { font-size: clamp(44px, 4.9vw, 70px); line-height: 1.07; font-weight: 600; max-width: 560px; }
+        .hero-copy { padding: 84px 64px; max-width: 768px; justify-self: end; }
+        .hero-copy h1 { font-size: clamp(44px, 4.9vw, 70px); line-height: 1.07; font-weight: 600; max-width: 600px; }
         .hero-copy h1 em { font-style: normal; color: var(--clay); }
-        .hero-sub { font-size: 18.5px; line-height: 1.7; color: var(--ink); margin-bottom: 40px; max-width: 480px; }
+        .hero-copy .rule { margin: 36px 0; }
+        .hero-sub { font-size: 18.5px; line-height: 1.75; color: var(--ink); margin-bottom: 48px; max-width: 520px; }
         .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
         .hero-photo { height: 100%; min-height: 560px; position: relative; overflow: hidden; }
-        .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hero-photo img {
+            position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+            filter: sepia(0.12) contrast(0.94) saturate(0.9) brightness(1.04);
+        }
 
-        .values { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 80px 0; }
+        .values { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 104px 0; }
         .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
         .value { padding: 0 44px; }
-        .value + .value { border-left: 1px solid var(--hairline); }
-        .value h3 { font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-        .value p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; }
+        .value + .value { border-left: 1px solid rgba(224,219,211,0.55); }
+        .value h3 { font-family: 'Inter', sans-serif; font-size: 13.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 18px; }
+        .value p { font-size: 14px; color: var(--ink-soft); line-height: 1.75; }
 
         .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 0; }
         .about-photo {
@@ -52,43 +56,75 @@
         .portrait img {
             width: 100%; height: auto; display: block;
             aspect-ratio: 0.88; object-fit: cover; object-position: 50% 32%;
-            filter: sepia(0.22) saturate(0.87) brightness(1.08) contrast(0.96);
+            filter: sepia(0.22) saturate(0.85) brightness(1.1) contrast(0.94);
         }
         .portrait::after {
             content: ''; position: absolute; inset: 0;
             background: rgba(236, 210, 178, 0.12);
             pointer-events: none;
         }
-        .about-copy { padding: 96px 72px; max-width: 720px; position: relative; }
-        .about-copy h2 { margin-bottom: 26px; max-width: 560px; }
-        .about-copy p { font-size: 17px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 28px; max-width: 560px; }
+        .about-copy { padding: 104px 72px; max-width: 720px; position: relative; }
+        .about-copy h2 { margin-bottom: 34px; max-width: 560px; }
+        .about-copy p { font-size: 17px; color: var(--ink-soft); line-height: 1.95; margin-bottom: 36px; max-width: 490px; }
         .botanical { position: absolute; right: 24px; bottom: 30px; width: 200px; opacity: 0.3; pointer-events: none; }
 
+        .research { padding: 118px 0; }
+        .research-intro { font-size: 17px; color: var(--ink-soft); line-height: 1.9; max-width: 620px; margin-bottom: 76px; }
+        .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
+        .research-card { border-top: 1px solid rgba(224,219,211,0.8); padding-top: 30px; display: flex; flex-direction: column; }
+        .research-label {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--green); margin-bottom: 22px; display: block;
+        }
+        .research-number {
+            font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+            font-size: clamp(44px, 4.4vw, 60px); color: var(--green);
+            line-height: 1; margin-bottom: 22px;
+        }
+        .research-card p { font-size: 14px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 18px; }
+        .research-lead { font-size: 14px; font-weight: 500; color: var(--ink) !important; line-height: 1.65 !important; margin-bottom: 18px !important; }
+        .research-breakdown { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 18px; }
+        .research-breakdown li {
+            display: flex; justify-content: space-between; gap: 12px;
+            font-size: 13.5px; color: var(--ink-soft); line-height: 1.5;
+            padding-bottom: 11px; border-bottom: 1px solid rgba(224,219,211,0.6);
+        }
+        .research-breakdown .pct { font-weight: 600; color: var(--green); flex-shrink: 0; }
+        .research-source { font-size: 11.5px; color: var(--ink-soft); font-style: italic; opacity: 0.7; margin-top: auto; }
+        .transition { padding: 110px 0; text-align: center; }
+        .transition p {
+            font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+            font-size: clamp(24px, 2.7vw, 35px); color: var(--green);
+            line-height: 1.45; max-width: 860px; margin: 0 auto;
+        }
         .philosophy { padding: 128px 0; }
-        .philosophy h2 { margin-bottom: 40px; max-width: 640px; }
-        .phil-intro { font-size: 17px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 30px; max-width: 560px; }
-        .phil-list { list-style: none; margin-bottom: 36px; }
+        .philosophy h2 { margin-bottom: 44px; max-width: 640px; }
+        .phil-intro { font-size: 17px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 34px; max-width: 540px; }
+        .phil-list { list-style: none; margin-bottom: 44px; }
         .phil-list li {
             font-family: 'Fraunces', Georgia, serif; font-weight: 500;
-            font-size: clamp(20px, 2vw, 25px); color: var(--green);
-            line-height: 1.35; padding: 7px 0;
+            font-size: clamp(22px, 2.2vw, 28px); color: var(--green);
+            line-height: 1.35; padding: 12px 0;
         }
-        .phil-close { font-size: 17px; color: var(--ink); line-height: 1.85; max-width: 600px; }
+        .phil-close { font-size: 17px; color: var(--ink); line-height: 1.9; max-width: 520px; }
         .whatido { padding: 118px 0 128px; text-align: center; background: var(--card); border-top: 1px solid var(--hairline); }
         .whatido .eyebrow { text-align: center; }
-        .whatido .eyebrow::after { content: ''; display: block; width: 34px; height: 1px; background: var(--clay); margin: 12px auto 0; }
+        .whatido .eyebrow::after { content: ''; display: block; width: 34px; height: 1px; background: var(--hairline); margin: 14px auto 0; }
         .whatido h2 { max-width: 760px; margin: 0 auto 64px; }
         .wid-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; text-align: left; }
         .wid-card {
             background: transparent;
-            border: 1px solid rgba(224,219,211,0.65);
+            border: 0.5px solid rgba(224,219,211,0.55);
             border-radius: 8px;
-            padding: 42px 32px 36px;
+            padding: 48px 34px 42px;
             display: flex; flex-direction: column;
             transition: border-color 0.2s ease;
         }
-        .wid-card:hover { border-color: #D2CABE; }
-        .wid-icon { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .wid-card:hover { border-color: rgba(210,202,190,0.8); }
+        .wid-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 26px; }
+        .wid-icon svg { width: 21px; height: 21px; }
+        .wid-card .text-link { font-size: 10.5px; color: var(--ink-soft); }
+        .wid-card .text-link:hover { color: var(--green); }
         .wid-icon.green { background: var(--green); }
         .wid-icon.clay { background: var(--clay); }
         .wid-card h3 { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; }
@@ -99,30 +135,31 @@
         .testi-grid { display: grid; grid-template-columns: 2.3fr 1fr; gap: 56px; align-items: center; }
         .testi-left { position: relative; padding-left: 76px; }
         .quote-marks {
-            position: absolute; left: 0; top: -18px;
+            position: absolute; left: 0; top: -24px;
             font-family: 'Fraunces', Georgia, serif;
-            font-size: 130px; line-height: 1; color: var(--clay); font-weight: 600;
+            font-size: 150px; line-height: 1; color: var(--clay); font-weight: 600;
         }
-        .testi-left { padding-left: 96px; }
+        .testi-left { padding-left: 108px; }
         .testi-left blockquote {
             font-family: 'Fraunces', Georgia, serif; font-weight: 500;
-            font-size: clamp(20px, 1.75vw, 25px); color: var(--bg);
-            line-height: 1.65; margin-bottom: 24px;
+            font-size: clamp(21px, 1.85vw, 27px); color: var(--bg);
+            line-height: 1.7; margin-bottom: 34px;
         }
         .testi-left cite {
-            font-style: normal; font-size: 12px; font-weight: 500;
+            font-style: normal; font-size: 11px; font-weight: 500;
             letter-spacing: 0.06em;
-            color: rgba(246,243,239,0.6);
+            color: rgba(246,243,239,0.55);
         }
         .testi-cta { display: flex; gap: 24px; align-items: center; }
         .testi-cta-icon {
-            width: 62px; height: 62px; border-radius: 50%; flex-shrink: 0;
-            border: 1px solid rgba(246,243,239,0.4);
+            width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+            border: 1px solid rgba(246,243,239,0.35);
             display: flex; align-items: center; justify-content: center;
         }
+        .testi-cta-icon svg { width: 25px; height: 25px; }
         .testi-cta p {
             font-family: 'Fraunces', Georgia, serif; font-weight: 500;
-            font-size: 24px; color: var(--bg); line-height: 1.35; margin-bottom: 12px;
+            font-size: 24px; color: var(--bg); line-height: 1.4; margin-bottom: 24px;
         }
         .testi-cta a {
             font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em;
@@ -131,19 +168,19 @@
         }
         .testi-cta a:hover { color: var(--white); }
 
-        footer.home-footer { background: var(--bg); padding: 40px 0 28px; }
+        footer.home-footer { background: var(--bg); padding: 34px 0 24px; }
         .hf-top {
             display: flex; align-items: center; justify-content: space-between;
-            gap: 28px; flex-wrap: wrap;
-            padding-bottom: 22px; border-bottom: 1px solid rgba(224,219,211,0.55);
+            gap: 26px; flex-wrap: wrap;
+            padding-bottom: 18px; border-bottom: 1px solid rgba(224,219,211,0.45);
         }
-        .hf-nav { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
-        .hf-nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
-        .hf-nav a:hover { color: var(--clay); }
-        .hf-social { display: flex; gap: 14px; }
-        .hf-social a { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(224,219,211,0.7); display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
+        .hf-nav { display: flex; gap: 26px; list-style: none; flex-wrap: wrap; }
+        .hf-nav a { font-size: 10.5px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); opacity: 0.85; text-decoration: none; transition: color 0.2s; }
+        .hf-nav a:hover { color: var(--clay); opacity: 1; }
+        .hf-social { display: flex; gap: 12px; }
+        .hf-social a { width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(224,219,211,0.55); display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
         .hf-social a:hover { border-color: var(--clay); }
-        .hf-bottom { padding-top: 18px; text-align: center; font-size: 11.5px; color: var(--ink-soft); opacity: 0.85; }
+        .hf-bottom { padding-top: 16px; text-align: center; font-size: 11px; color: var(--ink-soft); opacity: 0.65; }
         .hf-bottom a { color: var(--ink-soft); text-decoration: none; }
         .hf-bottom a:hover { color: var(--clay); }
 
@@ -159,6 +196,7 @@
             .about-copy { padding: 56px 24px; }
             .botanical { display: none; }
             .wid-grid { grid-template-columns: 1fr 1fr; }
+            .research-grid { grid-template-columns: 1fr; gap: 44px; }
             .testi-grid { grid-template-columns: 1fr; gap: 44px; }
             .testi-left { padding-left: 0; }
             .quote-marks { position: static; display: block; font-size: 64px; margin-bottom: 6px; }
@@ -289,6 +327,47 @@
     </div>
 </section>
 
+<!-- RESEARCH: THE COST OF AD-HOC HR -->
+<section class="research">
+    <div class="wrap reveal">
+        <span class="eyebrow">The Evidence</span>
+        <h2 style="max-width: 680px; margin-bottom: 30px;">Ad-hoc HR is costing your organization more than you think.</h2>
+        <p class="research-intro">Organizations rarely experience one dramatic people failure. Instead, the cost shows up quietly: avoidable turnover, inconsistent hiring, leadership overload, values that don't translate into everyday decisions, and friction that keeps coming back.</p>
+        <div class="research-grid">
+            <div class="research-card">
+                <span class="research-label">Financial Cost</span>
+                <div class="research-number">30–200%</div>
+                <p>Replacing one employee costs 30–200% of their annual salary once recruiting, onboarding, lost productivity, and team disruption are counted.</p>
+                <span class="research-source">Nonprofit Leadership Alliance; Inspirus</span>
+            </div>
+            <div class="research-card">
+                <span class="research-label">Operational Cost</span>
+                <p class="research-lead">Top reasons people leave — all symptoms of missing systems, not missing mission:</p>
+                <ul class="research-breakdown">
+                    <li><span>Too much work, too little support</span><span class="pct">59%</span></li>
+                    <li><span>Limited growth</span><span class="pct">54%</span></li>
+                    <li><span>Unsupportive management</span><span class="pct">52%</span></li>
+                    <li><span>Inadequate pay/benefits</span><span class="pct">50%</span></li>
+                </ul>
+                <span class="research-source">Social Impact Staff Retention Project, 2023–2024</span>
+            </div>
+            <div class="research-card">
+                <span class="research-label">Mission Cost</span>
+                <div class="research-number">2.7×</div>
+                <p>Purpose is the strongest predictor of retention across 59 factors studied — but only when the mission is visible in how decisions actually get made.</p>
+                <span class="research-source">The Strategy Group LLC</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRANSITION -->
+<section class="transition block-alt">
+    <div class="wrap reveal">
+        <p>Most organizations don't have a people problem.<br>They have a systems problem.</p>
+    </div>
+</section>
+
 <!-- PHILOSOPHY -->
 <section class="philosophy">
     <div class="wrap-narrow reveal">
@@ -375,7 +454,7 @@
     <div class="wrap">
         <div class="hf-top">
             <a href="index.html" class="nav-brand">
-                <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="31" height="31" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="24" y1="7" x2="40" y2="17" stroke="#234F45" stroke-width="0.9"/>
                     <line x1="24" y1="7" x2="8" y2="17" stroke="#234F45" stroke-width="0.9"/>
                     <line x1="24" y1="7" x2="24" y2="24" stroke="#234F45" stroke-width="0.9"/>
