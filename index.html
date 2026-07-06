@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Daniela Reinoso | Build the Workplace You Mean to Create">
-    <meta property="og:description" content="I help mission-driven organizations intentionally design people practices, leadership structures, and organizational systems that create clarity and trust.">
+    <meta property="og:description" content="I help mission-driven organizations intentionally design people practices, leadership habits, and organizational systems that create clarity, build trust, and support sustainable growth.">
     <meta property="og:image" content="https://danielareinosog.github.io/services/LIbanner.png">
     <meta property="og:url" content="https://danielareinoso.co/">
     <meta property="og:type" content="website">
@@ -18,54 +18,132 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         .hero-grid {
-            max-width: 1280px; margin: 0 auto;
-            display: grid; grid-template-columns: 1.5fr 1fr;
-            align-items: center; gap: 72px;
-            padding: 0 48px;
-            min-height: 600px;
+            max-width: 1360px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.15fr 1fr;
+            align-items: center; gap: 0;
+            min-height: 560px;
         }
-        .hero-copy { padding: 72px 0; max-width: 680px; }
-        .hero-copy h1 { font-size: clamp(52px, 6vw, 84px); line-height: 1.04; letter-spacing: -0.012em; }
+        .hero-copy { padding: 80px 72px 80px 64px; max-width: 720px; justify-self: end; }
+        .hero-copy h1 { font-size: clamp(44px, 4.9vw, 70px); line-height: 1.07; font-weight: 600; max-width: 560px; }
         .hero-copy h1 em { font-style: normal; color: var(--clay); }
-        .hero-sub { font-size: 17px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 40px; max-width: 560px; }
-        .hero-actions { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
-        .hero-photo { height: 100%; min-height: 600px; position: relative; overflow: hidden; }
+        .hero-sub { font-size: 18.5px; line-height: 1.7; color: var(--ink); margin-bottom: 40px; max-width: 480px; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+        .hero-photo { height: 100%; min-height: 560px; position: relative; overflow: hidden; }
         .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-        .framework-close {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 21px; font-style: italic; color: var(--ink-soft);
-            margin-top: 44px;
+
+        .values { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 72px 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .value { padding: 0 40px; }
+        .value + .value { border-left: 1px solid var(--hairline); }
+        .value-icon { width: 46px; height: 46px; margin-bottom: 20px; }
+        .value h3 { font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); margin-bottom: 12px; }
+        .value p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 0; }
+        .about-photo { min-height: 540px; position: relative; }
+        .about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+        .about-copy { padding: 96px 72px; max-width: 720px; position: relative; }
+        .about-copy h2 { margin-bottom: 26px; max-width: 560px; }
+        .about-copy p { font-size: 17px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 28px; max-width: 560px; }
+        .botanical { position: absolute; right: 24px; bottom: 30px; width: 200px; opacity: 0.3; pointer-events: none; }
+
+        .whatido { padding: 110px 0; text-align: center; background: var(--card); border-top: 1px solid var(--hairline); }
+        .whatido .eyebrow { text-align: center; }
+        .whatido .eyebrow::after { content: ''; display: block; width: 34px; height: 1px; background: var(--clay); margin: 12px auto 0; }
+        .whatido h2 { max-width: 760px; margin: 0 auto 64px; }
+        .wid-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: left; }
+        .wid-card {
+            background: var(--white);
+            border: 1px solid var(--hairline);
+            border-radius: 8px;
+            padding: 38px 28px 32px;
+            display: flex; flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .pattern-callout {
-            margin-top: 48px;
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(24px, 2.8vw, 32px);
-            color: var(--green); line-height: 1.4;
+        .wid-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(35,79,69,0.08); }
+        .wid-icon { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .wid-icon.green { background: var(--green); }
+        .wid-icon.clay { background: var(--clay); }
+        .wid-card h3 { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; }
+        .wid-card p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 24px; }
+        .wid-card .text-link { margin-top: auto; font-size: 12px; }
+
+        .testimonial-band { background: var(--green); padding: 84px 0; }
+        .testi-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 88px; align-items: center; }
+        .testi-left { position: relative; padding-left: 76px; }
+        .quote-marks {
+            position: absolute; left: 0; top: -10px;
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 96px; line-height: 1; color: var(--clay); font-weight: 600;
         }
-        .intro-grid { display: grid; grid-template-columns: 300px 1fr; gap: 80px; align-items: center; }
-        .intro-photo img { width: 100%; height: auto; display: block; border-radius: 4px; }
-        .intro-copy h2 { margin-bottom: 26px; }
-        .intro-copy p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 18px; }
-        .intro-copy .pov { color: var(--ink); }
-        .story-quote {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(26px, 3.4vw, 38px); color: var(--green);
-            line-height: 1.45; max-width: 880px; margin: 0 auto 32px; text-align: center;
+        .testi-left blockquote {
+            font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+            font-size: clamp(24px, 2.6vw, 31px); color: var(--bg);
+            line-height: 1.4; margin-bottom: 22px;
         }
-        .story-attr {
-            text-align: center; font-size: 10.5px; font-weight: 600;
-            letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft);
+        .testi-left cite {
+            font-style: normal; font-size: 11.5px; font-weight: 600;
+            letter-spacing: 0.16em; text-transform: uppercase;
+            color: rgba(246,243,239,0.65);
         }
+        .testi-cta { display: flex; gap: 24px; align-items: center; }
+        .testi-cta-icon {
+            width: 62px; height: 62px; border-radius: 50%; flex-shrink: 0;
+            border: 1px solid rgba(246,243,239,0.4);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .testi-cta p {
+            font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+            font-size: 24px; color: var(--bg); line-height: 1.35; margin-bottom: 12px;
+        }
+        .testi-cta a {
+            font-size: 12.5px; font-weight: 600; letter-spacing: 0.14em;
+            text-transform: uppercase; color: #E7C3AF; text-decoration: none;
+            transition: color 0.25s;
+        }
+        .testi-cta a:hover { color: var(--white); }
+
+        footer.home-footer { background: var(--bg); padding: 56px 0 36px; }
+        .hf-top {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 32px; flex-wrap: wrap;
+            padding-bottom: 32px; border-bottom: 1px solid var(--hairline);
+        }
+        .hf-nav { display: flex; gap: 30px; list-style: none; flex-wrap: wrap; }
+        .hf-nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.25s; }
+        .hf-nav a:hover { color: var(--clay); }
+        .hf-social { display: flex; gap: 16px; }
+        .hf-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; transition: border-color 0.25s; }
+        .hf-social a:hover { border-color: var(--clay); }
+        .hf-bottom { padding-top: 24px; text-align: center; font-size: 12.5px; color: var(--ink-soft); }
+        .hf-bottom a { color: var(--ink-soft); text-decoration: none; }
+        .hf-bottom a:hover { color: var(--clay); }
+
         @media (max-width: 960px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 0; padding: 0; min-height: 0; }
-            .hero-copy { padding: 56px 24px 48px; max-width: 100%; }
-            .hero-photo { min-height: 320px; }
-            .intro-grid { grid-template-columns: 1fr; gap: 40px; }
-            .intro-photo img { max-width: 280px; }
+            .hero-grid { grid-template-columns: 1fr; min-height: 0; }
+            .hero-copy { padding: 56px 24px 48px; justify-self: start; }
+            .hero-photo { min-height: 340px; }
+            .values-grid { grid-template-columns: 1fr 1fr; gap: 40px 0; }
+            .value { padding: 0 24px; }
+            .value:nth-child(3) { border-left: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-photo { min-height: 380px; }
+            .about-copy { padding: 56px 24px; }
+            .botanical { display: none; }
+            .wid-grid { grid-template-columns: 1fr 1fr; }
+            .testi-grid { grid-template-columns: 1fr; gap: 44px; }
+            .testi-left { padding-left: 0; }
+            .quote-marks { position: static; display: block; font-size: 64px; margin-bottom: 6px; }
+            .hf-top { flex-direction: column; align-items: flex-start; }
+        }
+        @media (max-width: 560px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .value + .value { border-left: none; }
+            .wid-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -73,23 +151,36 @@
 
 <nav class="site-nav">
     <a href="index.html" class="nav-brand">
-        <svg width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="12" stroke="#234F45" stroke-width="1"/>
-            <line x1="20" y1="8" x2="9" y2="26" stroke="#234F45" stroke-width="0.8"/>
-            <line x1="20" y1="8" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
-            <line x1="9" y1="26" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
-            <circle cx="20" cy="8" r="3" fill="#234F45"/>
-            <circle cx="9" cy="26" r="3" fill="#CB6B4B"/>
-            <circle cx="31" cy="26" r="3" fill="#6E675E"/>
+        <svg width="46" height="46" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="24" y1="7" x2="40" y2="17" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="24" y1="7" x2="8" y2="17" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="24" y1="7" x2="24" y2="24" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="8" y1="17" x2="24" y2="24" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="40" y1="17" x2="24" y2="24" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="8" y1="17" x2="9" y2="33" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="40" y1="17" x2="39" y2="33" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="24" y1="24" x2="9" y2="33" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="24" y1="24" x2="39" y2="33" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="24" y1="24" x2="24" y2="41" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="9" y1="33" x2="24" y2="41" stroke="#234F45" stroke-width="0.9"/>
+            <line x1="39" y1="33" x2="24" y2="41" stroke="#234F45" stroke-width="0.9"/>
+            <circle cx="24" cy="7" r="3.4" fill="#234F45"/>
+            <circle cx="8" cy="17" r="3" fill="#6E675E"/>
+            <circle cx="40" cy="17" r="3" fill="#234F45"/>
+            <circle cx="24" cy="24" r="3.8" fill="#0F4C5C"/>
+            <circle cx="9" cy="33" r="3" fill="#CB6B4B"/>
+            <circle cx="39" cy="33" r="3" fill="#234F45"/>
+            <circle cx="24" cy="41" r="3.4" fill="#CB6B4B"/>
         </svg>
         <span class="brand-word">Daniela<br>Reinoso</span>
     </a>
     <ul class="nav-links">
         <li><a href="about.html">About</a></li>
-        <li><a href="approach.html">Approach</a></li>
         <li><a href="services.html">Services</a></li>
+        <li><a href="approach.html">Approach</a></li>
         <li><a href="scan.html">The Scan</a></li>
-        <li><a href="work-together.html" class="nav-cta">Work Together</a></li>
+        <li><a href="people_systems_snapshot.html">Resources</a></li>
+        <li><a href="work-together.html" class="nav-cta">Let's Connect</a></li>
     </ul>
     <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -97,204 +188,207 @@
 </nav>
 <div id="mobile-menu" class="nav-mobile">
     <a href="about.html">About</a>
-    <a href="approach.html">Approach</a>
     <a href="services.html">Services</a>
+    <a href="approach.html">Approach</a>
     <a href="scan.html">The Scan</a>
-    <a href="work-together.html" class="nav-cta">Work Together</a>
+    <a href="people_systems_snapshot.html">Resources</a>
+    <a href="work-together.html" class="nav-cta">Let's Connect</a>
 </div>
 
-<!-- 1 · HERO -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-grid">
         <div class="hero-copy reveal">
             <h1>Build the workplace you <em>mean</em> to create.</h1>
             <hr class="rule">
-            <p class="hero-sub">I help mission-driven organizations intentionally design people practices, leadership structures, and organizational systems that create clarity and trust.</p>
+            <p class="hero-sub">I help mission-driven organizations intentionally design people practices, leadership habits, and organizational systems that create clarity, build trust, and support sustainable growth.</p>
             <div class="hero-actions">
-                <a href="work-together.html" class="btn btn-primary">Start a Conversation</a>
-                <a href="approach.html" class="text-link">The approach<span class="arr">→</span></a>
+                <a href="work-together.html" class="btn btn-primary">Work With Me</a>
+                <a href="approach.html" class="btn btn-outline">Learn More</a>
             </div>
         </div>
         <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1642543492366-a92039433543?q=80&w=1400&auto=format&fit=crop" alt="A notebook and pen on a wooden desk in warm window light">
+            <img src="https://images.unsplash.com/photo-1774364830987-d18b6b063ab7?q=80&w=1400&auto=format&fit=crop" alt="A ceramic vase with dried botanicals resting on books in warm natural light">
         </div>
     </div>
 </section>
 
-<!-- 2 · PHILOSOPHY -->
-<section class="statement block-alt">
-    <svg class="constellation" width="440" height="440" viewBox="0 0 440 440" fill="none" style="right:-130px; top:-90px; opacity:0.1;">
-        <line x1="70" y1="90" x2="210" y2="50" stroke="#234F45"/>
-        <line x1="210" y1="50" x2="350" y2="130" stroke="#234F45"/>
-        <line x1="70" y1="90" x2="130" y2="250" stroke="#234F45"/>
-        <line x1="130" y1="250" x2="290" y2="230" stroke="#234F45"/>
-        <line x1="350" y1="130" x2="290" y2="230" stroke="#234F45"/>
-        <line x1="290" y1="230" x2="390" y2="330" stroke="#234F45"/>
-        <line x1="130" y1="250" x2="190" y2="370" stroke="#234F45"/>
-        <circle cx="70" cy="90" r="4" fill="#234F45"/>
-        <circle cx="210" cy="50" r="4" fill="#CB6B4B"/>
-        <circle cx="350" cy="130" r="4" fill="#234F45"/>
-        <circle cx="130" cy="250" r="4" fill="#234F45"/>
-        <circle cx="290" cy="230" r="4" fill="#CB6B4B"/>
-        <circle cx="390" cy="330" r="4" fill="#234F45"/>
-        <circle cx="190" cy="370" r="4" fill="#234F45"/>
-    </svg>
-    <div class="wrap reveal">
-        <p>Organizations don't become places people trust by accident.</p>
-        <p class="sub">They're shaped by the decisions leaders make every week — who to hire, how to decide, what to put in writing. My work is making that shaping intentional.</p>
-    </div>
-</section>
-
-<!-- 3 · THE INTENTIONAL ORGANIZATION -->
-<section class="block">
-    <div class="wrap reveal">
-        <svg class="motif" width="130" height="12" viewBox="0 0 130 12" fill="none"><line x1="0" y1="6" x2="130" y2="6" stroke="#E4DDD3"/><circle cx="10" cy="6" r="3" fill="#234F45"/><circle cx="65" cy="6" r="3" fill="#CB6B4B"/><circle cx="120" cy="6" r="3" fill="#6E675E"/></svg>
-        <span class="eyebrow">The Intentional Organization</span>
-        <h2 style="max-width: 720px; margin-bottom: 56px;">What makes an organization intentional?</h2>
-        <ul class="principles">
-            <li>
-                <h3>Decisions are designed, not improvised.</h3>
-                <p>There's a known way choices get made — and it doesn't depend on who happens to be in the room.</p>
-            </li>
-            <li>
-                <h3>Expectations live in writing, not in memory.</h3>
-                <p>Roles, agreements, and standards are documented, so fairness doesn't rely on recall.</p>
-            </li>
-            <li>
-                <h3>Structure carries the weight, not individuals.</h3>
-                <p>The system holds the load. People hold the mission.</p>
-            </li>
-            <li>
-                <h3>Culture is practiced, not just stated.</h3>
-                <p>Values show up in hiring, feedback, and hard calls — not only on the wall.</p>
-            </li>
-        </ul>
-        <p class="framework-close">This is the standard every engagement builds toward.</p>
-    </div>
-</section>
-
-<!-- 4 · THE PATTERN -->
-<section class="block block-alt">
-    <div class="wrap-narrow reveal">
-        <span class="eyebrow">The Pattern</span>
-        <h2>You may have noticed.</h2>
-        <ul class="dash-list" style="margin-top: 44px;">
-            <li>Hiring takes longer than it should.</li>
-            <li>The same people problems keep coming back.</li>
-            <li>One leader has quietly become the person everything lands on.</li>
-        </ul>
-        <p class="pattern-callout">That's not a people problem. It's a systems problem — and it's fixable.</p>
-        <a href="scan.html" class="text-link" style="display: inline-block; margin-top: 36px;">See the pattern clearly<span class="arr">→</span></a>
-    </div>
-</section>
-
-<!-- 5 · HI, I'M DANIELA -->
-<section class="block">
+<!-- VALUES -->
+<section class="values">
     <div class="wrap">
-        <div class="intro-grid reveal">
-            <div class="intro-photo">
-                <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
+        <div class="values-grid reveal">
+            <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="22" cy="22" r="17" stroke="#234F45" stroke-width="1.4"/>
+                    <path d="M28 16L24 24L16 28L20 20L28 16Z" stroke="#234F45" stroke-width="1.4" stroke-linejoin="round"/>
+                </svg>
+                <h3>Clarity</h3>
+                <p>We bring clarity to the people side of your mission and strategy.</p>
             </div>
-            <div class="intro-copy">
-                <span class="eyebrow">Hi, I'm Daniela</span>
-                <h2>I've built these systems inside the organizations that needed them.</h2>
-                <p>For over a decade I led people and culture work across nonprofits and international NGOs — including building the people function from scratch at an international human rights organization, supporting teams across 13 countries. I started this practice because I kept seeing capable, mission-driven teams held back by the same structural gaps, and leaders carrying weight a well-designed system should carry instead.</p>
-                <p class="pov">My point of view is simple: structure is not bureaucracy. Done well, it's what protects the mission — and the people doing the work.</p>
-                <a href="about.html" class="text-link" style="display: inline-block; margin-top: 12px;">More about me<span class="arr">→</span></a>
+            <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="17" r="5" stroke="#CB6B4B" stroke-width="1.4"/>
+                    <circle cx="29" cy="19" r="4" stroke="#CB6B4B" stroke-width="1.4"/>
+                    <path d="M7 33C7 28 11 25 16 25C21 25 25 28 25 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M27 26C31.5 26 36 28.5 36 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+                <h3>Trust</h3>
+                <p>We build the foundations for trust, transparency, and accountability.</p>
+            </div>
+            <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="11" y="8" width="22" height="28" rx="2" stroke="#234F45" stroke-width="1.4"/>
+                    <path d="M16 16L18 18L21.5 14.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="25" y1="16.5" x2="29" y2="16.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
+                    <path d="M16 24L18 26L21.5 22.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <line x1="25" y1="24.5" x2="29" y2="24.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+                <h3>Effective Systems</h3>
+                <p>We design people systems that are practical, efficient, and built to last.</p>
+            </div>
+            <div class="value">
+                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 35C22 35 8 27 8 17.5C8 12.8 11.8 9 16.5 9C19 9 21 10.5 22 12C23 10.5 25 9 27.5 9C32.2 9 36 12.8 36 17.5C36 27 22 35 22 35Z" stroke="#CB6B4B" stroke-width="1.4" stroke-linejoin="round"/>
+                </svg>
+                <h3>Care</h3>
+                <p>We lead with empathy and respect for the people at the heart of your work.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- 6 · HOW I HELP -->
-<section class="block block-alt">
-    <div class="wrap reveal">
-        <span class="eyebrow">How I Help</span>
-        <h2 style="margin-bottom: 56px;">Three ways we can work together.</h2>
-        <ul class="rows">
-            <li>
-                <span class="num">01</span>
-                <h3>See clearly</h3>
-                <p>A three-week diagnostic that identifies what's actually creating the drag — and what to fix first.</p>
-            </li>
-            <li>
-                <span class="num">02</span>
-                <h3>Build what holds</h3>
-                <p>Hiring, onboarding, role clarity, decision structures — the systems your team needs, and nothing more.</p>
-            </li>
-            <li>
-                <span class="num">03</span>
-                <h3>Stay steady</h3>
-                <p>Ongoing counsel as you implement, make decisions, and lead through change.</p>
-            </li>
-        </ul>
-        <a href="services.html" class="text-link" style="display: inline-block; margin-top: 44px;">Explore the work<span class="arr">→</span></a>
-    </div>
-</section>
-
-<!-- 7 · ONE STORY -->
-<section class="block">
-    <div class="wrap reveal">
-        <svg class="motif center" width="130" height="12" viewBox="0 0 130 12" fill="none"><line x1="0" y1="6" x2="130" y2="6" stroke="#E4DDD3"/><circle cx="10" cy="6" r="3" fill="#234F45"/><circle cx="65" cy="6" r="3" fill="#CB6B4B"/><circle cx="120" cy="6" r="3" fill="#6E675E"/></svg>
-        <p class="story-quote">"A growing education nonprofit came to the Scan with a stretched team and every people decision improvised from scratch. Three weeks later, leadership had a clear map of what was breaking, what it was costing them, and a 90-day plan for what to fix first."</p>
-        <p class="story-attr">From a People Systems Scan engagement, 2026</p>
-    </div>
-</section>
-
-<!-- 8 · INVITATION -->
-<section class="cta-band">
-    <svg class="constellation" width="400" height="400" viewBox="0 0 440 440" fill="none" style="left:-110px; bottom:-120px; opacity:0.12;">
-        <line x1="70" y1="90" x2="210" y2="50" stroke="#F6F3EF"/>
-        <line x1="210" y1="50" x2="350" y2="130" stroke="#F6F3EF"/>
-        <line x1="70" y1="90" x2="130" y2="250" stroke="#F6F3EF"/>
-        <line x1="130" y1="250" x2="290" y2="230" stroke="#F6F3EF"/>
-        <line x1="350" y1="130" x2="290" y2="230" stroke="#F6F3EF"/>
-        <line x1="290" y1="230" x2="390" y2="330" stroke="#F6F3EF"/>
-        <circle cx="70" cy="90" r="4" fill="#F6F3EF"/>
-        <circle cx="210" cy="50" r="4" fill="#E7C3AF"/>
-        <circle cx="350" cy="130" r="4" fill="#F6F3EF"/>
-        <circle cx="130" cy="250" r="4" fill="#F6F3EF"/>
-        <circle cx="290" cy="230" r="4" fill="#E7C3AF"/>
-        <circle cx="390" cy="330" r="4" fill="#F6F3EF"/>
-    </svg>
-    <div class="wrap reveal">
-        <h2>Ready to build with <em>intention</em>?</h2>
-        <p>One conversation. No pitch — a clear read on what's happening in your organization and whether I can help.</p>
-        <a href="work-together.html" class="btn btn-cream">Book a Conversation</a>
-    </div>
-</section>
-
-<footer class="site-footer">
-    <div class="wrap">
-        <div class="footer-logo">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="12" stroke="#234F45" stroke-width="1"/>
-                <line x1="20" y1="8" x2="9" y2="26" stroke="#234F45" stroke-width="0.8"/>
-                <line x1="20" y1="8" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
-                <line x1="9" y1="26" x2="31" y2="26" stroke="#234F45" stroke-width="0.8"/>
-                <circle cx="20" cy="8" r="3" fill="#234F45"/>
-                <circle cx="9" cy="26" r="3" fill="#CB6B4B"/>
-                <circle cx="31" cy="26" r="3" fill="#6E675E"/>
+<!-- HI, I'M DANIELA -->
+<section class="about-intro">
+    <div class="about-grid">
+        <div class="about-photo">
+            <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
+        </div>
+        <div class="about-copy reveal">
+            <span class="eyebrow">Hi, I'm Daniela</span>
+            <h2>I believe intentional organizations create lasting impact.</h2>
+            <p>With over a decade of experience in people strategy and organizational development across the nonprofit and mission-driven sector, I partner with leaders to navigate complexity, align their teams, and build workplaces where people can thrive.</p>
+            <a href="about.html" class="text-link">More About Me<span class="arr">→</span></a>
+            <svg class="botanical" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 250C100 250 95 150 100 20" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 60C100 60 130 50 145 25" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 100C100 100 65 90 50 65" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 140C100 140 135 130 152 105" stroke="#CB6B4B" stroke-width="1"/>
+                <path d="M100 180C100 180 62 170 46 145" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="148" cy="22" rx="7" ry="14" transform="rotate(40 148 22)" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="47" cy="62" rx="7" ry="14" transform="rotate(-40 47 62)" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="155" cy="102" rx="7" ry="14" transform="rotate(40 155 102)" stroke="#CB6B4B" stroke-width="1"/>
+                <ellipse cx="43" cy="142" rx="7" ry="14" transform="rotate(-40 43 142)" stroke="#CB6B4B" stroke-width="1"/>
             </svg>
-            <span class="brand-word">Daniela<br>Reinoso</span>
         </div>
-        <ul class="footer-nav">
-            <li><a href="about.html">About</a></li>
-            <li><a href="approach.html">Approach</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="scan.html">The Scan</a></li>
-            <li><a href="people_systems_snapshot.html">The Snapshot</a></li>
-        </ul>
-        <div class="footer-social">
-            <a href="https://linkedin.com/in/danielareinoso" target="_blank" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#6E675E"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="mailto:daniela@danielareinoso.co" aria-label="Email">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E675E" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5L12 13L21 6.5"/></svg>
-            </a>
+    </div>
+</section>
+
+<!-- WHAT I DO -->
+<section class="whatido">
+    <div class="wrap">
+        <span class="eyebrow">What I Do</span>
+        <h2>Strategic support for the people side of your mission.</h2>
+        <div class="wid-grid reveal">
+            <div class="wid-card">
+                <div class="wid-icon green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3" stroke="#F6F3EF" stroke-width="1.5"/><circle cx="16.5" cy="9.5" r="2.3" stroke="#F6F3EF" stroke-width="1.5"/><path d="M3.5 19C3.5 15.7 6 13.7 9 13.7C12 13.7 14.5 15.7 14.5 19" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14.2C18.4 14.2 20.5 15.8 20.5 18.4" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>People Strategy</h3>
+                <p>Align your people practices with your mission, values, and growth goals.</p>
+                <a href="services.html" class="text-link">Learn More<span class="arr">→</span></a>
+            </div>
+            <div class="wid-card">
+                <div class="wid-icon clay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="9.5" y="3.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><rect x="3.5" y="15.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><rect x="15.5" y="15.5" width="5" height="4.4" rx="1" stroke="#FDF9F4" stroke-width="1.5"/><path d="M12 8V12M12 12H6V15.5M12 12H18V15.5" stroke="#FDF9F4" stroke-width="1.5"/></svg>
+                </div>
+                <h3>Organizational Design</h3>
+                <p>Design structure, roles, and processes that support clarity, collaboration, and impact.</p>
+                <a href="scan.html" class="text-link">Learn More<span class="arr">→</span></a>
+            </div>
+            <div class="wid-card">
+                <div class="wid-icon green">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 20C12 14 12 10 12 8" stroke="#F6F3EF" stroke-width="1.5" stroke-linecap="round"/><path d="M12 11C12 8 9.5 5.5 5.5 5.5C5.5 9.5 8 11.5 12 11.5" stroke="#F6F3EF" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 14.5C12 11.5 14.5 9 18.5 9C18.5 13 16 15 12 15" stroke="#F6F3EF" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </div>
+                <h3>Culture &amp; Leadership</h3>
+                <p>Strengthen culture and leadership to build trust, engagement, and belonging.</p>
+                <a href="approach.html" class="text-link">Learn More<span class="arr">→</span></a>
+            </div>
+            <div class="wid-card">
+                <div class="wid-icon clay">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 3.5H14L18.5 8V20.5H6V3.5Z" stroke="#FDF9F4" stroke-width="1.5" stroke-linejoin="round"/><path d="M14 3.5V8H18.5" stroke="#FDF9F4" stroke-width="1.5" stroke-linejoin="round"/><line x1="9" y1="12" x2="15.5" y2="12" stroke="#FDF9F4" stroke-width="1.5" stroke-linecap="round"/><line x1="9" y1="15.5" x2="15.5" y2="15.5" stroke="#FDF9F4" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </div>
+                <h3>Policies &amp; Systems</h3>
+                <p>Create practical policies and systems that support people and reduce risk.</p>
+                <a href="services.html" class="text-link">Learn More<span class="arr">→</span></a>
+            </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 Daniela Reinoso &nbsp;|&nbsp; <a href="https://danielareinoso.co">danielareinoso.co</a> &nbsp;|&nbsp; <a href="mailto:daniela@danielareinoso.co">daniela@danielareinoso.co</a>
+    </div>
+</section>
+
+<!-- TESTIMONIAL BAND -->
+<section class="testimonial-band">
+    <div class="wrap">
+        <div class="testi-grid reveal">
+            <div class="testi-left">
+                <span class="quote-marks">&ldquo;</span>
+                <blockquote>Daniela brings clarity, thoughtfulness, and a deep commitment to doing what's right.</blockquote>
+                <cite>Executive Director, Nonprofit Client</cite>
+            </div>
+            <div class="testi-cta">
+                <div class="testi-cta-icon">
+                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 22C13 15 13 11 13 8.5" stroke="#F6F3EF" stroke-width="1.3" stroke-linecap="round"/><path d="M13 12C13 8.5 10 5.5 5.5 5.5C5.5 10 8.5 12.5 13 12.5" stroke="#F6F3EF" stroke-width="1.3" stroke-linejoin="round"/><path d="M13 15.5C13 12 16 9.5 20.5 9.5C20.5 14 17.5 16 13 16" stroke="#F6F3EF" stroke-width="1.3" stroke-linejoin="round"/></svg>
+                </div>
+                <div>
+                    <p>Ready to build an organization with intention?</p>
+                    <a href="work-together.html">Let's Connect <span class="arr">→</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="home-footer">
+    <div class="wrap">
+        <div class="hf-top">
+            <a href="index.html" class="nav-brand">
+                <svg width="38" height="38" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="24" y1="7" x2="40" y2="17" stroke="#234F45" stroke-width="0.9"/>
+                    <line x1="24" y1="7" x2="8" y2="17" stroke="#234F45" stroke-width="0.9"/>
+                    <line x1="8" y1="17" x2="24" y2="24" stroke="#234F45" stroke-width="0.9"/>
+                    <line x1="40" y1="17" x2="24" y2="24" stroke="#234F45" stroke-width="0.9"/>
+                    <line x1="24" y1="24" x2="9" y2="33" stroke="#234F45" stroke-width="0.9"/>
+                    <line x1="24" y1="24" x2="39" y2="33" stroke="#234F45" stroke-width="0.9"/>
+                    <line x1="9" y1="33" x2="24" y2="41" stroke="#234F45" stroke-width="0.9"/>
+                    <line x1="39" y1="33" x2="24" y2="41" stroke="#234F45" stroke-width="0.9"/>
+                    <circle cx="24" cy="7" r="3" fill="#234F45"/>
+                    <circle cx="8" cy="17" r="2.6" fill="#6E675E"/>
+                    <circle cx="40" cy="17" r="2.6" fill="#234F45"/>
+                    <circle cx="24" cy="24" r="3.2" fill="#0F4C5C"/>
+                    <circle cx="9" cy="33" r="2.6" fill="#CB6B4B"/>
+                    <circle cx="39" cy="33" r="2.6" fill="#234F45"/>
+                    <circle cx="24" cy="41" r="3" fill="#CB6B4B"/>
+                </svg>
+                <span class="brand-word" style="font-size: 14px;">Daniela<br>Reinoso</span>
+            </a>
+            <ul class="hf-nav">
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="approach.html">Approach</a></li>
+                <li><a href="scan.html">The Scan</a></li>
+                <li><a href="people_systems_snapshot.html">Resources</a></li>
+            </ul>
+            <div class="hf-social">
+                <a href="https://linkedin.com/in/danielareinoso" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#6E675E"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="mailto:daniela@danielareinoso.co" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E675E" stroke-width="1.6"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5L12 13L21 6.5"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="hf-bottom">
+            &copy; 2026 Daniela Reinoso Consulting &nbsp;|&nbsp; <a href="https://danielareinoso.co">danielareinoso.co</a> &nbsp;|&nbsp; <a href="mailto:daniela@danielareinoso.co">daniela@danielareinoso.co</a>
         </div>
     </div>
 </footer>
