@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Daniela Reinoso</title>
     <meta property="og:title" content="Services | Daniela Reinoso">
-    <meta property="og:description" content="Three ways we can work together: the People Systems Scan, the Build, and Ongoing Advisory.">
+    <meta property="og:description" content="Three ways we can work together — and how to know which one fits.">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YZQYRTJQ9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,10 +18,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .pricing-note { max-width: 700px; margin-bottom: 64px; }
-        .pricing-note h4 { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-        .pricing-note p { font-size: 15px; color: var(--ink-soft); line-height: 1.85; }
-        .pricing-note p + p { margin-top: 12px; }
+        .svc-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 88px; align-items: start; }
+        .svc-left .card-kicker { margin-bottom: 16px; }
+        .svc-left h2 { margin-bottom: 20px; }
+        .svc-left .svc-desc { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 36px; }
+        .svc-invest { border-top: 1px solid var(--hairline); padding-top: 22px; }
+        .svc-invest .label { font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 4px; }
+        .svc-invest .amount { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 30px; color: var(--ink); }
+        .svc-invest .fine { font-size: 12px; color: var(--ink-soft); font-style: italic; line-height: 1.6; margin-top: 10px; max-width: 320px; }
+        .svc-right h3 { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+        .svc-right .dash-list { margin-bottom: 40px; }
+        .svc-right .dash-list li { font-size: 15px; padding: 15px 0 15px 30px; }
+        .svc-right .dash-list li::before { top: 15px; }
+        .svc-leave { font-size: 15px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 28px; }
+        .svc-leave strong { color: var(--ink); font-weight: 500; }
+        .quote-cta-band { background: var(--green); padding: 104px 0; text-align: center; position: relative; overflow: hidden; }
+        .quote-cta-band blockquote {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(26px, 3.2vw, 38px); color: var(--bg);
+            line-height: 1.4; max-width: 760px; margin: 0 auto 22px; position: relative;
+        }
+        .quote-cta-band p { font-size: 16px; color: rgba(246,243,239,0.7); margin-bottom: 44px; position: relative; }
+        @media (max-width: 900px) { .svc-grid { grid-template-columns: 1fr; gap: 40px; } }
     </style>
 </head>
 <body>
@@ -66,70 +84,116 @@
     </div>
 </section>
 
+<!-- 01 · SCAN -->
 <section class="block block-alt">
     <div class="wrap">
-        <div class="pricing-note reveal">
-            <h4>A note on investment</h4>
-            <p>My pricing is value-based and scope-based. The ranges below reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing may be calibrated to local market context, organizational budget, and scope.</p>
-            <p>The goal is a fair engagement: one that reflects the value of the work, the complexity of the problem, and the realities of the organization.</p>
-        </div>
-        <div class="cards-3 reveal">
-            <div class="price-card featured">
-                <p class="price-kicker">Start Here</p>
-                <h3>The People Systems Scan</h3>
-                <p class="price-typical">Typical investment</p>
-                <div class="price-amount">USD $3,500+</div>
-                <p class="price-note">A focused 3-week diagnostic for growing organizations experiencing recurring people-ops friction, unclear ownership, inconsistent processes, or leadership time pulled into preventable issues.</p>
-                <ul class="price-features">
-                    <li>People systems gap map</li>
-                    <li>Priority risk areas</li>
-                    <li>Leadership debrief</li>
-                    <li>90-day stabilization roadmap</li>
-                    <li>Recommendations: build, delegate, or defer</li>
-                </ul>
-                <a href="scan.html" class="btn btn-primary">About the Scan</a>
-                <p class="price-context">Pricing is calibrated to organization size, country/market context, urgency, and the level of support needed.</p>
+        <div class="svc-grid reveal">
+            <div class="svc-left">
+                <span class="card-kicker">01 · The Diagnostic</span>
+                <h2>People Systems Scan</h2>
+                <p class="svc-desc">A focused three-week diagnostic. We map where your people systems are creating drag, risk, or confusion — and turn the findings into a 90-day plan for what to fix first.</p>
+                <div class="svc-invest">
+                    <span class="label">Typical investment</span>
+                    <span class="amount">USD $3,500+</span>
+                    <p class="fine">Calibrated to organization size, market context, and urgency. Latin America-based organizations may qualify for adjusted pricing.</p>
+                </div>
             </div>
-            <div class="price-card">
-                <p class="price-kicker"></p>
-                <h3>People Systems Build</h3>
-                <p class="price-typical">Typical investment</p>
-                <div class="price-amount">USD $8,000–$20,000+</div>
-                <p class="price-note">For organizations ready to build or improve priority systems: hiring, onboarding, role clarity, performance rhythms, manager support, or policy foundations.</p>
-                <ul class="price-features">
-                    <li>Build highest-priority people systems</li>
-                    <li>Hiring, onboarding, role clarity</li>
-                    <li>Performance rhythms &amp; manager support</li>
-                    <li>Policy foundations</li>
-                    <li>Implementation support &amp; team handoff</li>
+            <div class="svc-right">
+                <h3>This is right for you if…</h3>
+                <ul class="dash-list">
+                    <li>People-ops friction keeps recurring, and nobody's sure exactly why.</li>
+                    <li>Leadership time is being pulled into preventable issues.</li>
+                    <li>You want a clear picture before investing in building anything.</li>
                 </ul>
-                <a href="work-together.html" class="btn btn-outline">Let's Talk</a>
-                <p class="price-context">Final pricing depends on the number of systems, team size, stakeholder complexity, and market context.</p>
-            </div>
-            <div class="price-card">
-                <p class="price-kicker"></p>
-                <h3>Ongoing Advisory</h3>
-                <p class="price-typical">Typical investment</p>
-                <div class="price-amount">USD $2,500–$6,000/mo</div>
-                <p class="price-note">For leaders who need steady counsel while implementing systems, making people decisions, and reducing recurring escalations.</p>
-                <ul class="price-features">
-                    <li>Senior people &amp; culture guidance</li>
-                    <li>Ongoing systems implementation</li>
-                    <li>Leadership advisory support</li>
-                    <li>Team friction &amp; culture work</li>
-                    <li>Flexible embedded engagement</li>
-                </ul>
-                <a href="work-together.html" class="btn btn-outline">Let's Talk</a>
-                <p class="price-context">Advisory pricing depends on cadence, response time, team complexity, and scope.</p>
+                <p class="svc-leave"><strong>You leave with:</strong> a people systems gap map, priority risk areas, a leadership debrief, and a 90-day stabilization roadmap.</p>
+                <a href="scan.html" class="text-link">About the Scan<span class="arr">→</span></a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="cta-band">
+<!-- 02 · BUILD -->
+<section class="block">
+    <div class="wrap">
+        <div class="svc-grid reveal">
+            <div class="svc-left">
+                <span class="card-kicker">02 · The Build</span>
+                <h2>People Systems Build</h2>
+                <p class="svc-desc">With priorities clear, we build the systems that matter most — designed for your stage, put in writing, and handed off to your team.</p>
+                <div class="svc-invest">
+                    <span class="label">Typical investment</span>
+                    <span class="amount">USD $8,000–$20,000+</span>
+                    <p class="fine">Depends on the number of systems, team size, and stakeholder complexity.</p>
+                </div>
+            </div>
+            <div class="svc-right">
+                <h3>This is right for you if…</h3>
+                <ul class="dash-list">
+                    <li>You know what's broken — through the Scan or hard experience.</li>
+                    <li>You're ready to put hiring, onboarding, role clarity, or performance rhythms in writing.</li>
+                    <li>You want systems your team will actually use, not a policy binder.</li>
+                </ul>
+                <p class="svc-leave"><strong>You leave with:</strong> working systems for your highest priorities — hiring, onboarding, role clarity, performance rhythms, manager support, policy foundations — plus implementation support and a clean handoff.</p>
+                <a href="work-together.html" class="text-link">Let's talk<span class="arr">→</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 · ADVISORY -->
+<section class="block block-alt">
+    <div class="wrap">
+        <div class="svc-grid reveal">
+            <div class="svc-left">
+                <span class="card-kicker">03 · The Counsel</span>
+                <h2>Ongoing Advisory</h2>
+                <p class="svc-desc">Steady senior counsel as you implement, make people decisions, and lead through change — without me becoming the person everything lands on.</p>
+                <div class="svc-invest">
+                    <span class="label">Typical investment</span>
+                    <span class="amount">USD $2,500–$6,000/mo</span>
+                    <p class="fine">Depends on cadence, response time, and whether the engagement is local, regional, or global.</p>
+                </div>
+            </div>
+            <div class="svc-right">
+                <h3>This is right for you if…</h3>
+                <ul class="dash-list">
+                    <li>You're implementing new systems and want experienced eyes along the way.</li>
+                    <li>People decisions keep escalating to you, and you want a thinking partner.</li>
+                    <li>You need senior people &amp; culture judgment without a full-time hire.</li>
+                </ul>
+                <p class="svc-leave"><strong>You get:</strong> ongoing implementation support, leadership advisory, and help with team friction and culture work — at a cadence that fits your organization.</p>
+                <a href="work-together.html" class="text-link">Let's talk<span class="arr">→</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING PHILOSOPHY -->
+<section class="block" style="padding-top: 72px; padding-bottom: 72px;">
+    <div class="wrap-narrow reveal">
+        <svg class="motif" width="130" height="12" viewBox="0 0 130 12" fill="none"><line x1="0" y1="6" x2="130" y2="6" stroke="#E4DDD3"/><circle cx="10" cy="6" r="3" fill="#234F45"/><circle cx="65" cy="6" r="3" fill="#CB6B4B"/><circle cx="120" cy="6" r="3" fill="#6E675E"/></svg>
+        <span class="eyebrow">A Note on Investment</span>
+        <p style="font-size: 15.5px; color: var(--ink-soft); line-height: 1.9; margin-bottom: 14px;">My pricing is value-based and scope-based. The ranges above reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing is calibrated to local market context, organizational budget, and scope.</p>
+        <p style="font-size: 15.5px; color: var(--ink); line-height: 1.9;">The goal is a fair engagement: one that reflects the value of the work, the complexity of the problem, and the realities of the organization.</p>
+    </div>
+</section>
+
+<!-- QUOTE + CTA -->
+<section class="quote-cta-band">
+    <svg class="constellation" width="400" height="400" viewBox="0 0 440 440" fill="none" style="right:-110px; top:-100px; opacity:0.12;">
+        <line x1="70" y1="90" x2="210" y2="50" stroke="#F6F3EF"/>
+        <line x1="210" y1="50" x2="350" y2="130" stroke="#F6F3EF"/>
+        <line x1="70" y1="90" x2="130" y2="250" stroke="#F6F3EF"/>
+        <line x1="130" y1="250" x2="290" y2="230" stroke="#F6F3EF"/>
+        <circle cx="70" cy="90" r="4" fill="#F6F3EF"/>
+        <circle cx="210" cy="50" r="4" fill="#E7C3AF"/>
+        <circle cx="350" cy="130" r="4" fill="#F6F3EF"/>
+        <circle cx="130" cy="250" r="4" fill="#F6F3EF"/>
+        <circle cx="290" cy="230" r="4" fill="#E7C3AF"/>
+    </svg>
     <div class="wrap reveal">
-        <h2>Not sure where to start?</h2>
-        <p>Start with a conversation. We'll figure out together whether the Scan, the Build, or neither is the right move.</p>
+        <blockquote>"The right engagement is the one your organization is actually ready for."</blockquote>
+        <p>Not sure which that is? That's exactly what a first conversation is for.</p>
         <a href="work-together.html" class="btn btn-cream">Work Together</a>
     </div>
 </section>

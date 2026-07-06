@@ -27,8 +27,18 @@
         .del-list li:first-child { border-top: none; padding-top: 0; }
         .del-list li:first-child::before { top: 0; }
         .del-list li::before { content: '—'; position: absolute; left: 0; top: 12px; color: var(--clay); }
-        .invest-strip { display: flex; gap: 56px; align-items: baseline; flex-wrap: wrap; padding: 44px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
-        .invest-strip .amount { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 44px; color: var(--green); }
+        .invest-strip { display: flex; gap: 64px; align-items: center; flex-wrap: wrap; padding: 44px 0; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+        .invest-strip .amount { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(56px, 7vw, 92px); line-height: 1; color: var(--green); }
+        .cta-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; text-align: left; }
+        .cta-split h2 { color: var(--bg); font-size: clamp(44px, 5.5vw, 68px); margin-bottom: 0; }
+        .cta-split .cta-lines { list-style: none; margin-bottom: 36px; }
+        .cta-split .cta-lines li {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 23px; color: rgba(246,243,239,0.85); line-height: 1.4;
+            padding: 13px 0; border-bottom: 1px solid rgba(246,243,239,0.15);
+        }
+        .cta-split .cta-lines li:first-child { border-top: 1px solid rgba(246,243,239,0.15); }
+        @media (max-width: 900px) { .cta-split { grid-template-columns: 1fr; gap: 40px; } }
         .invest-strip p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; max-width: 520px; }
         .familiar-note { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; font-style: italic; color: var(--ink-soft); line-height: 1.55; margin-top: 40px; }
         @media (max-width: 900px) { .scan-body { grid-template-columns: 1fr; gap: 44px; } }
@@ -117,20 +127,21 @@
 
 <section class="block block-alt">
     <div class="wrap reveal">
+        <svg class="motif" width="130" height="12" viewBox="0 0 130 12" fill="none"><line x1="0" y1="6" x2="130" y2="6" stroke="#E4DDD3"/><circle cx="10" cy="6" r="3" fill="#234F45"/><circle cx="65" cy="6" r="3" fill="#CB6B4B"/><circle cx="120" cy="6" r="3" fill="#6E675E"/></svg>
         <span class="eyebrow">How It Works</span>
-        <h2 style="margin-bottom: 60px;">Three weeks, three moves.</h2>
-        <div class="cards-3">
-            <div class="soft-card">
+        <h2 style="margin-bottom: 72px;">Three weeks, three moves.</h2>
+        <div class="timeline">
+            <div class="tl-item">
                 <span class="card-kicker">Week One</span>
                 <h3>Listen + review</h3>
                 <p>Kickoff with leadership, review core documents, and identify the gap between what the organization says and what is written down.</p>
             </div>
-            <div class="soft-card">
+            <div class="tl-item">
                 <span class="card-kicker">Week Two</span>
                 <h3>Pulse + walkthrough</h3>
                 <p>Speak with key stakeholders and walk through one high-friction workflow — hiring, onboarding, or performance support.</p>
             </div>
-            <div class="soft-card">
+            <div class="tl-item">
                 <span class="card-kicker">Week Three</span>
                 <h3>Connect the dots</h3>
                 <p>Analyze patterns, map the findings, and deliver the 90-day stabilization roadmap in a leadership debrief.</p>
@@ -151,9 +162,17 @@
 
 <section class="cta-band">
     <div class="wrap reveal">
-        <h2>Start by seeing clearly.</h2>
-        <p>One conversation to confirm the fit — then three weeks to a clear picture and a plan.</p>
-        <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-cream">Book a Conversation</a>
+        <div class="cta-split">
+            <h2>Start by seeing clearly.</h2>
+            <div>
+                <ul class="cta-lines">
+                    <li>Three weeks.</li>
+                    <li>One map of what's actually happening.</li>
+                    <li>A 90-day plan for what to fix first.</li>
+                </ul>
+                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-cream">Book a Conversation</a>
+            </div>
+        </div>
     </div>
 </section>
 

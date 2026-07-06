@@ -22,34 +22,39 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .hero-grid {
-            max-width: 1240px; margin: 0 auto;
-            display: grid; grid-template-columns: 1.05fr 1fr;
-            align-items: center; gap: 64px;
+            max-width: 1280px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.5fr 1fr;
+            align-items: center; gap: 72px;
             padding: 0 48px;
-            min-height: 620px;
+            min-height: 600px;
         }
-        .hero-copy { padding: 80px 0; max-width: 540px; }
-        .hero-copy h1 { font-size: clamp(42px, 4.8vw, 60px); line-height: 1.1; }
+        .hero-copy { padding: 72px 0; max-width: 680px; }
+        .hero-copy h1 { font-size: clamp(52px, 6vw, 84px); line-height: 1.04; letter-spacing: -0.012em; }
         .hero-copy h1 em { font-style: normal; color: var(--clay); }
-        .hero-sub { font-size: 16.5px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 40px; }
+        .hero-sub { font-size: 17px; line-height: 1.85; color: var(--ink-soft); margin-bottom: 40px; max-width: 560px; }
         .hero-actions { display: flex; gap: 28px; flex-wrap: wrap; align-items: center; }
-        .hero-photo { height: 100%; min-height: 620px; position: relative; }
+        .hero-photo { height: 100%; min-height: 600px; position: relative; overflow: hidden; }
         .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-        .pattern-callout {
-            margin-top: 52px;
+        .framework-close {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(22px, 2.6vw, 28px);
-            color: var(--green); line-height: 1.45;
+            font-size: 21px; font-style: italic; color: var(--ink-soft);
+            margin-top: 44px;
+        }
+        .pattern-callout {
+            margin-top: 48px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(24px, 2.8vw, 32px);
+            color: var(--green); line-height: 1.4;
         }
         .intro-grid { display: grid; grid-template-columns: 300px 1fr; gap: 80px; align-items: center; }
         .intro-photo img { width: 100%; height: auto; display: block; border-radius: 4px; }
-        .intro-copy h2 { margin-bottom: 28px; }
+        .intro-copy h2 { margin-bottom: 26px; }
         .intro-copy p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 18px; }
         .intro-copy .pov { color: var(--ink); }
         .story-quote {
             font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: clamp(23px, 2.8vw, 30px); color: var(--green);
-            line-height: 1.5; max-width: 780px; margin: 0 auto 30px; text-align: center;
+            font-size: clamp(26px, 3.4vw, 38px); color: var(--green);
+            line-height: 1.45; max-width: 880px; margin: 0 auto 32px; text-align: center;
         }
         .story-attr {
             text-align: center; font-size: 10.5px; font-weight: 600;
@@ -57,8 +62,8 @@
         }
         @media (max-width: 960px) {
             .hero-grid { grid-template-columns: 1fr; gap: 0; padding: 0; min-height: 0; }
-            .hero-copy { padding: 64px 24px 56px; max-width: 100%; }
-            .hero-photo { min-height: 340px; }
+            .hero-copy { padding: 56px 24px 48px; max-width: 100%; }
+            .hero-photo { min-height: 320px; }
             .intro-grid { grid-template-columns: 1fr; gap: 40px; }
             .intro-photo img { max-width: 280px; }
         }
@@ -111,21 +116,65 @@
             </div>
         </div>
         <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1774364830987-d18b6b063ab7?q=80&w=1400&auto=format&fit=crop" alt="A white ceramic vase with dried grasses resting on books in warm natural light">
+            <img src="https://images.unsplash.com/photo-1642543492366-a92039433543?q=80&w=1400&auto=format&fit=crop" alt="A notebook and pen on a wooden desk in warm window light">
         </div>
     </div>
 </section>
 
 <!-- 2 · PHILOSOPHY -->
 <section class="statement block-alt">
+    <svg class="constellation" width="440" height="440" viewBox="0 0 440 440" fill="none" style="right:-130px; top:-90px; opacity:0.1;">
+        <line x1="70" y1="90" x2="210" y2="50" stroke="#234F45"/>
+        <line x1="210" y1="50" x2="350" y2="130" stroke="#234F45"/>
+        <line x1="70" y1="90" x2="130" y2="250" stroke="#234F45"/>
+        <line x1="130" y1="250" x2="290" y2="230" stroke="#234F45"/>
+        <line x1="350" y1="130" x2="290" y2="230" stroke="#234F45"/>
+        <line x1="290" y1="230" x2="390" y2="330" stroke="#234F45"/>
+        <line x1="130" y1="250" x2="190" y2="370" stroke="#234F45"/>
+        <circle cx="70" cy="90" r="4" fill="#234F45"/>
+        <circle cx="210" cy="50" r="4" fill="#CB6B4B"/>
+        <circle cx="350" cy="130" r="4" fill="#234F45"/>
+        <circle cx="130" cy="250" r="4" fill="#234F45"/>
+        <circle cx="290" cy="230" r="4" fill="#CB6B4B"/>
+        <circle cx="390" cy="330" r="4" fill="#234F45"/>
+        <circle cx="190" cy="370" r="4" fill="#234F45"/>
+    </svg>
     <div class="wrap reveal">
         <p>Organizations don't become places people trust by accident.</p>
         <p class="sub">They're shaped by the decisions leaders make every week — who to hire, how to decide, what to put in writing. My work is making that shaping intentional.</p>
     </div>
 </section>
 
-<!-- 3 · THE PATTERN -->
+<!-- 3 · THE INTENTIONAL ORGANIZATION -->
 <section class="block">
+    <div class="wrap reveal">
+        <svg class="motif" width="130" height="12" viewBox="0 0 130 12" fill="none"><line x1="0" y1="6" x2="130" y2="6" stroke="#E4DDD3"/><circle cx="10" cy="6" r="3" fill="#234F45"/><circle cx="65" cy="6" r="3" fill="#CB6B4B"/><circle cx="120" cy="6" r="3" fill="#6E675E"/></svg>
+        <span class="eyebrow">The Intentional Organization</span>
+        <h2 style="max-width: 720px; margin-bottom: 56px;">What makes an organization intentional?</h2>
+        <ul class="principles">
+            <li>
+                <h3>Decisions are designed, not improvised.</h3>
+                <p>There's a known way choices get made — and it doesn't depend on who happens to be in the room.</p>
+            </li>
+            <li>
+                <h3>Expectations live in writing, not in memory.</h3>
+                <p>Roles, agreements, and standards are documented, so fairness doesn't rely on recall.</p>
+            </li>
+            <li>
+                <h3>Structure carries the weight, not individuals.</h3>
+                <p>The system holds the load. People hold the mission.</p>
+            </li>
+            <li>
+                <h3>Culture is practiced, not just stated.</h3>
+                <p>Values show up in hiring, feedback, and hard calls — not only on the wall.</p>
+            </li>
+        </ul>
+        <p class="framework-close">This is the standard every engagement builds toward.</p>
+    </div>
+</section>
+
+<!-- 4 · THE PATTERN -->
+<section class="block block-alt">
     <div class="wrap-narrow reveal">
         <span class="eyebrow">The Pattern</span>
         <h2>You may have noticed.</h2>
@@ -139,8 +188,8 @@
     </div>
 </section>
 
-<!-- 4 · HI, I'M DANIELA -->
-<section class="block block-alt">
+<!-- 5 · HI, I'M DANIELA -->
+<section class="block">
     <div class="wrap">
         <div class="intro-grid reveal">
             <div class="intro-photo">
@@ -157,11 +206,11 @@
     </div>
 </section>
 
-<!-- 5 · HOW I HELP -->
-<section class="block">
+<!-- 6 · HOW I HELP -->
+<section class="block block-alt">
     <div class="wrap reveal">
         <span class="eyebrow">How I Help</span>
-        <h2 style="margin-bottom: 64px;">Three ways we can work together.</h2>
+        <h2 style="margin-bottom: 56px;">Three ways we can work together.</h2>
         <ul class="rows">
             <li>
                 <span class="num">01</span>
@@ -183,16 +232,31 @@
     </div>
 </section>
 
-<!-- 6 · ONE STORY -->
-<section class="block block-alt">
+<!-- 7 · ONE STORY -->
+<section class="block">
     <div class="wrap reveal">
+        <svg class="motif center" width="130" height="12" viewBox="0 0 130 12" fill="none"><line x1="0" y1="6" x2="130" y2="6" stroke="#E4DDD3"/><circle cx="10" cy="6" r="3" fill="#234F45"/><circle cx="65" cy="6" r="3" fill="#CB6B4B"/><circle cx="120" cy="6" r="3" fill="#6E675E"/></svg>
         <p class="story-quote">"A growing education nonprofit came to the Scan with a stretched team and every people decision improvised from scratch. Three weeks later, leadership had a clear map of what was breaking, what it was costing them, and a 90-day plan for what to fix first."</p>
         <p class="story-attr">From a People Systems Scan engagement, 2026</p>
     </div>
 </section>
 
-<!-- 7 · INVITATION -->
+<!-- 8 · INVITATION -->
 <section class="cta-band">
+    <svg class="constellation" width="400" height="400" viewBox="0 0 440 440" fill="none" style="left:-110px; bottom:-120px; opacity:0.12;">
+        <line x1="70" y1="90" x2="210" y2="50" stroke="#F6F3EF"/>
+        <line x1="210" y1="50" x2="350" y2="130" stroke="#F6F3EF"/>
+        <line x1="70" y1="90" x2="130" y2="250" stroke="#F6F3EF"/>
+        <line x1="130" y1="250" x2="290" y2="230" stroke="#F6F3EF"/>
+        <line x1="350" y1="130" x2="290" y2="230" stroke="#F6F3EF"/>
+        <line x1="290" y1="230" x2="390" y2="330" stroke="#F6F3EF"/>
+        <circle cx="70" cy="90" r="4" fill="#F6F3EF"/>
+        <circle cx="210" cy="50" r="4" fill="#E7C3AF"/>
+        <circle cx="350" cy="130" r="4" fill="#F6F3EF"/>
+        <circle cx="130" cy="250" r="4" fill="#F6F3EF"/>
+        <circle cx="290" cy="230" r="4" fill="#E7C3AF"/>
+        <circle cx="390" cy="330" r="4" fill="#F6F3EF"/>
+    </svg>
     <div class="wrap reveal">
         <h2>Ready to build with <em>intention</em>?</h2>
         <p>One conversation. No pitch — a clear read on what's happening in your organization and whether I can help.</p>
