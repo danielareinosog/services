@@ -36,43 +36,58 @@
         .hero-photo { height: 100%; min-height: 560px; position: relative; overflow: hidden; }
         .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        .values { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 72px 0; }
+        .values { background: var(--card); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 80px 0; }
         .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-        .value { padding: 0 40px; }
+        .value { padding: 0 44px; }
         .value + .value { border-left: 1px solid var(--hairline); }
-        .value-icon { width: 46px; height: 46px; margin-bottom: 20px; }
-        .value h3 { font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); margin-bottom: 12px; }
-        .value p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; }
+        .value h3 { font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+        .value p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; }
 
         .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; align-items: center; gap: 0; }
         .about-photo {
             display: flex; align-items: center; justify-content: center;
             padding: 64px 48px;
         }
-        .about-photo img {
-            width: 100%; max-width: 480px; height: auto; display: block;
-            border-radius: 4px;
-            filter: sepia(0.18) saturate(1.02) brightness(1.03);
+        .portrait { position: relative; width: 100%; max-width: 460px; border-radius: 4px; overflow: hidden; }
+        .portrait img {
+            width: 100%; height: auto; display: block;
+            aspect-ratio: 0.88; object-fit: cover; object-position: 50% 32%;
+            filter: sepia(0.22) saturate(0.87) brightness(1.08) contrast(0.96);
+        }
+        .portrait::after {
+            content: ''; position: absolute; inset: 0;
+            background: rgba(236, 210, 178, 0.12);
+            pointer-events: none;
         }
         .about-copy { padding: 96px 72px; max-width: 720px; position: relative; }
         .about-copy h2 { margin-bottom: 26px; max-width: 560px; }
         .about-copy p { font-size: 17px; color: var(--ink-soft); line-height: 1.8; margin-bottom: 28px; max-width: 560px; }
         .botanical { position: absolute; right: 24px; bottom: 30px; width: 200px; opacity: 0.3; pointer-events: none; }
 
-        .whatido { padding: 110px 0; text-align: center; background: var(--card); border-top: 1px solid var(--hairline); }
+        .philosophy { padding: 128px 0; }
+        .philosophy h2 { margin-bottom: 40px; max-width: 640px; }
+        .phil-intro { font-size: 17px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 30px; max-width: 560px; }
+        .phil-list { list-style: none; margin-bottom: 36px; }
+        .phil-list li {
+            font-family: 'Fraunces', Georgia, serif; font-weight: 500;
+            font-size: clamp(20px, 2vw, 25px); color: var(--green);
+            line-height: 1.35; padding: 7px 0;
+        }
+        .phil-close { font-size: 17px; color: var(--ink); line-height: 1.85; max-width: 600px; }
+        .whatido { padding: 118px 0 128px; text-align: center; background: var(--card); border-top: 1px solid var(--hairline); }
         .whatido .eyebrow { text-align: center; }
         .whatido .eyebrow::after { content: ''; display: block; width: 34px; height: 1px; background: var(--clay); margin: 12px auto 0; }
         .whatido h2 { max-width: 760px; margin: 0 auto 64px; }
-        .wid-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: left; }
+        .wid-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px; text-align: left; }
         .wid-card {
-            background: var(--white);
-            border: 1px solid var(--hairline);
+            background: transparent;
+            border: 1px solid rgba(224,219,211,0.65);
             border-radius: 8px;
-            padding: 38px 28px 32px;
+            padding: 42px 32px 36px;
             display: flex; flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: border-color 0.2s ease;
         }
-        .wid-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(35,79,69,0.08); }
+        .wid-card:hover { border-color: #D2CABE; }
         .wid-icon { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
         .wid-icon.green { background: var(--green); }
         .wid-icon.clay { background: var(--clay); }
@@ -84,19 +99,20 @@
         .testi-grid { display: grid; grid-template-columns: 2.3fr 1fr; gap: 56px; align-items: center; }
         .testi-left { position: relative; padding-left: 76px; }
         .quote-marks {
-            position: absolute; left: 0; top: -10px;
+            position: absolute; left: 0; top: -18px;
             font-family: 'Fraunces', Georgia, serif;
-            font-size: 96px; line-height: 1; color: var(--clay); font-weight: 600;
+            font-size: 130px; line-height: 1; color: var(--clay); font-weight: 600;
         }
+        .testi-left { padding-left: 96px; }
         .testi-left blockquote {
             font-family: 'Fraunces', Georgia, serif; font-weight: 500;
-            font-size: clamp(16px, 1.3vw, 19px); color: var(--bg);
-            line-height: 1.6; margin-bottom: 20px;
+            font-size: clamp(20px, 1.75vw, 25px); color: var(--bg);
+            line-height: 1.65; margin-bottom: 24px;
         }
         .testi-left cite {
-            font-style: normal; font-size: 13px; font-weight: 500;
+            font-style: normal; font-size: 12px; font-weight: 500;
             letter-spacing: 0.06em;
-            color: rgba(246,243,239,0.7);
+            color: rgba(246,243,239,0.6);
         }
         .testi-cta { display: flex; gap: 24px; align-items: center; }
         .testi-cta-icon {
@@ -115,19 +131,19 @@
         }
         .testi-cta a:hover { color: var(--white); }
 
-        footer.home-footer { background: var(--bg); padding: 56px 0 36px; }
+        footer.home-footer { background: var(--bg); padding: 40px 0 28px; }
         .hf-top {
             display: flex; align-items: center; justify-content: space-between;
-            gap: 32px; flex-wrap: wrap;
-            padding-bottom: 32px; border-bottom: 1px solid var(--hairline);
+            gap: 28px; flex-wrap: wrap;
+            padding-bottom: 22px; border-bottom: 1px solid rgba(224,219,211,0.55);
         }
-        .hf-nav { display: flex; gap: 30px; list-style: none; flex-wrap: wrap; }
-        .hf-nav a { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.25s; }
+        .hf-nav { display: flex; gap: 28px; list-style: none; flex-wrap: wrap; }
+        .hf-nav a { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
         .hf-nav a:hover { color: var(--clay); }
-        .hf-social { display: flex; gap: 16px; }
-        .hf-social a { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--hairline); display: flex; align-items: center; justify-content: center; transition: border-color 0.25s; }
+        .hf-social { display: flex; gap: 14px; }
+        .hf-social a { width: 32px; height: 32px; border-radius: 50%; border: 1px solid rgba(224,219,211,0.7); display: flex; align-items: center; justify-content: center; transition: border-color 0.2s; }
         .hf-social a:hover { border-color: var(--clay); }
-        .hf-bottom { padding-top: 24px; text-align: center; font-size: 12.5px; color: var(--ink-soft); }
+        .hf-bottom { padding-top: 18px; text-align: center; font-size: 11.5px; color: var(--ink-soft); opacity: 0.85; }
         .hf-bottom a { color: var(--ink-soft); text-decoration: none; }
         .hf-bottom a:hover { color: var(--clay); }
 
@@ -215,7 +231,7 @@
                 <a href="approach.html" class="btn btn-outline">Learn More</a>
             </div>
         </div>
-        <div class="hero-photo">
+        <div class="hero-photo reveal">
             <img src="hero-workspace.jpg" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1642543492366-a92039433543?q=80&w=1400&auto=format&fit=crop';" alt="Hands paging through a planning notebook at a warm wooden desk">
         </div>
     </div>
@@ -226,38 +242,18 @@
     <div class="wrap-wide">
         <div class="values-grid reveal">
             <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="22" cy="22" r="17" stroke="#234F45" stroke-width="1.4"/>
-                    <path d="M28 16L24 24L16 28L20 20L28 16Z" stroke="#234F45" stroke-width="1.4" stroke-linejoin="round"/>
-                </svg>
                 <h3>Clarity</h3>
                 <p>We bring clarity to the people side of your mission and strategy.</p>
             </div>
             <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="16" cy="17" r="5" stroke="#CB6B4B" stroke-width="1.4"/>
-                    <circle cx="29" cy="19" r="4" stroke="#CB6B4B" stroke-width="1.4"/>
-                    <path d="M7 33C7 28 11 25 16 25C21 25 25 28 25 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
-                    <path d="M27 26C31.5 26 36 28.5 36 33" stroke="#CB6B4B" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
                 <h3>Trust</h3>
                 <p>We build the foundations for trust, transparency, and accountability.</p>
             </div>
             <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="11" y="8" width="22" height="28" rx="2" stroke="#234F45" stroke-width="1.4"/>
-                    <path d="M16 16L18 18L21.5 14.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="25" y1="16.5" x2="29" y2="16.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
-                    <path d="M16 24L18 26L21.5 22.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <line x1="25" y1="24.5" x2="29" y2="24.5" stroke="#234F45" stroke-width="1.4" stroke-linecap="round"/>
-                </svg>
                 <h3>Effective Systems</h3>
                 <p>We design people systems that are practical, efficient, and built to last.</p>
             </div>
             <div class="value">
-                <svg class="value-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M22 35C22 35 8 27 8 17.5C8 12.8 11.8 9 16.5 9C19 9 21 10.5 22 12C23 10.5 25 9 27.5 9C32.2 9 36 12.8 36 17.5C36 27 22 35 22 35Z" stroke="#CB6B4B" stroke-width="1.4" stroke-linejoin="round"/>
-                </svg>
                 <h3>Care</h3>
                 <p>We lead with empathy and respect for the people at the heart of your work.</p>
             </div>
@@ -268,12 +264,14 @@
 <!-- HI, I'M DANIELA -->
 <section class="about-intro">
     <div class="about-grid">
-        <div class="about-photo">
-            <img src="DR_headshot_2026.jpg" alt="Daniela Reinoso">
+        <div class="about-photo reveal">
+            <div class="portrait">
+                <img src="DR_headshot_2026.jpg" alt="Daniela Reinoso">
+            </div>
         </div>
         <div class="about-copy reveal">
             <span class="eyebrow">Hi, I'm Daniela</span>
-            <h2>I believe intentional organizations create lasting impact.</h2>
+            <h2>The best organizations aren't built by accident.</h2>
             <p>With over a decade of experience in people strategy and organizational development across the nonprofit and mission-driven sector, I partner with leaders to navigate complexity, align their teams, and build workplaces where people can thrive.</p>
             <a href="about.html" class="text-link">More About Me<span class="arr">→</span></a>
             <svg class="botanical" viewBox="0 0 200 260" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -291,10 +289,27 @@
     </div>
 </section>
 
-<!-- WHAT I DO -->
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+    <div class="wrap-narrow reveal">
+        <h2>Organizations become intentional one decision at a time.</h2>
+        <p class="phil-intro">Culture isn't created in an offsite. It's created through hundreds of everyday decisions:</p>
+        <ul class="phil-list">
+            <li>how people are hired</li>
+            <li>how performance is discussed</li>
+            <li>how feedback is given</li>
+            <li>how leaders communicate</li>
+            <li>how accountability works</li>
+            <li>how people experience their work</li>
+        </ul>
+        <p class="phil-close">These decisions don't happen independently. They're connected by the systems underneath them — and when those systems are designed with intention, the everyday decisions begin pointing in the same direction.</p>
+    </div>
+</section>
+
+<!-- HOW I CAN HELP -->
 <section class="whatido">
     <div class="wrap-wide">
-        <span class="eyebrow">What I Do</span>
+        <span class="eyebrow">How I Can Help</span>
         <h2>Strategic support for the people side of your mission.</h2>
         <div class="wid-grid reveal">
             <div class="wid-card">
@@ -347,7 +362,7 @@
                     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F6F3EF" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
                 </div>
                 <div>
-                    <p>Ready to build an organization with intention?</p>
+                    <p>Ready to build the workplace you mean to create?</p>
                     <a href="mailto:daniela@danielareinoso.co">Let's Connect <span class="arr">→</span></a>
                 </div>
             </div>
@@ -360,7 +375,7 @@
     <div class="wrap">
         <div class="hf-top">
             <a href="index.html" class="nav-brand">
-                <svg width="42" height="42" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <line x1="24" y1="7" x2="40" y2="17" stroke="#234F45" stroke-width="0.9"/>
                     <line x1="24" y1="7" x2="8" y2="17" stroke="#234F45" stroke-width="0.9"/>
                     <line x1="24" y1="7" x2="24" y2="24" stroke="#234F45" stroke-width="0.9"/>
@@ -381,7 +396,7 @@
                     <circle cx="39" cy="33" r="3" fill="#234F45"/>
                     <circle cx="24" cy="41" r="3.4" fill="#CB6B4B"/>
                 </svg>
-                <span class="brand-word" style="font-size: 14px;">Daniela<br>Reinoso</span>
+                <span class="brand-word" style="font-size: 12.5px;">Daniela<br>Reinoso</span>
             </a>
             <ul class="hf-nav">
                 <li><a href="about.html">About</a></li>
