@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="People Systems Consultant | Daniela Reinoso">
-    <meta property="og:description" content="People systems for growing social impact organizations that have outgrown ad hoc HR.">
+    <meta property="og:title" content="Daniela Reinoso | Build the Workplace You Mean to Create">
+    <meta property="og:description" content="I help mission-driven organizations intentionally design people practices, leadership habits, and organizational systems that create clarity, build trust, and support sustainable growth.">
     <meta property="og:image" content="https://danielareinosog.github.io/services/LIbanner.png">
     <meta property="og:url" content="https://danielareinosog.github.io/services/">
     <meta property="og:type" content="website">
-    <title>Daniela Reinoso | People Systems Consultant</title>
+    <title>Daniela Reinoso | Build the Workplace You Mean to Create</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YZQYRTJQ9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,207 +18,408 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
+            --green: #234F45;
+            --green-deep: #1B3B34;
             --teal: #0F4C5C;
-            --teal-dark: #0a3a47;
-            --teal-light: rgba(15,76,92,0.08);
-            --ink: #1F2A2E;
-            --ink-mid: #3a4f55;
-            --ink-soft: #5a7178;
-            --cream: #F8F3EC;
-            --clay: #E8D5C8;
-            --coral: #CB6B4B;
-            --coral-dark: #b55a3d;
+            --clay: #CB6B4B;
+            --bg: #F6F3EF;
+            --card: #FDF9F4;
+            --ink: #333333;
+            --ink-soft: #6E675E;
+            --hairline: #E4DDD3;
             --white: #FFFFFF;
-            --border: #d6cab9;
-            --border-light: #e8ddd2;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.75;
+            font-size: 16.5px;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection { background: rgba(203,107,75,0.18); }
 
-        /* NAV */
-        nav { background: var(--white); border-bottom: 1px solid var(--border-light); padding: 0 48px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
-        .nav-brand { font-size: 15px; font-weight: 700; color: var(--teal); letter-spacing: -0.01em; text-decoration: none; }
-        .nav-links { display: flex; gap: 32px; list-style: none; align-items: center; }
-        .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-mid); text-decoration: none; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--teal); }
-        .nav-cta { background: var(--teal) !important; color: var(--white) !important; padding: 9px 20px; border-radius: 6px; font-weight: 600 !important; transition: background 0.2s !important; }
-        .nav-cta:hover { background: var(--teal-dark) !important; }
+        h1, h2, h3.serif {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-weight: 500;
+            color: var(--green);
+        }
 
-        /* BUTTONS */
-        .btn { display: inline-block; padding: 14px 28px; border-radius: 6px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: 2px solid transparent; letter-spacing: -0.01em; }
-        .btn-primary { background: var(--teal); color: var(--white); border-color: var(--teal); }
-        .btn-primary:hover { background: var(--teal-dark); border-color: var(--teal-dark); }
-        .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
-        .btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.8); }
-        .btn-outline { background: transparent; color: var(--teal); border-color: var(--teal); }
-        .btn-outline:hover { background: var(--teal); color: var(--white); }
-        .btn-white { background: var(--white); color: var(--teal); border-color: var(--white); }
-        .btn-white:hover { background: var(--cream); border-color: var(--cream); }
+        /* ── NAV ── */
+        nav {
+            background: rgba(246,243,239,0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--hairline);
+            padding: 0 56px;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 78px;
+            position: sticky; top: 0; z-index: 100;
+        }
+        .nav-brand {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 21px; font-weight: 600; letter-spacing: 0.02em;
+            color: var(--green); text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
+        .nav-links a {
+            font-size: 13.5px; font-weight: 400; color: var(--ink);
+            text-decoration: none; letter-spacing: 0.01em;
+            transition: color 0.25s;
+        }
+        .nav-links a:hover { color: var(--clay); }
+        .nav-cta {
+            border: 1px solid var(--green);
+            color: var(--green) !important;
+            padding: 10px 24px;
+            font-size: 12px !important;
+            letter-spacing: 0.12em !important;
+            text-transform: uppercase;
+            transition: all 0.25s !important;
+        }
+        .nav-cta:hover { background: var(--green); color: var(--bg) !important; }
 
-        /* LAYOUT */
-        .wrap { max-width: 980px; margin: 0 auto; padding: 0 48px; }
-        .wrap-wide { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-        .section-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--coral); margin-bottom: 14px; display: block; }
+        /* ── BUTTONS ── */
+        .btn {
+            display: inline-block;
+            padding: 17px 38px;
+            font-size: 12.5px; font-weight: 500;
+            letter-spacing: 0.14em; text-transform: uppercase;
+            text-decoration: none; cursor: pointer;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .btn-primary { background: var(--green); color: var(--bg); border-color: var(--green); }
+        .btn-primary:hover { background: var(--green-deep); border-color: var(--green-deep); }
+        .btn-outline { background: transparent; color: var(--green); border-color: var(--green); }
+        .btn-outline:hover { background: var(--green); color: var(--bg); }
+        .btn-cream { background: var(--bg); color: var(--green); border-color: var(--bg); }
+        .btn-cream:hover { background: transparent; color: var(--bg); border-color: var(--bg); }
+        .text-link {
+            font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--clay); text-decoration: none;
+            border-bottom: 1px solid rgba(203,107,75,0.35);
+            padding-bottom: 3px;
+            transition: border-color 0.25s;
+        }
+        .text-link:hover { border-color: var(--clay); }
 
-        /* HERO */
-        .hero { background: var(--teal); padding: 96px 48px 88px; text-align: center; }
-        .hero-inner { max-width: 820px; margin: 0 auto; }
-        .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 28px; }
-        .hero h1 { font-size: clamp(34px, 5vw, 54px); font-weight: 800; line-height: 1.12; letter-spacing: -0.025em; color: var(--white); margin-bottom: 24px; }
-        .hero h1 em { font-style: normal; color: var(--clay); }
-        .hero-sub { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto 40px; }
-        .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        /* ── LAYOUT ── */
+        .wrap { max-width: 1060px; margin: 0 auto; padding: 0 56px; }
+        section { padding: 128px 0; }
+        .section-label {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.22em;
+            text-transform: uppercase; color: var(--clay);
+            margin-bottom: 26px; display: block;
+        }
+        .rule {
+            width: 44px; height: 1px; background: var(--clay);
+            border: none; margin: 34px 0 0;
+        }
+        h2 {
+            font-size: clamp(34px, 4.2vw, 50px);
+            line-height: 1.15;
+            letter-spacing: -0.005em;
+        }
+        .lede { font-size: 18px; color: var(--ink-soft); line-height: 1.8; }
 
-        /* CRED STRIP */
-        .cred-strip { background: var(--white); border-bottom: 1px solid var(--border-light); padding: 20px 48px; }
-        .cred-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: nowrap; }
-        .cred-item { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 500; color: var(--ink-mid); white-space: nowrap; padding: 0 28px; }
-        .cred-item:not(:last-child) { border-right: 1px solid var(--border-light); }
-        .cred-dot { width: 6px; height: 6px; background: var(--coral); border-radius: 50%; flex-shrink: 0; }
+        /* ── HERO ── */
+        .hero { background: var(--bg); padding: 130px 0 110px; }
+        .hero-inner { max-width: 880px; }
+        .hero h1 {
+            font-size: clamp(48px, 7vw, 78px);
+            line-height: 1.06;
+            letter-spacing: -0.01em;
+            margin-bottom: 0;
+        }
+        .hero h1 em { font-style: italic; color: var(--clay); }
+        .hero .rule { margin: 42px 0; }
+        .hero-sub {
+            font-size: 18.5px; line-height: 1.85; color: var(--ink-soft);
+            max-width: 560px; margin-bottom: 52px;
+        }
+        .hero-actions { display: flex; gap: 36px; align-items: center; flex-wrap: wrap; }
 
-        /* PAIN */
-        .pain { background: var(--cream); padding: 88px 48px; border-bottom: 1px solid var(--border-light); }
-        .pain-inner { max-width: 720px; margin: 0 auto; }
-        .pain h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 36px; }
-        .pain-list { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
-        .pain-list li { font-size: 17px; color: var(--ink-mid); padding-left: 20px; position: relative; line-height: 1.6; }
-        .pain-list li::before { content: '—'; position: absolute; left: 0; color: var(--coral); font-weight: 700; }
-        .pain-body { font-size: 17px; color: var(--ink-mid); line-height: 1.75; margin-bottom: 20px; }
-        .pain-callout { margin-top: 36px; padding: 22px 28px; border-left: 3px solid var(--teal); background: var(--white); border-radius: 0 8px 8px 0; }
-        .pain-callout p { font-size: 17px; font-weight: 600; color: var(--ink); margin: 0; font-style: italic; }
+        /* ── VALUES ── */
+        .values { padding: 96px 0; border-top: 1px solid var(--hairline); }
+        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 56px; }
+        .value h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 11.5px; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--green);
+            margin-bottom: 14px;
+        }
+        .value p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; }
+        .value::before {
+            content: ''; display: block;
+            width: 28px; height: 1px; background: var(--clay);
+            margin-bottom: 22px;
+        }
 
-        /* COST OF NOT ACTING */
-        .cost { background: var(--clay); padding: 88px 48px; border-bottom: 1px solid var(--border); }
-        .cost-inner { max-width: 980px; margin: 0 auto; }
-        .cost-inner h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; max-width: 700px; }
-        .cost-intro { font-size: 17px; color: var(--ink-mid); max-width: 700px; line-height: 1.7; margin-bottom: 44px; }
-        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
-        .stat-card { background: var(--white); border: 1px solid var(--border-light); border-radius: 10px; padding: 32px 28px; display: flex; flex-direction: column; }
-        .stat-number { font-size: 38px; font-weight: 800; color: var(--teal); letter-spacing: -0.02em; line-height: 1; margin-bottom: 14px; }
-        .stat-card p { font-size: 15px; color: var(--ink-mid); line-height: 1.65; margin-bottom: 14px; }
-        .stat-breakdown { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 14px; }
-        .stat-breakdown li { display: flex; justify-content: space-between; gap: 12px; font-size: 14px; color: var(--ink-mid); line-height: 1.4; }
-        .stat-breakdown .stat-pct { font-weight: 800; color: var(--coral); flex-shrink: 0; }
-        .stat-source { font-size: 12px; color: var(--ink-soft); font-style: italic; margin-top: auto; }
-        .cost-callout { padding: 24px 28px; border-left: 3px solid var(--coral); background: var(--white); border-radius: 0 8px 8px 0; }
-        .cost-callout p { font-size: 16px; color: var(--ink); line-height: 1.7; font-style: italic; }
-        .cost-callout p:last-child { margin-top: 8px; font-size: 13px; color: var(--ink-soft); font-style: normal; }
+        /* ── PAIN ── */
+        .pain { background: var(--card); border-top: 1px solid var(--hairline); }
+        .pain-inner { max-width: 720px; }
+        .pain h2 { margin-bottom: 56px; }
+        .pain-list { list-style: none; }
+        .pain-list li {
+            font-size: 17px; color: var(--ink); line-height: 1.7;
+            padding: 22px 0 22px 36px; position: relative;
+            border-top: 1px solid var(--hairline);
+        }
+        .pain-list li:last-child { border-bottom: 1px solid var(--hairline); }
+        .pain-list li::before {
+            content: '—'; position: absolute; left: 0; top: 22px;
+            color: var(--clay);
+        }
+        .pain-callout {
+            margin-top: 64px;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(24px, 3vw, 32px); font-style: italic;
+            color: var(--green); line-height: 1.4;
+        }
 
-        /* SCAN SECTION */
-        .scan { background: var(--clay); padding: 88px 48px; border-bottom: 1px solid var(--border); }
-        .scan-inner { max-width: 980px; margin: 0 auto; }
-        .scan-header { margin-bottom: 52px; }
-        .scan-header h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 14px; }
-        .scan-header .subhead { font-size: 17px; color: var(--ink-mid); max-width: 700px; line-height: 1.7; margin-bottom: 20px; }
-        .scan-body { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-        .scan-desc p { font-size: 16px; color: var(--ink-mid); line-height: 1.75; margin-bottom: 28px; }
-        .scan-deliverables { background: var(--white); border-radius: 10px; padding: 32px 28px; border: 1px solid var(--border-light); }
-        .scan-deliverables h3 { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 20px; }
-        .del-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
-        .del-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--ink); font-weight: 500; line-height: 1.5; }
-        .del-list li::before { content: '→'; color: var(--coral); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+        /* ── COST ── */
+        .cost { border-top: 1px solid var(--hairline); }
+        .cost h2 { max-width: 700px; margin-bottom: 24px; }
+        .cost-intro { max-width: 640px; margin-bottom: 88px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
+        .stat { border-top: 1px solid var(--green); padding-top: 34px; }
+        .stat-number {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 60px; font-weight: 500; color: var(--green);
+            line-height: 1; margin-bottom: 22px; letter-spacing: -0.01em;
+        }
+        .stat p { font-size: 15px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 18px; }
+        .stat-lead { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.65; margin-bottom: 20px; }
+        .stat-breakdown { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        .stat-breakdown li {
+            display: flex; justify-content: space-between; gap: 14px;
+            font-size: 14px; color: var(--ink-soft); line-height: 1.5;
+            padding-bottom: 12px; border-bottom: 1px solid var(--hairline);
+        }
+        .stat-breakdown .stat-pct { font-weight: 600; color: var(--clay); flex-shrink: 0; }
+        .stat-source { font-size: 12px; color: var(--ink-soft); font-style: italic; opacity: 0.75; }
+        .cost-quote { max-width: 760px; margin: 104px auto 0; text-align: center; }
+        .cost-quote blockquote {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: clamp(23px, 2.8vw, 30px); font-style: italic;
+            color: var(--green); line-height: 1.45; margin-bottom: 26px;
+        }
+        .cost-quote cite {
+            font-family: 'Inter', sans-serif; font-style: normal;
+            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--ink-soft);
+        }
 
-        /* 3-WEEK PROCESS */
-        .process { background: var(--white); padding: 88px 48px; border-bottom: 1px solid var(--border-light); }
-        .process-inner { max-width: 980px; margin: 0 auto; }
-        .section-heading { margin-bottom: 48px; }
-        .section-heading h2 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
-        .week-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-        .week-card { background: var(--cream); border: 1px solid var(--border-light); border-radius: 10px; padding: 32px 28px; }
-        .week-num { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin-bottom: 10px; }
-        .week-card h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 14px; line-height: 1.3; }
-        .week-card p { font-size: 15px; color: var(--ink-mid); line-height: 1.7; }
+        /* ── FAMILIAR ── */
+        .familiar { background: var(--card); border-top: 1px solid var(--hairline); }
+        .familiar-inner { max-width: 720px; }
+        .familiar h2 { margin-bottom: 56px; }
+        .familiar-note {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 22px; font-style: italic; color: var(--ink-soft);
+            line-height: 1.55; margin-top: 48px; max-width: 620px;
+        }
+        .familiar .btn { margin-top: 44px; }
 
-        /* WHAT NEXT */
-        .next { background: var(--cream); padding: 88px 48px; border-bottom: 1px solid var(--border-light); }
-        .next-inner { max-width: 980px; margin: 0 auto; }
-        .next-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-        .next-card { background: var(--white); border: 1px solid var(--border-light); border-radius: 10px; padding: 32px 28px; }
-        .next-card-num { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); margin-bottom: 12px; }
-        .next-card h3 { font-size: 18px; font-weight: 700; color: var(--teal); margin-bottom: 12px; line-height: 1.3; }
-        .next-card p { font-size: 15px; color: var(--ink-mid); line-height: 1.7; }
+        /* ── SCAN ── */
+        .scan { border-top: 1px solid var(--hairline); }
+        .scan-header { margin-bottom: 80px; max-width: 720px; }
+        .scan-header h2 { margin-bottom: 26px; }
+        .scan-body { display: grid; grid-template-columns: 1.1fr 1fr; gap: 96px; align-items: start; }
+        .scan-desc p { font-size: 16.5px; color: var(--ink-soft); line-height: 1.85; margin-bottom: 44px; }
+        .scan-deliverables {
+            background: var(--card);
+            border: 1px solid var(--hairline);
+            padding: 48px 44px;
+        }
+        .scan-deliverables h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--green); margin-bottom: 30px;
+        }
+        .del-list { list-style: none; }
+        .del-list li {
+            font-size: 15px; color: var(--ink); line-height: 1.6;
+            padding: 14px 0 14px 26px; position: relative;
+            border-top: 1px solid var(--hairline);
+        }
+        .del-list li:first-child { border-top: none; padding-top: 0; }
+        .del-list li:first-child::before { top: 0; }
+        .del-list li::before {
+            content: '—'; position: absolute; left: 0; top: 14px; color: var(--clay);
+        }
 
-        /* APPROACH */
-        .approach { background: var(--clay); padding: 88px 48px; border-bottom: 1px solid var(--border); }
-        .approach-inner { max-width: 980px; margin: 0 auto; }
-        .approach-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
-        .approach-card { background: var(--white); border: 1px solid var(--border-light); border-radius: 10px; padding: 32px 28px; }
-        .approach-card-bar { width: 32px; height: 3px; background: var(--coral); border-radius: 2px; margin-bottom: 20px; }
-        .approach-card h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 10px; line-height: 1.3; }
-        .approach-card p { font-size: 15px; color: var(--ink-mid); line-height: 1.7; }
+        /* ── PROCESS / SERVICES / APPROACH shared ── */
+        .section-heading { margin-bottom: 76px; }
+        .cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
+        .cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 64px 88px; }
+        .col-item { border-top: 1px solid var(--hairline); padding-top: 34px; }
+        .col-num {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 30px; font-style: italic; color: var(--clay);
+            line-height: 1; margin-bottom: 20px; display: block;
+        }
+        .col-kicker {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--clay); margin-bottom: 18px; display: block;
+        }
+        .col-item h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 25px; font-weight: 500; color: var(--green);
+            line-height: 1.25; margin-bottom: 16px;
+        }
+        .col-item p { font-size: 15px; color: var(--ink-soft); line-height: 1.8; }
 
-        /* FOUNDER */
-        .founder { background: var(--cream); padding: 88px 48px; border-bottom: 1px solid var(--border-light); }
-        .founder-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 200px 1fr; gap: 60px; align-items: start; }
-        .founder-photo img { width: 200px; height: auto; border-radius: 8px; display: block; }
-        .founder-content h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 800; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 28px; }
-        .founder-content p { font-size: 16px; color: var(--ink-mid); line-height: 1.8; margin-bottom: 18px; }
-        .founder-content p:last-child { margin-bottom: 0; }
+        .process { background: var(--card); border-top: 1px solid var(--hairline); }
+        .next { border-top: 1px solid var(--hairline); }
+        .approach { background: var(--card); border-top: 1px solid var(--hairline); }
 
-        /* PRICING */
-        .pricing { background: var(--white); padding: 88px 48px; border-bottom: 1px solid var(--border-light); }
-        .pricing-inner { max-width: 980px; margin: 0 auto; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
-        .price-card { background: var(--cream); border: 1px solid var(--border-light); border-radius: 10px; padding: 36px 28px; position: relative; }
-        .price-card.featured { border-color: var(--teal); border-width: 2px; }
-        .price-badge { position: absolute; top: -12px; left: 28px; background: var(--teal); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
-        .price-card h3 { font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-        .price-amount { font-size: 28px; font-weight: 800; color: var(--teal); margin-bottom: 6px; letter-spacing: -0.02em; }
-        .price-note { font-size: 13px; color: var(--ink-soft); margin-bottom: 20px; line-height: 1.5; }
-        .price-divider { height: 1px; background: var(--border-light); margin: 20px 0; }
-        .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
-        .price-features li { font-size: 14px; color: var(--ink-mid); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
-        .price-features li::before { content: '→'; color: var(--coral); font-weight: 700; flex-shrink: 0; }
-        .price-credit { font-size: 13px; color: var(--ink-soft); font-style: italic; line-height: 1.6; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-light); }
-        .access-badge { display: inline-block; background: var(--teal-light); color: var(--teal); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: 4px; margin-bottom: 16px; }
-        .price-typical { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); margin-bottom: 6px; }
-        .price-context { font-size: 13px; color: var(--ink-soft); line-height: 1.65; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-light); }
-        .pricing-note-box { background: var(--teal-light); border: 1px solid var(--border); border-radius: 10px; padding: 28px 32px; margin-bottom: 44px; }
-        .pricing-note-box h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
-        .pricing-note-box p { font-size: 15px; color: var(--ink-mid); line-height: 1.75; }
-        .pricing-note-box p + p { margin-top: 10px; }
+        /* ── FOUNDER ── */
+        .founder { border-top: 1px solid var(--hairline); }
+        .founder-inner { display: grid; grid-template-columns: 300px 1fr; gap: 96px; align-items: start; }
+        .founder-photo img {
+            width: 100%; height: auto; display: block;
+            border-radius: 2px;
+        }
+        .founder-content h2 { margin-bottom: 36px; }
+        .founder-content p { font-size: 16.5px; color: var(--ink-soft); line-height: 1.9; margin-bottom: 24px; }
+        .founder-facts {
+            margin-top: 44px; padding-top: 30px;
+            border-top: 1px solid var(--hairline);
+            display: flex; gap: 40px; flex-wrap: wrap;
+        }
+        .founder-facts span {
+            font-size: 11.5px; font-weight: 600; letter-spacing: 0.16em;
+            text-transform: uppercase; color: var(--green);
+        }
 
-        /* FINAL CTA */
-        .final-cta { background: var(--teal); padding: 88px 48px; text-align: center; }
+        /* ── PRICING ── */
+        .pricing { background: var(--card); border-top: 1px solid var(--hairline); }
+        .pricing-note {
+            max-width: 720px; margin-bottom: 88px;
+        }
+        .pricing-note h4 {
+            font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--green); margin-bottom: 18px;
+        }
+        .pricing-note p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.85; }
+        .pricing-note p + p { margin-top: 14px; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .price-card {
+            background: var(--bg);
+            border: 1px solid var(--hairline);
+            padding: 52px 40px 44px;
+            display: flex; flex-direction: column;
+        }
+        .price-card.featured { border-color: var(--green); }
+        .price-kicker {
+            font-size: 10.5px; font-weight: 600; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--clay); margin-bottom: 16px;
+            min-height: 16px;
+        }
+        .price-card h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 26px; font-weight: 500; color: var(--green);
+            line-height: 1.2; margin-bottom: 22px;
+        }
+        .price-amount {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 34px; font-weight: 500; color: var(--ink);
+            margin-bottom: 4px; letter-spacing: -0.01em;
+        }
+        .price-typical {
+            font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em;
+            text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px;
+        }
+        .price-note { font-size: 14px; color: var(--ink-soft); margin: 18px 0 26px; line-height: 1.7; }
+        .price-features { list-style: none; margin-bottom: 36px; }
+        .price-features li {
+            font-size: 14px; color: var(--ink); line-height: 1.55;
+            padding: 11px 0 11px 24px; position: relative;
+            border-top: 1px solid var(--hairline);
+        }
+        .price-features li::before {
+            content: '—'; position: absolute; left: 0; top: 11px; color: var(--clay);
+        }
+        .price-card .btn { text-align: center; margin-top: auto; }
+        .price-context {
+            font-size: 12.5px; color: var(--ink-soft); line-height: 1.7;
+            margin-top: 24px; font-style: italic; opacity: 0.85;
+        }
+
+        /* ── FINAL CTA ── */
+        .final-cta { background: var(--green); text-align: center; padding: 140px 0; }
         .final-cta-inner { max-width: 680px; margin: 0 auto; }
-        .final-cta h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.02em; color: var(--white); margin-bottom: 20px; line-height: 1.2; }
-        .final-cta p { font-size: 17px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 36px; }
+        .final-cta h2 {
+            color: var(--bg);
+            font-size: clamp(38px, 5vw, 58px);
+            margin-bottom: 30px;
+        }
+        .final-cta h2 em { font-style: italic; color: #E7C3AF; }
+        .final-cta p {
+            font-size: 17px; color: rgba(246,243,239,0.75);
+            line-height: 1.85; margin-bottom: 52px;
+            max-width: 560px; margin-left: auto; margin-right: auto;
+        }
 
-        /* FOOTER */
-        footer { background: var(--ink); padding: 56px 48px 40px; }
-        .footer-inner { max-width: 980px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; }
-        .footer-brand h3 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
-        .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.55); max-width: 260px; line-height: 1.6; }
-        .footer-contact { font-size: 13px; line-height: 2.1; color: rgba(255,255,255,0.55); }
-        .footer-contact a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
-        .footer-contact a:hover { color: var(--white); }
-        .footer-bottom { max-width: 980px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: rgba(255,255,255,0.3); }
+        /* ── FOOTER ── */
+        footer { background: var(--green-deep); padding: 72px 0 48px; }
+        .footer-inner {
+            max-width: 1060px; margin: 0 auto; padding: 0 56px;
+            display: flex; justify-content: space-between; align-items: flex-start;
+            gap: 40px; flex-wrap: wrap;
+        }
+        .footer-brand h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 22px; font-weight: 500; color: var(--bg); margin-bottom: 10px;
+        }
+        .footer-brand p { font-size: 13.5px; color: rgba(246,243,239,0.55); max-width: 300px; line-height: 1.7; }
+        .footer-contact { font-size: 13.5px; line-height: 2.3; color: rgba(246,243,239,0.55); }
+        .footer-contact a { color: rgba(246,243,239,0.75); text-decoration: none; transition: color 0.25s; }
+        .footer-contact a:hover { color: var(--bg); }
+        .footer-bottom {
+            max-width: 1060px; margin: 48px auto 0; padding: 28px 56px 0;
+            border-top: 1px solid rgba(246,243,239,0.12);
+            font-size: 12px; color: rgba(246,243,239,0.35);
+        }
 
-        /* RESPONSIVE */
+        /* ── RESPONSIVE ── */
         .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
-        .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--teal); border-radius: 2px; transition: all 0.3s; }
-        .nav-mobile { display: none; flex-direction: column; background: var(--white); border-top: 1px solid var(--border-light); padding: 16px 20px; gap: 4px; }
-        .nav-mobile a { font-size: 15px; font-weight: 500; color: var(--ink-mid); text-decoration: none; padding: 10px 0; border-bottom: 1px solid var(--border-light); display: block; }
+        .nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--green); transition: all 0.3s; }
+        .nav-mobile { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--hairline); padding: 16px 24px; gap: 4px; }
+        .nav-mobile a { font-size: 15px; color: var(--ink); text-decoration: none; padding: 12px 0; border-bottom: 1px solid var(--hairline); display: block; }
         .nav-mobile a:last-child { border-bottom: none; }
-        .nav-mobile a.nav-cta { background: var(--teal); color: var(--white) !important; padding: 12px 20px; border-radius: 6px; text-align: center; margin-top: 8px; border: none; }
+        .nav-mobile a.nav-cta { border: 1px solid var(--green); color: var(--green) !important; padding: 12px 20px; text-align: center; margin-top: 12px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
 
-        @media (max-width: 800px) {
-            nav { padding: 0 20px; }
+        @media (max-width: 860px) {
+            nav { padding: 0 24px; }
             .nav-hamburger { display: flex; }
             .nav-links { display: none; }
-            .hero, .pain, .cost, .scan, .process, .next, .approach, .founder, .pricing, .final-cta, footer { padding-left: 20px; padding-right: 20px; }
-            .stat-grid { grid-template-columns: 1fr; }
-            .cred-strip { padding: 16px 20px; }
-            .cred-inner { flex-wrap: wrap; gap: 14px; justify-content: flex-start; }
-            .cred-item { border-right: none !important; padding: 0; }
-            .scan-body { grid-template-columns: 1fr; gap: 32px; }
-            .week-cards, .next-cards, .approach-cards, .pricing-grid { grid-template-columns: 1fr; }
-            .founder-inner { grid-template-columns: 1fr; gap: 32px; }
-            .footer-inner { flex-direction: column; gap: 24px; }
+            .wrap { padding: 0 24px; }
+            section { padding: 80px 0; }
+            .hero { padding: 80px 0 72px; }
+            .hero .rule { margin: 32px 0; }
+            .values { padding: 64px 0; }
+            .values-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .stat-grid, .cols-3, .pricing-grid { grid-template-columns: 1fr; gap: 48px; }
+            .cols-2 { grid-template-columns: 1fr; gap: 48px; }
+            .scan-body { grid-template-columns: 1fr; gap: 56px; }
+            .founder-inner { grid-template-columns: 1fr; gap: 48px; }
+            .founder-photo img { max-width: 280px; }
+            .footer-inner { flex-direction: column; gap: 28px; padding: 0 24px; }
+            .footer-bottom { padding: 28px 24px 0; }
+            .final-cta { padding: 96px 0; }
+        }
+        @media (max-width: 480px) {
+            .values-grid { grid-template-columns: 1fr; }
+            .hero-actions { gap: 24px; }
         }
     </style>
 </head>
@@ -231,9 +432,10 @@
         <li><a href="#scan">The Scan</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#approach">Approach</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#pricing">Investment</a></li>
-        <li><a href="people_systems_snapshot.html">Free Snapshot</a></li>
-        <li><a href="mailto:daniela@danielareinoso.co" class="nav-cta">Get in Touch</a></li>
+        <li><a href="people_systems_snapshot.html">Snapshot</a></li>
+        <li><a href="mailto:daniela@danielareinoso.co" class="nav-cta">Let's Connect</a></li>
     </ul>
     <button class="nav-hamburger" onclick="document.getElementById('mobile-menu').style.display = document.getElementById('mobile-menu').style.display === 'flex' ? 'none' : 'flex'" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -243,66 +445,83 @@
     <a href="#scan" onclick="document.getElementById('mobile-menu').style.display='none'">The Scan</a>
     <a href="#services" onclick="document.getElementById('mobile-menu').style.display='none'">Services</a>
     <a href="#approach" onclick="document.getElementById('mobile-menu').style.display='none'">Approach</a>
+    <a href="#about" onclick="document.getElementById('mobile-menu').style.display='none'">About</a>
     <a href="#pricing" onclick="document.getElementById('mobile-menu').style.display='none'">Investment</a>
-    <a href="people_systems_snapshot.html">Free Snapshot</a>
-    <a href="mailto:daniela@danielareinoso.co" class="nav-cta">Get in Touch</a>
+    <a href="people_systems_snapshot.html">Snapshot</a>
+    <a href="mailto:daniela@danielareinoso.co" class="nav-cta">Let's Connect</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="hero-inner">
-        <p class="hero-eyebrow">People Systems Consulting</p>
-        <h1>People systems for growing social impact organizations that have outgrown <em>ad hoc HR.</em></h1>
-        <p class="hero-sub">I help growing social impact organizations get their Founder, CEO, COO, and managers out of the HR chaos by building practical people systems that actually reflect their mission — without adding corporate bloat.</p>
-        <div class="hero-actions">
-            <a href="#scan" class="btn btn-primary">Start With the People Systems Scan</a>
-            <a href="#services" class="btn btn-ghost">See if this is the right fit</a>
+    <div class="wrap">
+        <div class="hero-inner">
+            <h1>Build the workplace you <em>mean</em> to create.</h1>
+            <hr class="rule">
+            <p class="hero-sub">I help mission-driven organizations intentionally design people practices, leadership habits, and organizational systems that create clarity, build trust, and support sustainable growth.</p>
+            <div class="hero-actions">
+                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary">Work With Me</a>
+                <a href="#scan" class="text-link">Explore the work</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- CREDIBILITY STRIP -->
-<div class="cred-strip">
-    <div class="cred-inner">
-        <div class="cred-item"><span class="cred-dot"></span>10+ years in People &amp; Culture</div>
-        <div class="cred-item"><span class="cred-dot"></span>13+ countries</div>
-        <div class="cred-item"><span class="cred-dot"></span>Built HR systems from scratch</div>
-        <div class="cred-item"><span class="cred-dot"></span>Global, values-aligned experience</div>
+<!-- VALUES -->
+<section class="values">
+    <div class="wrap">
+        <div class="values-grid">
+            <div class="value">
+                <h3>Clarity</h3>
+                <p>We bring clarity to the people side of your mission and strategy.</p>
+            </div>
+            <div class="value">
+                <h3>Trust</h3>
+                <p>We build the foundations for trust, transparency, and accountability.</p>
+            </div>
+            <div class="value">
+                <h3>Effective Systems</h3>
+                <p>We design people systems that are practical, fair, and built to last.</p>
+            </div>
+            <div class="value">
+                <h3>Care</h3>
+                <p>We lead with empathy and respect for the people at the heart of your work.</p>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 
 <!-- PAIN -->
 <section class="pain">
-    <div class="pain-inner">
-        <span class="section-label">The Problem</span>
-        <h2>When people systems are held together by goodwill, growth gets harder.</h2>
-        <ul class="pain-list">
-            <li>Hiring takes longer than it should.</li>
-            <li>Managers are improvising.</li>
-            <li>People decisions feel inconsistent.</li>
-            <li>Culture depends on good intentions instead of clear and fair systems.</li>
-            <li>Your CEO, COO, or Ops lead has quietly become the HR department — slowing down strategic work, creating decision bottlenecks, and putting too much people risk on one already-stretched leader.</li>
-        </ul>
-        <div class="pain-callout">
-            <p>That is usually not a people problem. It is a systems problem.</p>
+    <div class="wrap">
+        <div class="pain-inner">
+            <span class="section-label">The Problem</span>
+            <h2>When people systems are held together by goodwill, growth gets harder.</h2>
+            <ul class="pain-list" style="margin-top: 56px;">
+                <li>Hiring takes longer than it should.</li>
+                <li>Managers are improvising.</li>
+                <li>People decisions feel inconsistent.</li>
+                <li>Culture depends on good intentions instead of clear and fair systems.</li>
+                <li>Your CEO, COO, or Ops lead has quietly become the HR department — slowing down strategic work, creating decision bottlenecks, and putting too much people risk on one already-stretched leader.</li>
+            </ul>
+            <p class="pain-callout">That is usually not a people problem. It is a systems problem.</p>
         </div>
     </div>
 </section>
 
 <!-- COST OF NOT ACTING -->
 <section class="cost">
-    <div class="cost-inner">
+    <div class="wrap">
         <span class="section-label">Why This Matters Now</span>
         <h2>Ad hoc HR is not a quirk. It is a cost you are already paying.</h2>
-        <p class="cost-intro">It rarely shows up as a single dramatic failure. It shows up as turnover you can't quite explain, a hire that goes sideways, or a values statement that doesn't match the last hard decision your team watched you make.</p>
+        <p class="lede cost-intro" style="margin-top: 24px;">It rarely shows up as a single dramatic failure. It shows up as turnover you can't quite explain, a hire that goes sideways, or a values statement that doesn't match the last hard decision your team watched you make.</p>
         <div class="stat-grid">
-            <div class="stat-card">
+            <div class="stat">
                 <div class="stat-number">30–200%</div>
                 <p>Replacing one employee costs 30–200% of their annual salary once recruiting, onboarding, lost productivity, and team disruption are counted.</p>
                 <span class="stat-source">Nonprofit Leadership Alliance; Inspirus</span>
             </div>
-            <div class="stat-card">
-                <p style="margin-bottom: 12px; font-weight: 600; color: var(--ink);">Top reasons people leave — all symptoms of missing systems, not missing mission:</p>
+            <div class="stat">
+                <p class="stat-lead">Top reasons people leave — all symptoms of missing systems, not missing mission:</p>
                 <ul class="stat-breakdown">
                     <li><span>Too much work, too little support</span><span class="stat-pct">59%</span></li>
                     <li><span>Limited growth</span><span class="stat-pct">54%</span></li>
@@ -311,43 +530,45 @@
                 </ul>
                 <span class="stat-source">Social Impact Staff Retention Project, 2023–2024</span>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">2.7x</div>
+            <div class="stat">
+                <div class="stat-number">2.7×</div>
                 <p>Purpose is the single strongest predictor of retention across 59 factors studied — but only when the mission is visible in how decisions actually get made, not just in a values statement.</p>
                 <span class="stat-source">The Strategy Group LLC</span>
             </div>
         </div>
-        <div class="cost-callout">
-            <p>"Leaders consistently say their stated values are hardest to see — not in the mission statement, but in the rushed decisions made under pressure: who gets hired, who gets a raise, who gets let go, and how."</p>
-            <p>Howard Consulting</p>
+        <div class="cost-quote">
+            <blockquote>"Leaders consistently say their stated values are hardest to see — not in the mission statement, but in the rushed decisions made under pressure: who gets hired, who gets a raise, who gets let go, and how."</blockquote>
+            <cite>Howard Consulting</cite>
         </div>
     </div>
 </section>
 
 <!-- THIS IS PROBABLY HAPPENING IF -->
-<section style="background: var(--white); padding: 88px 48px; border-bottom: 1px solid var(--border-light);">
-    <div style="max-width: 720px; margin: 0 auto;">
-        <span class="section-label">Sound familiar?</span>
-        <h2 style="font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 36px;">This is probably happening if…</h2>
-        <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
-            <li style="font-size: 17px; color: var(--ink-mid); padding-left: 22px; position: relative; line-height: 1.65;"><span style="position: absolute; left: 0; color: var(--coral); font-weight: 700;">—</span>Your ED, COO, or ops lead has become the default HR department.</li>
-            <li style="font-size: 17px; color: var(--ink-mid); padding-left: 22px; position: relative; line-height: 1.65;"><span style="position: absolute; left: 0; color: var(--coral); font-weight: 700;">—</span>Hiring, onboarding, performance, or compensation works differently depending on who handles it.</li>
-            <li style="font-size: 17px; color: var(--ink-mid); padding-left: 22px; position: relative; line-height: 1.65;"><span style="position: absolute; left: 0; color: var(--coral); font-weight: 700;">—</span>Your values are clear on paper, but harder to translate into daily people decisions.</li>
-            <li style="font-size: 17px; color: var(--ink-mid); padding-left: 22px; position: relative; line-height: 1.65;"><span style="position: absolute; left: 0; color: var(--coral); font-weight: 700;">—</span>You have payroll, admin, or a fiscal sponsor — but no one owns the people system.</li>
-            <li style="font-size: 17px; color: var(--ink-mid); padding-left: 22px; position: relative; line-height: 1.65;"><span style="position: absolute; left: 0; color: var(--coral); font-weight: 700;">—</span>One conflict, underperformance issue, or messy exit has revealed how much is unwritten.</li>
-        </ul>
-        <p style="font-size: 17px; color: var(--ink-mid); line-height: 1.65; margin-top: 24px; font-style: italic;">Or maybe things feel mostly fine — and you're not sure whether that's actually true or just that no one's had time to look.</p>
-        <a href="people_systems_snapshot.html" class="btn btn-outline" style="margin-top: 28px;">Take the 3-Minute People Systems Snapshot →</a>
+<section class="familiar">
+    <div class="wrap">
+        <div class="familiar-inner">
+            <span class="section-label">Sound Familiar?</span>
+            <h2>This is probably happening if…</h2>
+            <ul class="pain-list">
+                <li>Your ED, COO, or ops lead has become the default HR department.</li>
+                <li>Hiring, onboarding, performance, or compensation works differently depending on who handles it.</li>
+                <li>Your values are clear on paper, but harder to translate into daily people decisions.</li>
+                <li>You have payroll, admin, or a fiscal sponsor — but no one owns the people system.</li>
+                <li>One conflict, underperformance issue, or messy exit has revealed how much is unwritten.</li>
+            </ul>
+            <p class="familiar-note">Or maybe things feel mostly fine — and you're not sure whether that's actually true or just that no one's had time to look.</p>
+            <a href="people_systems_snapshot.html" class="btn btn-outline">Take the 3-Minute Snapshot</a>
+        </div>
     </div>
 </section>
 
 <!-- PEOPLE SYSTEMS SCAN -->
 <section class="scan" id="scan">
-    <div class="scan-inner">
+    <div class="wrap">
         <div class="scan-header">
             <span class="section-label">Where We Start</span>
             <h2>The People Systems Scan</h2>
-            <p class="subhead">A focused 3-week diagnostic for growing social impact organizations that need to understand what is creating people-ops friction — and what to fix first.</p>
+            <p class="lede" style="margin-top: 24px;">A focused 3-week diagnostic for growing, mission-driven organizations that need to understand what is creating people-ops friction — and what to fix first.</p>
         </div>
         <div class="scan-body">
             <div class="scan-desc">
@@ -370,24 +591,24 @@
 
 <!-- 3-WEEK PROCESS -->
 <section class="process">
-    <div class="process-inner">
+    <div class="wrap">
         <div class="section-heading">
             <span class="section-label">How It Works</span>
             <h2>The 3-week process</h2>
         </div>
-        <div class="week-cards">
-            <div class="week-card">
-                <p class="week-num">Week 1</p>
+        <div class="cols-3">
+            <div class="col-item">
+                <span class="col-kicker">Week One</span>
                 <h3>Listen + Review</h3>
                 <p>Kickoff with leadership, review core documents, and identify the gap between what the organization says and what is written down.</p>
             </div>
-            <div class="week-card">
-                <p class="week-num">Week 2</p>
+            <div class="col-item">
+                <span class="col-kicker">Week Two</span>
                 <h3>Pulse + Process Walkthrough</h3>
                 <p>Speak with key stakeholders and walk through one high-friction workflow, such as hiring, onboarding, or performance support.</p>
             </div>
-            <div class="week-card">
-                <p class="week-num">Week 3</p>
+            <div class="col-item">
+                <span class="col-kicker">Week Three</span>
                 <h3>Connect the Dots</h3>
                 <p>Analyze patterns, build the Chaos Map, and deliver a 90-day stabilization roadmap in a leadership debrief.</p>
             </div>
@@ -397,24 +618,24 @@
 
 <!-- WHAT CAN HAPPEN NEXT -->
 <section class="next" id="services">
-    <div class="next-inner">
+    <div class="wrap">
         <div class="section-heading">
             <span class="section-label">Services</span>
             <h2>How we work together</h2>
         </div>
-        <div class="next-cards">
-            <div class="next-card">
-                <p class="next-card-num">01</p>
+        <div class="cols-3">
+            <div class="col-item">
+                <span class="col-num">01</span>
                 <h3>People Systems Scan</h3>
                 <p>Diagnose what is creating drag, risk, and confusion. A focused 3-week engagement that gives you a clear picture of what to fix first.</p>
             </div>
-            <div class="next-card">
-                <p class="next-card-num">02</p>
+            <div class="col-item">
+                <span class="col-num">02</span>
                 <h3>People Systems Build</h3>
                 <p>Build the highest-priority systems: hiring, onboarding, role clarity, performance rhythms, manager support, and policy foundations.</p>
             </div>
-            <div class="next-card">
-                <p class="next-card-num">03</p>
+            <div class="col-item">
+                <span class="col-num">03</span>
                 <h3>Ongoing Advisory</h3>
                 <p>Support leaders as they implement, make people decisions, and stabilize the system — without becoming the person who gets pulled into everything.</p>
             </div>
@@ -424,30 +645,26 @@
 
 <!-- APPROACH -->
 <section class="approach" id="approach">
-    <div class="approach-inner">
+    <div class="wrap">
         <div class="section-heading">
             <span class="section-label">How I Work</span>
             <h2>Why my approach is different</h2>
         </div>
-        <div class="approach-cards">
-            <div class="approach-card">
-                <div class="approach-card-bar"></div>
+        <div class="cols-2">
+            <div class="col-item">
                 <h3>Deep diagnosis before templates</h3>
                 <p>I do not start by handing you generic HR documents. I look for the patterns underneath the recurring problems.</p>
             </div>
-            <div class="approach-card">
-                <div class="approach-card-bar"></div>
+            <div class="col-item">
                 <h3>Enough structure, no bloat</h3>
                 <p>I build people systems small teams can actually use — clear, practical, and proportionate to your stage.</p>
             </div>
-            <div class="approach-card">
-                <div class="approach-card-bar"></div>
+            <div class="col-item">
                 <h3>Fairness with practicality</h3>
                 <p>The goal is not HR for HR's sake. It is clearer decisions, lower risk, and a workplace where people know what to expect.</p>
             </div>
-            <div class="approach-card">
-                <div class="approach-card-bar"></div>
-                <h3>Built for social impact realities</h3>
+            <div class="col-item">
+                <h3>Built for mission-driven realities</h3>
                 <p>I understand lean teams, donor pressure, distributed work, global complexity, and values-driven cultures where the people experience has to reflect the mission.</p>
             </div>
         </div>
@@ -456,40 +673,46 @@
 
 <!-- FOUNDER STORY -->
 <section class="founder" id="about">
-    <div class="founder-inner">
-        <div class="founder-photo">
-            <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
-        </div>
-        <div class="founder-content">
-            <span class="section-label">About</span>
-            <h2>Why I do this work</h2>
-            <p>I started this work after seeing the same pattern across growing social impact organizations: powerful missions, committed teams, and people systems held together by goodwill, memory, and whoever had capacity that week.</p>
-            <p>I recognized the pattern because I had lived inside it. Early in my HR career, I stepped into an international nonprofit where people operations needed to be built from the ground up. Leadership needed structure, staff needed clarity, and the organization needed people systems that matched the complexity of the work.</p>
-            <p>That experience shaped how I work today. I believe organizations doing mission-critical work deserve practical, fair HR infrastructure that can carry the weight of growth — without adding bureaucracy or losing the humanity at the center of the mission.</p>
+    <div class="wrap">
+        <div class="founder-inner">
+            <div class="founder-photo">
+                <img src="DRheadshot2026.jpeg" alt="Daniela Reinoso">
+            </div>
+            <div class="founder-content">
+                <span class="section-label">About</span>
+                <h2>Why I do this work</h2>
+                <p style="margin-top: 36px;">I started this work after seeing the same pattern across growing, mission-driven organizations: powerful missions, committed teams, and people systems held together by goodwill, memory, and whoever had capacity that week.</p>
+                <p>I recognized the pattern because I had lived inside it. Early in my HR career, I stepped into an international nonprofit where people operations needed to be built from the ground up. Leadership needed structure, staff needed clarity, and the organization needed people systems that matched the complexity of the work.</p>
+                <p>That experience shaped how I work today. I believe organizations doing mission-critical work deserve practical, fair people infrastructure that can carry the weight of growth — without adding bureaucracy or losing the humanity at the center of the mission.</p>
+                <div class="founder-facts">
+                    <span>10+ years in People &amp; Culture</span>
+                    <span>13+ countries</span>
+                    <span>Systems built from scratch</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- PRICING -->
 <section class="pricing" id="pricing">
-    <div class="pricing-inner">
+    <div class="wrap">
         <div class="section-heading">
             <span class="section-label">Investment</span>
             <h2>How we can work together</h2>
         </div>
-        <div class="pricing-note-box">
+        <div class="pricing-note">
             <h4>A note on pricing</h4>
             <p>My pricing is value-based and scope-based. The ranges below reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing may be calibrated based on local market context, organizational budget, and scope.</p>
             <p>The goal is a fair engagement: one that reflects the value of the work, the complexity of the problem, and the realities of the organization.</p>
         </div>
         <div class="pricing-grid">
             <div class="price-card featured">
-                <span class="price-badge">Start Here</span>
+                <p class="price-kicker">Start Here</p>
                 <h3>The People Systems Scan</h3>
                 <p class="price-typical">Typical investment</p>
                 <div class="price-amount">USD $3,500+</div>
                 <p class="price-note">A focused 3-week diagnostic for growing organizations experiencing recurring people-ops friction, unclear ownership, inconsistent processes, or leadership time being pulled into preventable issues.</p>
-                <div class="price-divider"></div>
                 <ul class="price-features">
                     <li>People systems gap map</li>
                     <li>Priority risk areas</li>
@@ -497,15 +720,15 @@
                     <li>90-day stabilization roadmap</li>
                     <li>Recommendations: build, delegate, or defer</li>
                 </ul>
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary" style="width:100%;text-align:center;">Start With the Scan</a>
+                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-primary">Start With the Scan</a>
                 <p class="price-context">Pricing is calibrated based on organization size, country/market context, urgency, and the level of support needed. Ecuador-based and Latin America-based organizations may qualify for market-adjusted pricing.</p>
             </div>
             <div class="price-card">
+                <p class="price-kicker"></p>
                 <h3>People Systems Build</h3>
                 <p class="price-typical">Typical investment</p>
                 <div class="price-amount">USD $8,000–$20,000+</div>
                 <p class="price-note">For organizations ready to build or improve priority people systems such as hiring, onboarding, role clarity, performance rhythms, manager support, or policy foundations.</p>
-                <div class="price-divider"></div>
                 <ul class="price-features">
                     <li>Build highest-priority people systems</li>
                     <li>Hiring, onboarding, role clarity</li>
@@ -513,15 +736,15 @@
                     <li>Policy foundations</li>
                     <li>Implementation support &amp; team handoff</li>
                 </ul>
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline" style="width:100%;text-align:center;">Let's Talk</a>
+                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline">Let's Talk</a>
                 <p class="price-context">Final pricing depends on the number of systems involved, team size, stakeholder complexity, implementation support, and market context. Ecuador-based and Latin America-based organizations may qualify for adjusted pricing.</p>
             </div>
             <div class="price-card">
+                <p class="price-kicker"></p>
                 <h3>Ongoing Advisory</h3>
                 <p class="price-typical">Typical investment</p>
                 <div class="price-amount">USD $2,500–$6,000/mo</div>
                 <p class="price-note">For leaders who need steady support while implementing people systems, making people decisions, and reducing recurring escalations.</p>
-                <div class="price-divider"></div>
                 <ul class="price-features">
                     <li>Senior People &amp; Culture guidance</li>
                     <li>Ongoing systems implementation</li>
@@ -529,7 +752,7 @@
                     <li>Team friction &amp; culture work</li>
                     <li>Flexible embedded engagement</li>
                 </ul>
-                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline" style="width:100%;text-align:center;">Let's Talk</a>
+                <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-outline">Let's Talk</a>
                 <p class="price-context">Advisory pricing depends on cadence, response time, team complexity, and whether the engagement is local, regional, or global in scope.</p>
             </div>
         </div>
@@ -538,10 +761,12 @@
 
 <!-- FINAL CTA -->
 <section class="final-cta">
-    <div class="final-cta-inner">
-        <h2>Start with a fit conversation.</h2>
-        <p>We'll talk through what is creating drag, risk, or confusion in your people systems, what kind of support would be most useful, and whether the investment range makes sense for your organization's context.</p>
-        <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-white">Book a Fit Conversation</a>
+    <div class="wrap">
+        <div class="final-cta-inner">
+            <h2>Ready to build with <em>intention</em>?</h2>
+            <p>We'll talk through what is creating drag, risk, or confusion in your people systems, what kind of support would be most useful, and whether the investment range makes sense for your organization's context.</p>
+            <a href="https://cal.com/danielareinoso/discovery-call" class="btn btn-cream">Book a Fit Conversation</a>
+        </div>
     </div>
 </section>
 
@@ -550,15 +775,15 @@
     <div class="footer-inner">
         <div class="footer-brand">
             <h3>Daniela Reinoso</h3>
-            <p>People Systems Consultant for Growing Social Impact Organizations</p>
+            <p>Helping mission-driven organizations build the workplace they mean to create.</p>
         </div>
         <div class="footer-contact">
-            <div><a href="https://cal.com/danielareinoso/discovery-call">daniela@danielareinoso.co</a></div>
+            <div><a href="mailto:daniela@danielareinoso.co">daniela@danielareinoso.co</a></div>
             <div><a href="https://danielareinoso.co" target="_blank">danielareinoso.co</a></div>
-        <div><a href="https://linkedin.com/in/danielareinoso" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)" style="flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>linkedin.com/in/danielareinoso</a></div>
+            <div><a href="https://linkedin.com/in/danielareinoso" target="_blank" style="display:flex;align-items:center;gap:6px;"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="rgba(246,243,239,0.6)" style="flex-shrink:0;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>linkedin.com/in/danielareinoso</a></div>
         </div>
     </div>
-    <div class="footer-bottom">&copy; 2025 Daniela Reinoso. All rights reserved.</div>
+    <div class="footer-bottom">&copy; 2026 Daniela Reinoso. All rights reserved.</div>
 </footer>
 
 </body>
