@@ -26,15 +26,11 @@
         .svc-invest .label { font-size: 9.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); opacity: 0.8; display: block; margin-bottom: 4px; }
         .svc-invest .amount { font-family: 'Fraunces', Georgia, serif; font-size: 22px; color: var(--ink-soft); }
         .svc-invest .fine { font-size: 11.5px; color: var(--ink-soft); opacity: 0.8; font-style: italic; line-height: 1.6; margin-top: 8px; max-width: 320px; }
-        .svc-featured {
-            background: var(--card);
-            border: 1.5px solid rgba(35,79,69,0.3);
-            border-radius: 8px;
-            padding: 76px 68px;
-        }
-        .svc-featured h2 { font-size: clamp(44px, 5vw, 64px); }
-        .svc-featured .svc-desc { font-size: 17px; }
-        @media (max-width: 900px) { .svc-featured { padding: 44px 24px; } }
+        section.block { padding: 132px 0; }
+        .svc-flagship { padding: 148px 0; }
+        .svc-flagship h2 { font-size: clamp(48px, 5.4vw, 70px); }
+        .svc-flagship .svc-desc { font-size: 17.5px; }
+        .svc-flagship .dash-list li { font-size: 16.5px; }
         .svc-right h3 { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
         .svc-right .dash-list { margin-bottom: 40px; }
         .svc-right .dash-list li { font-size: 15px; padding: 15px 0 15px 30px; }
@@ -106,10 +102,9 @@
 </section>
 
 <!-- 01 · SCAN -->
-<section class="block">
+<section class="block svc-flagship block-alt">
     <div class="wrap">
-        <div class="svc-featured reveal">
-        <div class="svc-grid">
+        <div class="svc-grid reveal">
             <div class="svc-left">
                 <span class="card-kicker">01 · Start Here</span>
                 <h2>People Systems Scan</h2>
@@ -117,7 +112,6 @@
                 <div class="svc-invest">
                     <span class="label">Typical investment</span>
                     <span class="amount">USD $3,500+</span>
-                    <p class="fine">Calibrated to organization size, market context, and urgency. Latin America-based organizations may qualify for adjusted pricing.</p>
                 </div>
             </div>
             <div class="svc-right">
@@ -131,12 +125,11 @@
                 <a href="scan.html" class="text-link">About the Scan<span class="arr">→</span></a>
             </div>
         </div>
-        </div>
     </div>
 </section>
 
 <!-- 02 · BUILD -->
-<section class="block block-alt">
+<section class="block">
     <div class="wrap">
         <div class="svc-grid reveal">
             <div class="svc-left">
@@ -146,7 +139,6 @@
                 <div class="svc-invest">
                     <span class="label">Typical investment</span>
                     <span class="amount">USD $8,000–$20,000+</span>
-                    <p class="fine">Depends on the number of systems, team size, and stakeholder complexity.</p>
                 </div>
             </div>
             <div class="svc-right">
@@ -174,7 +166,6 @@
                 <div class="svc-invest">
                     <span class="label">Typical investment</span>
                     <span class="amount">USD $2,500–$6,000/mo</span>
-                    <p class="fine">Depends on cadence, response time, and whether the engagement is local, regional, or global.</p>
                 </div>
             </div>
             <div class="svc-right">
@@ -192,11 +183,11 @@
 </section>
 
 <!-- PRICING PHILOSOPHY -->
-<section class="block" style="padding-top: 72px; padding-bottom: 72px;">
+<section class="block block-alt" style="padding-top: 76px; padding-bottom: 76px;">
     <div class="wrap-narrow reveal">
         <span class="eyebrow">A Note on Investment</span>
-        <p style="font-size: 15.5px; color: var(--ink-soft); line-height: 1.9; margin-bottom: 14px;">My pricing is value-based and scope-based. The ranges above reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing is calibrated to local market context, organizational budget, and scope.</p>
-        <p style="font-size: 15.5px; color: var(--ink); line-height: 1.9;">The goal is a fair engagement: one that reflects the value of the work, the complexity of the problem, and the realities of the organization.</p>
+        <p style="font-size: 15.5px; color: var(--ink-soft); line-height: 1.9; margin-bottom: 14px; max-width: 560px;">My pricing is value-based and scope-based. The ranges above reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing is calibrated to local market context, organizational budget, and scope.</p>
+        <p style="font-size: 15.5px; color: var(--ink); line-height: 1.9; max-width: 560px;">The goal is a fair engagement: one that reflects the value of the work, the complexity of the problem, and the realities of the organization.</p>
     </div>
 </section>
 
@@ -205,7 +196,7 @@
     <div class="wrap reveal">
         <blockquote>"The right engagement is the one your organization is actually ready for."</blockquote>
         <p>Not sure which that is? That's exactly what a first conversation is for.</p>
-        <a href="work-together.html" class="btn btn-cream">Let's Connect</a>
+        <a href="work-together.html" class="btn btn-cream" style="padding: 18px 36px; font-size: 15px;">Let's Connect</a>
     </div>
 </section>
 
