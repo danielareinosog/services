@@ -62,6 +62,10 @@ nav.site-nav {
 .nav-links a:not(.nav-cta):hover::after { transform: scaleX(1); }
 .nav-links a.active { border-bottom: 1px solid var(--clay); color: var(--green); }
 .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
     background: var(--clay);
     color: var(--white) !important;
     font-weight: 600 !important;
