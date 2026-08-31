@@ -82,6 +82,31 @@ a.nav-cta {
 .nav-mobile a:last-child { border-bottom: none; }
 .nav-mobile a.nav-cta { background: var(--clay); color: var(--white) !important; padding: 13px 20px; border-radius: 3px; text-align: center; margin-top: 12px; }
 
+/* ── LANGUAGE TOGGLE ── */
+.nav-lang {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; white-space: nowrap;
+}
+.nav-lang a {
+    color: var(--ink-soft); text-decoration: none;
+    padding-bottom: 2px; position: relative; transition: color 0.25s;
+}
+.nav-lang a::after {
+    content: ''; position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 1px; background: var(--clay);
+    transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+}
+.nav-lang a:hover { color: var(--clay); }
+.nav-lang a:hover::after { transform: scaleX(1); }
+.nav-lang a.active { color: var(--green); cursor: default; }
+.nav-lang a.active::after { display: none; }
+.nav-lang .sep { color: var(--hairline); }
+.nav-mobile .nav-lang {
+    padding: 13px 0; border-bottom: 1px solid var(--hairline);
+    font-size: 12.5px; letter-spacing: 0.12em;
+}
+
 /* ── BUTTONS ── */
 .btn {
     display: inline-block;
