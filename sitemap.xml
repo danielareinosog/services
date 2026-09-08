@@ -46,12 +46,27 @@
   <url>
     <loc>https://danielareinoso.co/blog/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/blog/nonprofit-first-hr-hire.html</loc>
     <lastmod>2026-09-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/blog/nonprofit-first-hr-hire.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/blog/cuando-contratar-recursos-humanos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/nonprofit-first-hr-hire.html"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/blog/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/blog/cuando-contratar-recursos-humanos.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/blog/nonprofit-first-hr-hire.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/blog/cuando-contratar-recursos-humanos.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/nonprofit-first-hr-hire.html"/>
   </url>
   <url>
