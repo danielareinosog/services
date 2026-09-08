@@ -226,3 +226,40 @@ function sendFollowUpEmail(email, firstName, lang) {
     name: 'Daniela Reinoso'
   });
 }
+
+
+// ─────────────────────────────────────────────────────────────────────
+// TEST HARNESS
+// ─────────────────────────────────────────────────────────────────────
+// Run THIS function from the editor (not sendResultsEmail — that one needs
+// a data argument and will throw "Cannot read properties of undefined" if
+// run bare). Running this triggers the one-time authorization prompt AND
+// sends you all four emails so you can eyeball them. It does not touch the
+// sheet or the live web app.
+function runEmailTests() {
+  var TEST_EMAIL = 'daniela@danielareinoso.co';  // change to whichever inbox you want the samples in
+
+  ['en', 'es'].forEach(function (lang) {
+    sendResultsEmail({
+      name: 'Test',
+      email: TEST_EMAIL,
+      lang: lang,
+      pattern: (lang === 'es') ? "Patrón: La carga de quien fundó" : "Pattern: The Founder's Burden",
+      result: (lang === 'es')
+        ? "RR. HH. está sobre tus hombros, y cada vez pesa más."
+        : "HR is sitting on your shoulders — and it's getting heavier.",
+      description: (lang === 'es')
+        ? "Texto de ejemplo para la prueba del correo de resultados en español."
+        : "Sample body copy for the English results email test.",
+      signals: (lang === 'es')
+        ? ["Señal de ejemplo uno", "Señal de ejemplo dos"]
+        : ["Sample signal one", "Sample signal two"],
+      help: (lang === 'es')
+        ? "Recomendación de ejemplo para la prueba."
+        : "Sample recommendation for the test."
+    });
+    sendFollowUpEmail(TEST_EMAIL, 'Test', lang);
+  });
+
+  Logger.log('Sent 4 test emails (EN + ES results, EN + ES follow-up) to ' + TEST_EMAIL);
+}
