@@ -197,6 +197,17 @@
         }
         .research-breakdown .pct { font-weight: 600; color: var(--green); flex-shrink: 0; }
         .research-source { font-size: 11.5px; color: var(--ink-soft); font-style: italic; opacity: 0.7; margin-top: auto; }
+        .workshop-proof { padding: 88px 0; }
+        .wp-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; align-items: center; }
+        .wp-metric { border-right: 1px solid rgba(224,219,211,0.6); padding-right: 56px; }
+        .wp-number { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(58px, 6.2vw, 88px); color: var(--green); line-height: 1; margin: 18px 0 14px; }
+        .wp-number .wp-denom { font-size: 0.4em; font-weight: 400; color: var(--ink-soft); margin-left: 2px; }
+        .wp-caption { font-size: 13px; color: var(--ink-soft); }
+        .wp-quote blockquote {
+            font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 500;
+            font-size: clamp(19px, 1.7vw, 22px); color: var(--ink); line-height: 1.65; margin-bottom: 20px;
+        }
+        .wp-quote cite { font-style: normal; font-size: 11.5px; font-weight: 500; letter-spacing: 0.06em; color: var(--ink-soft); }
         .transition { padding: 110px 0; text-align: center; }
         .transition p {
             font-family: 'Fraunces', Georgia, serif; font-weight: 500;
@@ -303,6 +314,8 @@
             .botanical { display: none; }
             .wid-grid { grid-template-columns: 1fr 1fr; }
             .research-grid { grid-template-columns: 1fr; gap: 44px; }
+            .wp-grid { grid-template-columns: 1fr; gap: 36px; }
+            .wp-metric { border-right: none; padding-right: 0; border-bottom: 1px solid rgba(224,219,211,0.6); padding-bottom: 32px; }
             .testi-grid { grid-template-columns: 1fr; gap: 44px; }
             .testi-left { padding-left: 0; }
             .quote-marks { position: static; display: block; font-size: 64px; margin-bottom: 6px; }
@@ -466,6 +479,23 @@
                 <div class="research-number">2,7×</div>
                 <p>El propósito es el predictor más fuerte de retención entre 59 factores estudiados, pero solo cuando la misión se nota en cómo se toman las decisiones.</p>
                 <span class="research-source">The Strategy Group LLC</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EVIDENCIA DE TALLER COMUNITARIO -->
+<section class="workshop-proof block-alt">
+    <div class="wrap reveal">
+        <div class="wp-grid">
+            <div class="wp-metric">
+                <span class="eyebrow">En la práctica</span>
+                <div class="wp-number">4.75<span class="wp-denom">/5</span></div>
+                <p class="wp-caption">Calificación de participantes &middot; 16 respuestas</p>
+            </div>
+            <div class="wp-quote">
+                <blockquote>&ldquo;Daniela guio esta sesión con una claridad e intencionalidad evidentes desde el primer intercambio. La sesión conectó maravillosamente con nuestra comunidad.&rdquo;</blockquote>
+                <cite>Tha&iacute;s Reis, Coordinadora de Eventos &mdash; The Bloom</cite>
             </div>
         </div>
     </div>
