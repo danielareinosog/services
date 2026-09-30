@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daniela Reinoso · Contact</title>
+<meta name="description" content="Daniela Reinoso, Organizational Strategy Advisor. Save my contact or reach me in one tap.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --green: #234F45; --clay: #CB6B4B; --clay-dark: #B85C3D;
+    --bg: #F6F3EF; --card: #FDF9F4; --ink: #333333; --soft: #6E675E;
+    --hairline: #E0DBD3; --white: #FFFFFF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--ink);
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    padding: 24px 16px; -webkit-font-smoothing: antialiased;
+}
+.card {
+    width: 100%; max-width: 860px; background: var(--card); border: 1px solid var(--hairline);
+    border-radius: 14px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+}
+.who { padding: 40px; border-right: 1px solid var(--hairline); display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
+.photo { width: 132px; height: 165px; object-fit: cover; object-position: top; border-radius: 8px; border: 1px solid var(--hairline); display: block; }
+h1 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; font-size: 34px; line-height: 1.1; color: var(--green); margin-top: 24px; }
+.role { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clay); margin-top: 12px; }
+.tag { font-size: 14px; color: var(--soft); line-height: 1.5; margin-top: 8px; max-width: 300px; }
+.closing { font-family: 'Fraunces', Georgia, serif; font-size: 17px; line-height: 1.4; color: var(--green); border-top: 1px solid var(--hairline); padding-top: 20px; }
+.links { padding: 40px; display: flex; flex-direction: column; gap: 10px; justify-content: center; }
+.row {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; color: var(--ink);
+    background: var(--white); border: 1px solid var(--hairline); border-radius: 10px; padding: 14px 16px; cursor: pointer; font: inherit; text-align: left; width: 100%;
+    transition: border-color .15s;
+}
+.row:hover { border-color: var(--green); }
+.row b { display: block; font-size: 15px; font-weight: 600; }
+.row span { display: block; font-size: 13px; color: var(--soft); margin-top: 2px; }
+.row i { font-style: normal; color: var(--soft); font-size: 20px; }
+.row.primary { background: var(--green); border-color: var(--green); color: var(--white); }
+.row.primary span, .row.primary i { color: rgba(255,255,255,.75); }
+.row.primary:hover { background: #1B3B34; }
+.row[hidden] { display: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+@media (max-width: 720px) {
+    .card { grid-template-columns: 1fr; }
+    .who { border-right: 0; border-bottom: 1px solid var(--hairline); padding: 28px 20px; gap: 24px; }
+    .links { padding: 20px; }
+    .closing { display: none; }
+}
+</style>
+</head>
+<body>
+<main class="card">
+    <section class="who">
+        <div>
+            <img class="photo" src="card-photo.jpeg" alt="Daniela Reinoso" width="132" height="165">
+            <h1>Daniela<br>Reinoso</h1>
+            <p class="role">Organizational Strategy Advisor</p>
+            <p class="tag">Helping mission-driven organizations build the workplace they mean to create.</p>
+        </div>
+        <p class="closing">Structure for the people side of your mission.</p>
+    </section>
+
+    <section class="links">
+        <button class="row primary" id="save" type="button"><div><b>Save contact</b><span>Add to my contacts</span></div><i>↓</i></button>
+        <a class="row" id="wa" hidden><div><b>WhatsApp</b><span id="wa-t"></span></div><i>›</i></a>
+        <a class="row" id="tel" hidden><div><b>Call</b><span id="tel-t"></span></div><i>›</i></a>
+        <a class="row" href="mailto:daniela@danielareinoso.co"><div><b>Email</b><span>daniela@danielareinoso.co</span></div><i>›</i></a>
+        <a class="row" href="https://linkedin.com/in/danielareinoso" target="_blank" rel="noopener"><div><b>LinkedIn</b><span>View profile</span></div><i>›</i></a>
+        <a class="row" href="https://cal.com/danielareinoso/discovery-call" target="_blank" rel="noopener"><div><b>Book a call</b><span>Discovery conversation</span></div><i>›</i></a>
+        <a class="row" href="https://danielareinoso.co"><div><b>Website</b><span>danielareinoso.co</span></div><i>›</i></a>
+    </section>
+</main>
+
+<script>
+// Fill in PHONE (international format, e.g. "+593 99 000 0000") to turn on the WhatsApp and Call rows and add it to the saved contact.
+var PHONE = "+593 98 241 0212";
+
+(function () {
+    var digits = PHONE.replace(/[^\d+]/g, "");
+    if (digits) {
+        var wa = document.getElementById("wa"), tel = document.getElementById("tel");
+        wa.href = "https://wa.me/" + digits.replace("+", ""); wa.target = "_blank"; wa.rel = "noopener";
+        tel.href = "tel:" + digits;
+        document.getElementById("wa-t").textContent = PHONE;
+        document.getElementById("tel-t").textContent = PHONE;
+        wa.hidden = tel.hidden = false;
+    }
+
+    function toBase64(buf) {
+        var s = "", b = new Uint8Array(buf);
+        for (var i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000));
+        return btoa(s);
+    }
+    function download(vcf) {
+        var blob = new Blob([vcf], { type: "text/vcard;charset=utf-8" });
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob); a.download = "Daniela-Reinoso.vcf";
+        document.body.appendChild(a); a.click(); a.remove();
+    }
+
+    document.getElementById("save").addEventListener("click", function () {
+        var lines = [
+            "BEGIN:VCARD", "VERSION:3.0",
+            "N:Reinoso;Daniela;;;", "FN:Daniela Reinoso",
+            "TITLE:Organizational Strategy Advisor",
+            "ORG:Daniela Reinoso, People & Culture Systems"
+        ];
+        if (digits) lines.push("TEL;TYPE=CELL:" + digits);
+        lines.push(
+            "EMAIL;TYPE=WORK:daniela@danielareinoso.co",
+            "URL:https://danielareinoso.co",
+            "URL;TYPE=LinkedIn:https://linkedin.com/in/danielareinoso",
+            "ADR;TYPE=WORK:;;;Quito;;;Ecuador"
+        );
+        fetch("card-photo.jpeg").then(function (r) { return r.arrayBuffer(); }).then(function (buf) {
+            lines.push("PHOTO;ENCODING=b;TYPE=JPEG:" + toBase64(buf), "END:VCARD");
+            download(lines.join("\r\n"));
+        }).catch(function () {
+            lines.push("END:VCARD"); download(lines.join("\r\n"));
+        });
+    });
+})();
+</script>
+</body>
+</html>
