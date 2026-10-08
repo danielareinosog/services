@@ -73,7 +73,7 @@ var RESULT_COPY = {
     signals:  'Signals to watch for',
     priority: "What I'd prioritize first",
     ctaTitle: 'What happens next',
-    ctaBody:  'A 30-minute conversation can turn this snapshot into a clear picture of what to prioritize.',
+    ctaBody:  'Where to go next depends on your stage. Early founder-led team? The <a href="https://danielareinoso.co/primer.html" style="color:#cb6b4b;">People Systems Primer</a> may be your next step. Larger or more complex organization? The <a href="https://danielareinoso.co/scan.html" style="color:#cb6b4b;">People Systems Assessment</a> is likely a better fit. Not sure yet? Just reply and tell me where you are.',
     ctaReach: 'Reply to this email, or reach Daniela directly at'
   },
   es: {
@@ -84,7 +84,7 @@ var RESULT_COPY = {
     signals:  'Señales a las que prestar atención',
     priority: 'Qué priorizaría primero',
     ctaTitle: 'Qué sigue',
-    ctaBody:  'Una conversación de 30 minutos puede convertir este snapshot en una imagen clara de qué priorizar.',
+    ctaBody:  'Tu siguiente paso depende de tu etapa. ¿Equipo fundador en etapa temprana? El <a href="https://danielareinoso.co/es/primer.html" style="color:#cb6b4b;">People Systems Primer</a> puede ser tu siguiente paso. ¿Organización más grande o compleja? El <a href="https://danielareinoso.co/es/diagnostico.html" style="color:#cb6b4b;">Diagnóstico</a> probablemente te conviene más. ¿Todavía no estás seguro? Responde a este correo y cuéntame dónde estás.',
     ctaReach: 'Responde a este correo o escribe a Daniela directamente a'
   }
 };
@@ -183,6 +183,7 @@ var FOLLOWUP_COPY = {
         'For some organizations, that\'s unclear roles. For others, it\'s inconsistent onboarding, decision-making, manager support, or performance conversations that happen too late.',
         'Your Snapshot is a starting point, not a diagnosis.',
         'If it would be useful, I\'d be happy to help you interpret what your result might mean in your actual context.',
+        'If you are an early founder-led team, the <a href="https://danielareinoso.co/primer.html" style="color:#cb6b4b;">People Systems Primer</a> may be a good next step. If your organization is larger or more complex, the <a href="https://danielareinoso.co/scan.html" style="color:#cb6b4b;">Assessment</a> is usually the better place to begin.',
         'You can reply here or reach me directly at <a href="mailto:daniela@danielareinoso.co" style="color:#cb6b4b;">daniela@danielareinoso.co</a>.',
         'Either way, I hope the Snapshot gave you a clearer way to name what may be happening underneath the surface.'
       ];
@@ -199,6 +200,7 @@ var FOLLOWUP_COPY = {
         'Para algunas organizaciones son los roles poco claros. Para otras, una incorporación inconsistente, la toma de decisiones, el apoyo a las jefaturas o conversaciones de desempeño que llegan demasiado tarde.',
         'Tu Snapshot es un punto de partida, no un diagnóstico.',
         'Si te resulta útil, con gusto te ayudo a interpretar qué podría significar tu resultado en tu contexto real.',
+        'Si eres un equipo fundador en etapa temprana, el <a href="https://danielareinoso.co/es/primer.html" style="color:#cb6b4b;">People Systems Primer</a> puede ser un buen siguiente paso. Si tu organización es más grande o más compleja, el <a href="https://danielareinoso.co/es/diagnostico.html" style="color:#cb6b4b;">Diagnóstico</a> suele ser el mejor lugar para empezar.',
         'Puedes responder aquí o escribirme directamente a <a href="mailto:daniela@danielareinoso.co" style="color:#cb6b4b;">daniela@danielareinoso.co</a>.',
         'En cualquier caso, espero que el Snapshot te haya dado una forma más clara de nombrar lo que puede estar pasando bajo la superficie.'
       ];
