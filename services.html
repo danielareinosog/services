@@ -28,8 +28,9 @@
         "@type": "ItemList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "item": { "@id": "https://danielareinoso.co/services.html#service-snapshot" } },
-          { "@type": "ListItem", "position": 2, "item": { "@id": "https://danielareinoso.co/services.html#service-assessment" } },
-          { "@type": "ListItem", "position": 3, "item": { "@id": "https://danielareinoso.co/services.html#service-partnership" } }
+          { "@type": "ListItem", "position": 2, "item": { "@id": "https://danielareinoso.co/services.html#service-primer" } },
+          { "@type": "ListItem", "position": 3, "item": { "@id": "https://danielareinoso.co/services.html#service-assessment" } },
+          { "@type": "ListItem", "position": 4, "item": { "@id": "https://danielareinoso.co/services.html#service-partnership" } }
         ]
       }
     },
@@ -43,6 +44,19 @@
       "offers": {
         "@type": "Offer",
         "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://danielareinoso.co/services.html#service-primer",
+      "name": "People Systems Primer",
+      "url": "https://danielareinoso.co/primer.html",
+      "description": "A focused one-week session for early mission-driven teams deciding what people practices to formalize now, what can stay informal, and what to watch as they grow.",
+      "provider": { "@id": "https://danielareinoso.co/#business" },
+      "offers": {
+        "@type": "Offer",
+        "price": "1250",
         "priceCurrency": "USD"
       }
     },
@@ -205,12 +219,49 @@
     </div>
 </section>
 
-<!-- 02 · ASSESSMENT -->
+<!-- 02 · PRIMER -->
 <section class="block">
     <div class="wrap">
         <div class="svc-grid reveal">
             <div class="svc-left">
-                <span class="card-kicker">02 · See Clearly</span>
+                <span class="card-kicker">02 · Focused Session</span>
+                <h2>People Systems Primer</h2>
+                <p class="svc-desc">Before you build an HR function, know which people systems actually need structure. The Primer helps early mission-driven teams decide what to formalize now, what can stay informal, and what to watch as they grow.</p>
+                <div class="svc-invest">
+                    <span class="label">Investment</span>
+                    <span class="amount">$1,250 flat</span>
+                    <p class="fine">90-minute session + 10-minute team questionnaire. One week, start to finish. You receive a 2-page People Systems Primer memo.</p>
+                    <p class="fine">Limited community-rate slots may be available for locally funded Ecuador/LatAm organizations.</p>
+                </div>
+            </div>
+            <div class="svc-right">
+                <h3>This is right for you if…</h3>
+                <ul class="dash-list">
+                    <li>You lead a founder-led, mission-driven team of roughly 5–15 people, or a smaller team preparing to hire.</li>
+                    <li>You're not ready for a full HR function, but informal people practices are starting to feel risky, confusing, or too dependent on you.</li>
+                    <li>You want to know what to set up before you grow, and what you can safely leave alone.</li>
+                </ul>
+                <h3>Three kinds of people systems debt</h3>
+                <ul class="dash-list">
+                    <li><strong>Clarity Debt</strong> — unclear ownership, expectations, and decision rights.</li>
+                    <li><strong>Manager Debt</strong> — people leading others before anyone has taught them how.</li>
+                    <li><strong>Consistency Debt</strong> — hiring, onboarding, feedback, and pay handled differently depending on who is involved.</li>
+                </ul>
+                <p class="svc-leave"><strong>You leave with:</strong> a 2-page memo naming what to build now, what to leave informal, and what signals mean it's time to revisit.</p>
+                <p class="svc-leave">Larger or more complex organization — repeated people friction, distributed teams, restructuring, or board and funder pressure? The Assessment is likely the better fit.</p>
+                <a href="primer.html" class="text-link">About the Primer<span class="arr">→</span></a>
+                <p style="margin-top: 24px;"><a href="https://cal.com/danielareinoso/people-systems-primer-call" target="_blank" rel="noopener" class="btn btn-primary">Book a Primer</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 03 · ASSESSMENT -->
+<section class="block block-alt">
+    <div class="wrap">
+        <div class="svc-grid reveal">
+            <div class="svc-left">
+                <span class="card-kicker">03 · See Clearly</span>
                 <h2>People Systems Assessment</h2>
                 <p class="svc-desc">A focused diagnostic. We map where your people systems are creating drag, risk, or confusion, and turn the findings into a clear set of priorities — what matters most, and in what order.</p>
                 <div class="svc-invest">
@@ -227,6 +278,7 @@
                 </ul>
                 <p class="svc-leave"><strong>You leave with:</strong> a people systems gap map, priority risk areas, a leadership debrief, and a roadmap for what to address first.</p>
                 <p class="svc-leave">An assessment tells you what to prioritize. It doesn't make the calls that come after — which of four priorities to move first when your board meets in six weeks, what to do when one priority stalls while three others suddenly become urgent. That's where this work actually pays off, and it's what the partnership is built for.</p>
+                <p class="svc-leave">Smaller team, roughly 5–15 people or preparing to hire? <a href="primer.html" style="color: var(--green); text-underline-offset: 2px;">The Primer</a> may be the better first step.</p>
                 <a href="scan.html" class="text-link">About the Assessment<span class="arr">→</span></a>
             </div>
         </div>
@@ -234,7 +286,7 @@
 </section>
 
 <!-- WHY CONTINUE -->
-<section class="block block-alt" style="padding-top: 96px; padding-bottom: 96px;">
+<section class="block" style="padding-top: 96px; padding-bottom: 96px;">
     <div class="wrap-narrow reveal">
         <span class="eyebrow">The Question Worth Asking</span>
         <h2 style="font-size: clamp(28px, 3vw, 38px); margin-bottom: 20px;">Why not just take the roadmap and run?</h2>
@@ -243,12 +295,12 @@
     </div>
 </section>
 
-<!-- 03 · FLAGSHIP: PARTNERSHIP -->
-<section class="block svc-flagship">
+<!-- 04 · FLAGSHIP: PARTNERSHIP -->
+<section class="block block-alt svc-flagship">
     <div class="wrap">
         <div class="svc-grid reveal">
             <div class="svc-left">
-                <span class="card-kicker">03 · The Flagship</span>
+                <span class="card-kicker">04 · The Flagship</span>
                 <h2>People Infrastructure Partnership</h2>
                 <p class="svc-desc">This is how I partner with leadership teams once we've identified the priorities that matter most.</p>
                 <div class="svc-invest">
@@ -272,7 +324,7 @@
 </section>
 
 <!-- PRICING PHILOSOPHY -->
-<section class="block block-alt" style="padding-top: 76px; padding-bottom: 76px;">
+<section class="block" style="padding-top: 76px; padding-bottom: 76px;">
     <div class="wrap-narrow reveal">
         <span class="eyebrow">A Note on Investment</span>
         <p style="font-size: 15.5px; color: var(--ink-soft); line-height: 1.9; margin-bottom: 14px; max-width: 650px;">My pricing is value-based and scope-based. The ranges above reflect typical investments for U.S.-based, global, and well-funded organizations. I also work with Ecuador-based and Latin America-based organizations, where pricing is calibrated to local market context, organizational budget, and scope.</p>
@@ -321,6 +373,7 @@
             <li><a href="services.html">Services</a></li>
             <li><a href="scan.html">The Scan</a></li>
             <li><a href="blog/index.html">Writing</a></li>
+            <li><a href="primer.html">The Primer</a></li>
             <li><a href="people_systems_snapshot.html">The Snapshot</a></li>
         </ul>
         <div class="footer-social">

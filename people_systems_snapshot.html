@@ -566,6 +566,13 @@
 
     .cta-secondary:hover { color: var(--forest); }
 
+    .next-steps { list-style: none; margin-bottom: 32px; }
+    .next-steps li { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; padding: 12px 0 12px 28px; position: relative; border-top: 1px solid var(--border); }
+    .next-steps li:last-child { border-bottom: 1px solid var(--border); }
+    .next-steps li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); }
+    .next-steps li strong { color: var(--forest); font-weight: 600; }
+    .next-steps a { color: var(--forest); text-underline-offset: 3px; }
+
     .restart-link {
       display: block;
       text-align: center;
@@ -715,7 +722,7 @@
         <li>What it means for your organization</li>
         <li>Leadership signals to watch for</li>
         <li>Practical recommendations</li>
-        <li>Guidance on whether a People Systems Scan would be valuable</li>
+        <li>Guidance on your best next step for your stage</li>
       </ul>
       <p class="email-fine-print">The report will be emailed immediately so you can save it, revisit it, or share it with your leadership team.</p>
       <div class="email-confidentiality">
@@ -732,9 +739,15 @@
     </div>
 
     <div class="cta-block">
-      <p>The Snapshot identifies recurring patterns. The People Systems Scan identifies why they're happening, prioritizes what matters most, and provides a practical 90-day roadmap.</p>
+      <p>After the Snapshot, your next step depends on your stage:</p>
+      <ul class="next-steps">
+        <li><strong>Founder + small team, not hiring yet:</strong> watch the signal and revisit later.</li>
+        <li><strong>Early team preparing to grow:</strong> the <a href="primer.html">People Systems Primer</a> may be the right next step.</li>
+        <li><strong>Larger or more complex organization:</strong> the <a href="scan.html">People Systems Assessment</a> is likely a better fit.</li>
+      </ul>
       <div class="cta-actions">
-        <a href="index.html#scan" class="btn btn-primary">Explore the People Systems Scan</a>
+        <a href="primer.html" class="btn btn-primary">Explore the Primer</a>
+        <a href="scan.html" class="cta-secondary">Explore the Assessment</a>
         <a href="https://cal.com/danielareinoso/discovery-call" target="_blank" class="cta-secondary">Book a conversation</a>
       </div>
     </div>
@@ -812,7 +825,7 @@
         "Onboarding looks different for every person who joins",
         "You've said 'we need to fix this' about the same issue more than twice"
       ],
-      help: "The highest-leverage starting point is usually a quick diagnostic to name what's actually broken — not a policy manual, not an HRIS. A People Systems Scan can identify the 2–3 root issues creating the most drag, and give you a clear sequence for what to address first. Most leaders in this pattern are surprised by how quickly things can shift once the right things are named."
+      help: "The highest-leverage starting point is usually a quick diagnostic to name what's actually broken — not a policy manual, not an HRIS. A People Systems Scan can identify the 2–3 root issues creating the most drag, and give you a clear sequence for what to address first. Most leaders in this pattern are surprised by how quickly things can shift once the right things are named. Where to go next depends on your stage. If you're a founder with a small team and no hiring plans yet, watch the signals above and revisit later. If you're an early team preparing to grow, roughly 5–15 people, the People Systems Primer is likely the right next step. If your organization is larger or more complex, the People Systems Assessment is likely a better fit."
     },
     {
       min: 9, max: 13,
@@ -826,7 +839,7 @@
         "Hiring takes longer than it should because there's no clear, repeatable process",
         "You've added headcount but haven't updated how you onboard or develop people"
       ],
-      help: "Organizations at this stage usually need structure more than they need new ideas. The work is about taking what's working informally and making it replicable — building the infrastructure around the culture that already exists. A People Systems Scan is designed exactly for this moment: it tells you what to build first, what to wait on, and what's creating the most drag right now."
+      help: "Organizations at this stage usually need structure more than they need new ideas. The work is about taking what's working informally and making it replicable — building the infrastructure around the culture that already exists. A People Systems Scan is designed exactly for this moment: it tells you what to build first, what to wait on, and what's creating the most drag right now. Where to go next depends on your stage. If you're a founder with a small team and no hiring plans yet, watch the signals above and revisit later. If you're an early team preparing to grow, roughly 5–15 people, the People Systems Primer is likely the right next step. If your organization is larger or more complex, the People Systems Assessment is likely a better fit."
     },
     {
       min: 14, max: 17,
@@ -840,7 +853,7 @@
         "DEI commitments aren't reflected in how you actually hire, promote, or develop people",
         "There's a difference between what leadership says it values and what gets rewarded"
       ],
-      help: "The work here is alignment — connecting the people systems (how you hire, how you develop, how you recognize, how you exit) to the values the organization has already defined. A People Systems Scan will map where that gap is largest and what would close it most effectively. The goal isn't more values work — it's building systems that make the values real."
+      help: "The work here is alignment — connecting the people systems (how you hire, how you develop, how you recognize, how you exit) to the values the organization has already defined. A People Systems Scan will map where that gap is largest and what would close it most effectively. The goal isn't more values work — it's building systems that make the values real. Where to go next depends on your stage. If you're a founder with a small team and no hiring plans yet, watch the signals above and revisit later. If you're an early team preparing to grow, roughly 5–15 people, the People Systems Primer is likely the right next step. If your organization is larger or more complex, the People Systems Assessment is likely a better fit."
     },
     {
       min: 18, max: 20,
@@ -854,7 +867,7 @@
         "You haven't had a major people crisis — but you also don't have visibility into what might be building underneath",
         "HR feels handled — but it's mostly payroll and admin, not people development or culture design"
       ],
-      help: "Organizations at your stage have the most runway to build intentionally — before growth creates pressure, before turnover forces the issue, before a donor or board raises concerns. A People Systems Scan can give you a clear picture of what's actually working, what's held together by informal knowledge or key people (and therefore fragile), and where small investments now would create the most protection later."
+      help: "Organizations at your stage have the most runway to build intentionally — before growth creates pressure, before turnover forces the issue, before a donor or board raises concerns. A People Systems Scan can give you a clear picture of what's actually working, what's held together by informal knowledge or key people (and therefore fragile), and where small investments now would create the most protection later. Where to go next depends on your stage. If you're a founder with a small team and no hiring plans yet, watch the signals above and revisit later. If you're an early team preparing to grow, roughly 5–15 people, the People Systems Primer is likely the right next step. If your organization is larger or more complex, the People Systems Assessment is likely a better fit."
     }
   ];
 
