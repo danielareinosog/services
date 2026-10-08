@@ -450,3 +450,17 @@ html.js .reveal.in { opacity: 1; transform: none; }
     .quote-band { padding: 80px 0; }
     .quote-band .inner { padding: 0 24px; }
 }
+
+/* ── START FORK ("Where should you start?") ── */
+.fork-section { padding: 96px 0; }
+.fork-section.fork-top { border-top: 1px solid var(--hairline); }
+.fork-section h2 { font-size: clamp(34px, 4vw, 48px); margin-bottom: 18px; }
+.fork-intro { font-size: 16px; color: var(--ink-soft); line-height: 1.85; max-width: 640px; margin-bottom: 48px; }
+.fork-grid .soft-card { display: flex; flex-direction: column; }
+.fork-grid .soft-card p { margin-bottom: 20px; }
+.fork-grid .soft-card .fork-next { font-size: 13.5px; color: var(--ink); margin-bottom: 26px; }
+.fork-grid .soft-card .fork-next strong { font-weight: 500; }
+.fork-grid .soft-card .text-link { margin-top: auto; align-self: flex-start; }
+.btn-cream-outline { background: transparent; color: var(--bg); border-color: rgba(246,243,239,0.5); }
+.btn-cream-outline:hover { background: var(--bg); color: var(--green); border-color: var(--bg); }
+.btn-row { display: flex; gap: 16px; flex-wrap: wrap; }
