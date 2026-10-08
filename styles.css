@@ -441,7 +441,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
     .statement { padding: 80px 0; }
     .page-hero { padding: 60px 0 50px; }
     .rows li { grid-template-columns: 1fr; gap: 10px; padding: 30px 0; }
-    .cards-3, .cards-2, .stat-grid, .text-grid { grid-template-columns: 1fr; }
+    .cards-3, .cards-2, .stat-grid, .text-grid, .evidence-grid { grid-template-columns: 1fr; }
     .timeline { grid-template-columns: 1fr; gap: 36px; padding-top: 0; padding-left: 34px; }
     .timeline::before { left: 6px; right: auto; top: 8px; bottom: 8px; width: 1px; height: auto; }
     .tl-item::before { left: -34px; top: 8px; }
@@ -464,3 +464,8 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .btn-cream-outline { background: transparent; color: var(--bg); border-color: rgba(246,243,239,0.5); }
 .btn-cream-outline:hover { background: var(--bg); color: var(--green); border-color: var(--bg); }
 .btn-row { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* prevent long words / grid children from forcing horizontal scroll */
+h1, h2, h3 { overflow-wrap: break-word; }
+.svc-grid > *, .scan-body > *, .primer-body > * { min-width: 0; }
+@media (max-width: 900px) { .fork-section { padding: 64px 0; } .fork-intro { margin-bottom: 32px; } }
