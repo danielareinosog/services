@@ -26,6 +26,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/services.html"/>
   </url>
   <url>
+    <loc>https://danielareinoso.co/primer.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/primer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/primer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/primer.html"/>
+  </url>
+  <url>
     <loc>https://danielareinoso.co/scan.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/scan.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/diagnostico.html"/>
