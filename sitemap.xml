@@ -3,54 +3,63 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://danielareinoso.co/</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/about.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/about.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/sobre-mi.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/about.html"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/approach.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/approach.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/enfoque.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/approach.html"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/services.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/services.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/servicios.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/services.html"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/primer.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/primer.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/primer.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/primer.html"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/scan.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/scan.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/diagnostico.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/scan.html"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/people_systems_snapshot.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/people_systems_snapshot.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/people_systems_snapshot.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/people_systems_snapshot.html"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/work-together.html</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/work-together.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/trabajemos-juntos.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/work-together.html"/>
   </url>
   <url>
     <loc>https://danielareinoso.co/blog/</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/"/>
@@ -63,7 +72,64 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/nonprofit-first-hr-hire.html"/>
   </url>
   <url>
+    <loc>https://danielareinoso.co/es/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/sobre-mi.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/about.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/sobre-mi.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/about.html"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/enfoque.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/approach.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/enfoque.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/approach.html"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/servicios.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/services.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/services.html"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/primer.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/primer.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/primer.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/primer.html"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/diagnostico.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/scan.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/diagnostico.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/scan.html"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/people_systems_snapshot.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/people_systems_snapshot.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/people_systems_snapshot.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/people_systems_snapshot.html"/>
+  </url>
+  <url>
+    <loc>https://danielareinoso.co/es/trabajemos-juntos.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/work-together.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/trabajemos-juntos.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/work-together.html"/>
+  </url>
+  <url>
     <loc>https://danielareinoso.co/es/blog/</loc>
+    <lastmod>2026-10-15</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/blog/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/"/>
@@ -74,47 +140,5 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/blog/nonprofit-first-hr-hire.html"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/blog/cuando-contratar-recursos-humanos.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/blog/nonprofit-first-hr-hire.html"/>
-  </url>
-  <url>
-    <loc>https://danielareinoso.co/es/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/"/>
-  </url>
-  <url>
-    <loc>https://danielareinoso.co/es/sobre-mi.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/about.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/sobre-mi.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/about.html"/>
-  </url>
-  <url>
-    <loc>https://danielareinoso.co/es/enfoque.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/approach.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/enfoque.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/approach.html"/>
-  </url>
-  <url>
-    <loc>https://danielareinoso.co/es/servicios.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/services.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/servicios.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/services.html"/>
-  </url>
-  <url>
-    <loc>https://danielareinoso.co/es/diagnostico.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/scan.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/diagnostico.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/scan.html"/>
-  </url>
-  <url>
-    <loc>https://danielareinoso.co/es/people_systems_snapshot.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/people_systems_snapshot.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/people_systems_snapshot.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/people_systems_snapshot.html"/>
-  </url>
-  <url>
-    <loc>https://danielareinoso.co/es/trabajemos-juntos.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://danielareinoso.co/work-together.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://danielareinoso.co/es/trabajemos-juntos.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://danielareinoso.co/work-together.html"/>
   </url>
 </urlset>
