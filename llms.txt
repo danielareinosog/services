@@ -5,7 +5,7 @@
 ## Services
 
 - [People Systems Snapshot](https://danielareinoso.co/people_systems_snapshot.html): A free, self-guided 3-minute check on where friction may be coming from in an organization's roles, decisions, processes, and people practices.
-- [People Systems Primer](https://danielareinoso.co/primer.html): A one-week session (90-minute working session + 10-minute team questionnaire, 2-page memo) for founder-led teams of roughly 5–15 people deciding which people practices to formalize now, what can stay informal, and what to watch. Investment: USD $1,250 flat.
+- [Organizational Effectiveness Primer (OE Primer)](https://danielareinoso.co/primer.html): A one-week session (90-minute working session + 10-minute team questionnaire, 2-page memo) for founder-led teams of roughly 5–15 people deciding which people practices to formalize now, what can stay informal, and what to watch. Investment: USD $1,250 flat.
 - [People Systems Assessment (The Scan)](https://danielareinoso.co/scan.html): A three-week organizational diagnostic that maps where roles, processes, and people systems create drag, risk, or confusion, resulting in a 90-day roadmap. It stands on its own; the client chooses whether and how to act on it. Starting at USD $3,500.
 - [People Infrastructure Partnership](https://danielareinoso.co/services.html): An optional ongoing partnership to sequence and implement the organizational systems a team's priorities call for. Six-month minimum, priced individually.
 
